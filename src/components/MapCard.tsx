@@ -1,5 +1,7 @@
 import React from 'react';
 import { Star, Heart, Copy, Info } from 'lucide-react';
+import { translations } from '../translations';
+import type { Language } from '../translations';
 
 export interface MapData {
   id: string;
@@ -32,6 +34,7 @@ interface MapCardProps {
   onToggleFavorite: (id: string) => void;
   onShowToast: (message: string) => void;
   onSelectAuthor?: (author: string) => void;
+  lang: Language;
 }
 
 export const MapCard: React.FC<MapCardProps> = ({
@@ -41,7 +44,9 @@ export const MapCard: React.FC<MapCardProps> = ({
   onToggleFavorite,
   onShowToast,
   onSelectAuthor,
+  lang,
 }) => {
+  const t = translations[lang];
   const getDifficultyClass = (diff?: string) => {
     switch (diff?.toLowerCase()) {
       case 'easy':
@@ -61,12 +66,12 @@ export const MapCard: React.FC<MapCardProps> = ({
       // Pick the main BSP name (first in the list)
       const bsp = map.bsp_names[0];
       navigator.clipboard.writeText(`map ${bsp}`);
-      onShowToast(`Consola: "map ${bsp}" copiado al portapapeles`);
+      onShowToast(t.copiedConsole.replace('{cmd}', `map ${bsp}`));
     } else {
       // Fallback if not fully scraped, try clean map ID
       const bspFallback = map.id.replace(/-/g, '_');
       navigator.clipboard.writeText(`map ${bspFallback}`);
-      onShowToast(`Consola: "map ${bspFallback}" copiado al portapapeles`);
+      onShowToast(t.copiedConsole.replace('{cmd}', `map ${bspFallback}`));
     }
   };
 
@@ -103,7 +108,7 @@ export const MapCard: React.FC<MapCardProps> = ({
       <div className="card-image-wrap">
         <div className="card-image-fallback">
           <Info size={36} />
-          <span>Sven Co-op Map</span>
+          <span>{t.fallbackCardTitle}</span>
         </div>
 
         {imgSource ? (
@@ -185,19 +190,19 @@ export const MapCard: React.FC<MapCardProps> = ({
         <button
           className={`btn-card-action ${isFavorite ? 'favorite-active' : ''}`}
           onClick={handleFavoriteClick}
-          title={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+          title={t.favBtnTitle}
         >
           <Heart size={16} fill={isFavorite ? '#ff3b30' : 'none'} />
-          <span>{isFavorite ? 'Favorito' : 'Favorito'}</span>
+          <span>{t.favoriteBtn}</span>
         </button>
 
         <button
           className="btn-card-action btn-card-bsp"
           onClick={handleCopyBsp}
-          title="Copiar comando de consola para cargar el mapa"
+          title={t.copyBspTitle}
         >
           <Copy size={14} />
-          <span>Copy BSP</span>
+          <span>{t.copyBspBtn}</span>
         </button>
       </div>
     </div>

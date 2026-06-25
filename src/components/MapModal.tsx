@@ -4,16 +4,20 @@ import type { MapData } from './MapCard';
 import iconSteam from '../assets/icon_steam.png';
 import borderPressed from '../assets/border-pressed.png';
 import xIcon from '../assets/X.png';
+import { translations } from '../translations';
+import type { Language } from '../translations';
 
 interface MapModalProps {
   map: MapData;
   onClose: () => void;
   onShowToast: (message: string) => void;
   onSelectAuthor?: (author: string) => void;
+  lang: Language;
 }
 
-export const MapModal: React.FC<MapModalProps> = ({ map, onClose, onShowToast, onSelectAuthor }) => {
+export const MapModal: React.FC<MapModalProps> = ({ map, onClose, onShowToast, onSelectAuthor, lang }) => {
   const [activeImgIdx, setActiveImgIdx] = useState(0);
+  const t = translations[lang];
 
   // Close when overlay is clicked
   const handleOverlayClick = (e: React.MouseEvent) => {
@@ -36,7 +40,7 @@ export const MapModal: React.FC<MapModalProps> = ({ map, onClose, onShowToast, o
 
   const handleCopyBsp = (bsp: string) => {
     navigator.clipboard.writeText(`map ${bsp}`);
-    onShowToast(`Consola: "map ${bsp}" copiado al portapapeles`);
+    onShowToast(t.copiedConsole.replace('{cmd}', `map ${bsp}`));
   };
 
   const cleanUrl = (url: string) => {
@@ -86,7 +90,7 @@ export const MapModal: React.FC<MapModalProps> = ({ map, onClose, onShowToast, o
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 'bold' }}>
             <img src={iconSteam} style={{ height: '16px', width: 'auto', imageRendering: 'pixelated' }} alt="Steam" />
-            <span style={{ fontSize: '14px', color: 'var(--text-primary)' }}>Map Details</span>
+            <span style={{ fontSize: '14px', color: 'var(--text-primary)' }}>{t.modalHeader}</span>
           </div>
           <button 
             onClick={onClose} 
@@ -97,7 +101,7 @@ export const MapModal: React.FC<MapModalProps> = ({ map, onClose, onShowToast, o
               alignItems: 'center', 
               justifyContent: 'center' 
             }}
-            aria-label="Cerrar modal"
+            aria-label={t.modalCloseLabel}
           >
             <img src={xIcon} style={{ height: '10px', width: 'auto', imageRendering: 'pixelated' }} alt="Close" />
           </button>
@@ -154,24 +158,24 @@ export const MapModal: React.FC<MapModalProps> = ({ map, onClose, onShowToast, o
                   {map.author}
                 </strong>
               ) : (
-                'Unknown'
+                t.unknownMapper
               )}
             </p>
 
             <div className="modal-section">
-              <h3 className="modal-section-title">Descripción</h3>
+              <h3 className="modal-section-title">{t.descriptionLabel}</h3>
               {map.description ? (
                 <p className="modal-description">{map.description}</p>
               ) : (
                 <p className="modal-description" style={{ fontStyle: 'italic', opacity: 0.5 }}>
-                  {map.scraped ? 'No hay descripción disponible para este mapa.' : 'Esta información aún no ha sido cargada del servidor original.'}
+                  {map.scraped ? t.noDescription : t.notScrapedYet}
                 </p>
               )}
             </div>
 
             {map.additional_info && map.additional_info !== 'N/A' && (
               <div className="modal-section">
-                <h3 className="modal-section-title">Información Adicional</h3>
+                <h3 className="modal-section-title">{t.additionalInfoLabel}</h3>
                 <p className="modal-description" style={{ fontSize: '0.9rem' }}>{map.additional_info}</p>
               </div>
             )}
@@ -185,7 +189,7 @@ export const MapModal: React.FC<MapModalProps> = ({ map, onClose, onShowToast, o
                 borderRadius: 'var(--radius-sm)'
               }}>
                 <h3 className="modal-section-title" style={{ color: '#e74c3c', display: 'flex', alignItems: 'center', gap: '6px', margin: '0 0 6px 0', fontSize: '0.9rem' }}>
-                  <span>Problemas Conocidos / Known Issues</span>
+                  <span>{t.knownIssuesLabel}</span>
                 </h3>
                 <p className="modal-description" style={{ fontSize: '0.85rem', margin: 0, whiteSpace: 'pre-line' }}>
                   {map.known_issues}
@@ -198,7 +202,7 @@ export const MapModal: React.FC<MapModalProps> = ({ map, onClose, onShowToast, o
           <div className="modal-meta-sidebar">
             {/* BSP Copy Commands */}
             <div style={{ background: 'rgba(0,0,0,0.2)', padding: '15px', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)' }}>
-              <span className="filter-section-title" style={{ marginBottom: '10px' }}>Comandos de Consola</span>
+              <span className="filter-section-title" style={{ marginBottom: '10px' }}>{t.consoleCommandsLabel}</span>
               <div className="bsp-list-pills" style={{ alignItems: 'stretch' }}>
                 {map.bsp_names && map.bsp_names.length > 0 ? (
                   map.bsp_names.map((bsp) => (
@@ -227,27 +231,27 @@ export const MapModal: React.FC<MapModalProps> = ({ map, onClose, onShowToast, o
 
             {/* General Info Table */}
             <div>
-              <span className="filter-section-title">Detalles del Mapa</span>
+              <span className="filter-section-title">{t.mapDetailsLabel}</span>
               <table className="metadata-table">
                 <tbody>
                   <tr>
-                    <td>Mod Original</td>
+                    <td>{t.originalModLabel}</td>
                     <td>{map.original_release_date || 'N/A'}</td>
                   </tr>
                   <tr>
-                    <td>Publicación</td>
+                    <td>{t.releaseLabel}</td>
                     <td>{map.release_date || 'N/A'}</td>
                   </tr>
                   <tr>
-                    <td>Votos</td>
+                    <td>{t.votesLabel}</td>
                     <td>{map.votes || 0}</td>
                   </tr>
                   <tr>
-                    <td>Dificultad</td>
+                    <td>{t.difficultyLabel}</td>
                     <td style={{ textTransform: 'capitalize' }}>{map.difficulty || 'N/A'}</td>
                   </tr>
                   <tr>
-                    <td>Tamaño</td>
+                    <td>{t.sizeLabel}</td>
                     <td style={{ textTransform: 'capitalize' }}>{map.size || 'N/A'}</td>
                   </tr>
                 </tbody>
@@ -256,7 +260,7 @@ export const MapModal: React.FC<MapModalProps> = ({ map, onClose, onShowToast, o
 
             {/* Mirrors / Downloads */}
             <div>
-              <span className="filter-section-title">Descargar</span>
+              <span className="filter-section-title">{t.downloadLabel}</span>
               {map.download_links && map.download_links.length > 0 ? (
                 map.download_links.map((link, idx) => (
                   <a
@@ -286,7 +290,7 @@ export const MapModal: React.FC<MapModalProps> = ({ map, onClose, onShowToast, o
                 ))
               ) : (
                 <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontStyle: 'italic', padding: '10px 0' }}>
-                  No hay links de descarga directos disponibles.
+                  {t.noDownloads}
                 </div>
               )}
 
@@ -319,7 +323,7 @@ export const MapModal: React.FC<MapModalProps> = ({ map, onClose, onShowToast, o
               className="btn btn-primary"
               style={{ width: '100%', justifyContent: 'center', textDecoration: 'none' }}
             >
-              <span>Ver Web Original</span>
+              <span>{t.viewOriginalBtn}</span>
               <ExternalLink size={16} />
             </a>
           </div>

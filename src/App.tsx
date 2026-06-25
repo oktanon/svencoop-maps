@@ -4,11 +4,28 @@ import { MapCard } from './components/MapCard';
 import type { MapData } from './components/MapCard';
 import { MapModal } from './components/MapModal';
 import iconSteam from './assets/icon_steam.png';
+import { translations } from './translations';
+import type { Language } from './translations';
 
 function App() {
   const [maps, setMaps] = useState<MapData[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  // Language state
+  const [lang, setLang] = useState<Language>(() => {
+    const saved = localStorage.getItem('scmapdb_lang');
+    if (saved === 'es' || saved === 'en') return saved as Language;
+    const browserLang = navigator.language || (navigator as any).userLanguage || 'en';
+    return browserLang.toLowerCase().startsWith('es') ? 'es' : 'en';
+  });
+
+  // Save language preference
+  useEffect(() => {
+    localStorage.setItem('scmapdb_lang', lang);
+  }, [lang]);
+
+  const t = translations[lang];
 
   // Filter & Search states
   const [searchTerm, setSearchTerm] = useState('');
@@ -49,14 +66,14 @@ function App() {
         setError(null);
       } catch (err: any) {
         console.error('Database load error:', err);
-        setError('No se pudo cargar la base de datos de mapas. Ejecuta el scraper para generarla.');
+        setError(t.dbLoadError);
       } finally {
         setLoading(false);
       }
     };
 
     fetchMaps();
-  }, []);
+  }, [t.dbLoadError]);
 
   // Save favorites to localStorage when they change
   useEffect(() => {
@@ -136,7 +153,7 @@ function App() {
   const handleSelectAuthor = (authorName: string) => {
     setSelectedAuthor(authorName);
     setSelectedMap(null);
-    showToast(`Filtrando mapas de: ${authorName}`);
+    showToast(t.filteringAuthor.replace('{author}', authorName));
   };
 
   // Pick a random map from the current filtered list
@@ -144,13 +161,13 @@ function App() {
     if (filteredAndSortedMaps.length > 0) {
       const randomIdx = Math.floor(Math.random() * filteredAndSortedMaps.length);
       setSelectedMap(filteredAndSortedMaps[randomIdx]);
-      showToast(`🎲 Mapa aleatorio: "${filteredAndSortedMaps[randomIdx].title}"`);
+      showToast(t.randomPickToast.replace('{title}', filteredAndSortedMaps[randomIdx].title));
     } else if (maps.length > 0) {
       const randomIdx = Math.floor(Math.random() * maps.length);
       setSelectedMap(maps[randomIdx]);
-      showToast(`🎲 Mapa aleatorio: "${maps[randomIdx].title}"`);
+      showToast(t.randomPickToast.replace('{title}', maps[randomIdx].title));
     } else {
-      showToast('No hay mapas cargados en la base de datos.');
+      showToast(t.noMapsLoaded);
     }
   };
 
@@ -260,7 +277,7 @@ function App() {
           disabled={currentPage === 1}
           onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
         >
-          Anterior
+          {t.paginationPrev}
         </button>
 
         {startPage > 1 && (
@@ -302,11 +319,11 @@ function App() {
           disabled={currentPage === totalPages}
           onClick={() => setCurrentPage((prev) => Math.min(totalPages, prev + 1))}
         >
-          Siguiente
+          {t.paginationNext}
         </button>
 
         <div className="items-per-page-container">
-          <span>Mapas por página:</span>
+          <span>{t.mapsPerPage}</span>
           <select
             value={itemsPerPage}
             onChange={(e) => {
@@ -346,14 +363,14 @@ function App() {
             style={{ height: '32px', width: 'auto', imageRendering: 'pixelated' }} 
           />
           <div className="brand-text">
-            <h1>Sven Co-Op Maps</h1>
+            <h1>{t.title}</h1>
           </div>
         </div>
 
         <div className="action-row">
           <button className="btn btn-primary" onClick={handlePickRandom}>
             <Shuffle size={16} />
-            <span>Mapa Aleatorio</span>
+            <span>{t.randomMap}</span>
           </button>
           
           <button
@@ -361,7 +378,16 @@ function App() {
             onClick={() => setShowOnlyFavorites(prev => !prev)}
           >
             <Heart size={16} fill={showOnlyFavorites ? 'currentColor' : 'none'} />
-            <span>Mis Favoritos ({favorites.length})</span>
+            <span>{t.myFavorites.replace('{count}', favorites.length.toString())}</span>
+          </button>
+
+          <button
+            className="btn"
+            onClick={() => setLang(prev => prev === 'es' ? 'en' : 'es')}
+            title={lang === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+            style={{ minWidth: '45px', padding: '6px' }}
+          >
+            <span style={{ fontWeight: 'bold' }}>{lang.toUpperCase()}</span>
           </button>
         </div>
       </header>
@@ -370,10 +396,10 @@ function App() {
       {error && (
         <div className="empty-state" style={{ borderColor: '#e74c3c', background: 'rgba(231,76,60,0.05)', marginBottom: '30px' }}>
           <AlertCircle size={40} style={{ color: '#e74c3c' }} />
-          <h3>No se cargaron los mapas</h3>
+          <h3>{t.dbNotLoadedHeader}</h3>
           <p>{error}</p>
           <div style={{ fontSize: '0.85rem', fontFamily: 'JetBrains Mono', background: '#000', padding: '12px 18px', borderRadius: '6px', opacity: 0.8 }}>
-            Correr en la carpeta del scraper: node scraper.js
+            {t.scraperTip}
           </div>
         </div>
       )}
@@ -388,7 +414,7 @@ function App() {
             borderRadius: '50%',
             animation: 'spin 1s linear infinite'
           }} />
-          <p style={{ fontFamily: 'JetBrains Mono, monospace', marginTop: '10px' }}>Cargando base de datos de mapas...</p>
+          <p style={{ fontFamily: 'JetBrains Mono, monospace', marginTop: '10px' }}>{t.loadingDb}</p>
           <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
         </div>
       ) : (
@@ -398,15 +424,15 @@ function App() {
             <div id="header" style={{ marginBottom: '10px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontWeight: 'bold' }}>
                 <img src={iconSteam} style={{ height: '16px', width: 'auto', imageRendering: 'pixelated' }} alt="Steam" />
-                <span>Filters</span>
+                <span>{t.filtersHeader}</span>
               </div>
             </div>
             <div>
-              <span className="filter-section-title">Búsqueda</span>
+              <span className="filter-section-title">{t.searchLabel}</span>
               <div className="search-box">
                 <input
                   type="text"
-                  placeholder="Título, autor, bsp, tag..."
+                  placeholder={t.searchPlaceholder}
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="search-input"
@@ -416,44 +442,44 @@ function App() {
             </div>
 
             <div>
-              <span className="filter-section-title">Dificultad</span>
+              <span className="filter-section-title">{t.difficultyLabel}</span>
               <select
                 value={selectedDifficulty}
                 onChange={(e) => setSelectedDifficulty(e.target.value)}
                 className="filter-select"
               >
-                <option value="all">Todas</option>
+                <option value="all">{t.allOptions}</option>
                 <option value="easy">Easy</option>
                 <option value="medium">Medium</option>
                 <option value="hard">Hard</option>
-                <option value="unrated">Sin clasificar (Unrated)</option>
+                <option value="unrated">{t.unratedOption}</option>
               </select>
             </div>
 
             <div>
-              <span className="filter-section-title">Tamaño</span>
+              <span className="filter-section-title">{t.sizeLabel}</span>
               <select
                 value={selectedSize}
                 onChange={(e) => setSelectedSize(e.target.value)}
                 className="filter-select"
               >
-                <option value="all">Todos</option>
+                <option value="all">{t.allOptionsSize}</option>
                 <option value="small">Small</option>
                 <option value="medium">Medium</option>
                 <option value="large">Large</option>
-                <option value="unrated">Sin clasificar (Unrated)</option>
+                <option value="unrated">{t.unratedOption}</option>
               </select>
             </div>
 
             {availableYears.length > 0 && (
               <div>
-                <span className="filter-section-title">Año de Lanzamiento</span>
+                <span className="filter-section-title">{t.yearLabel}</span>
                 <select
                   value={selectedYear}
                   onChange={(e) => setSelectedYear(e.target.value)}
                   className="filter-select"
                 >
-                  <option value="all">Todos los años</option>
+                  <option value="all">{t.allYears}</option>
                   {availableYears.map((y) => (
                     <option key={y} value={y.toString()}>
                       {y}
@@ -465,7 +491,7 @@ function App() {
 
             {popularTags.length > 0 && (
               <div>
-                <span className="filter-section-title">Tags Populares</span>
+                <span className="filter-section-title">{t.popularTagsLabel}</span>
                 <div className="tag-list-filter">
                   {popularTags.map((tag) => {
                     const isActive = selectedTags.includes(tag);
@@ -484,13 +510,13 @@ function App() {
             )}
 
             <div className="stats-box">
-              <span>Resultados: </span>
+              <span>{t.resultsCount} </span>
               <strong className="stats-count">{filteredAndSortedMaps.length}</strong> / {maps.length}
             </div>
 
             <button className="btn" onClick={handleResetFilters} style={{ justifyContent: 'center' }}>
               <RotateCcw size={16} />
-              <span>Limpiar filtros</span>
+              <span>{t.clearFilters}</span>
             </button>
           </aside>
 
@@ -499,19 +525,19 @@ function App() {
             {/* Toolbar Panel */}
             <div className="toolbar-panel">
               <div className="sort-container">
-                <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Ordenar por:</span>
+                <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{t.sortByLabel}</span>
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
                   className="filter-select"
                   style={{ width: '180px', padding: '8px 12px' }}
                 >
-                  <option value="rating-desc">Rating (Mayor a Menor)</option>
-                  <option value="rating-asc">Rating (Menor a Mayor)</option>
-                  <option value="year-desc">Año (Más Nuevo)</option>
-                  <option value="year-asc">Año (Más Viejo)</option>
-                  <option value="name-asc">Nombre (A-Z)</option>
-                  <option value="name-desc">Nombre (Z-A)</option>
+                  <option value="rating-desc">{t.sortRatingDesc}</option>
+                  <option value="rating-asc">{t.sortRatingAsc}</option>
+                  <option value="year-desc">{t.sortYearDesc}</option>
+                  <option value="year-asc">{t.sortYearAsc}</option>
+                  <option value="name-asc">{t.sortNameAsc}</option>
+                  <option value="name-desc">{t.sortNameDesc}</option>
                 </select>
               </div>
 
@@ -547,7 +573,7 @@ function App() {
                 marginBottom: '15px',
                 fontFamily: 'var(--font-mono)'
               }}>
-                <span>Mapper: <strong>{selectedAuthor}</strong></span>
+                <span>{t.mapperFilterLabel.replace('{author}', selectedAuthor)}</span>
                 <button
                   onClick={() => setSelectedAuthor(null)}
                   style={{
@@ -563,7 +589,7 @@ function App() {
                     fontSize: '1rem',
                     lineHeight: '1'
                   }}
-                  title="Limpiar filtro de mapper"
+                  title={t.clearMapperFilter}
                 >
                   &times;
                 </button>
@@ -583,6 +609,7 @@ function App() {
                       onToggleFavorite={handleToggleFavorite}
                       onShowToast={showToast}
                       onSelectAuthor={handleSelectAuthor}
+                      lang={lang}
                     />
                   ))}
                 </div>
@@ -591,10 +618,10 @@ function App() {
             ) : (
               <div className="empty-state">
                 <Filter size={48} className="empty-state-icon" />
-                <h3>No se encontraron mapas</h3>
-                <p>Prueba ajustando los filtros de búsqueda o eliminando tags seleccionados.</p>
+                <h3>{t.noMapsFound}</h3>
+                <p>{t.adjustFiltersTip}</p>
                 <button className="btn btn-primary" onClick={handleResetFilters}>
-                  Limpiar Filtros
+                  {t.clearFiltersBtn}
                 </button>
               </div>
             )}
@@ -609,6 +636,7 @@ function App() {
           onClose={() => setSelectedMap(null)}
           onShowToast={showToast}
           onSelectAuthor={handleSelectAuthor}
+          lang={lang}
         />
       )}
     </div>

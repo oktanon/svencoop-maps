@@ -76,6 +76,14 @@ body {
   border-image: url("./assets/border-pressed.png") 40 stretch;
 }
 
+/* Hide duplicate/inverted scrollbar buttons on Chrome/Webkit */
+::-webkit-scrollbar-button:vertical:start:increment,
+::-webkit-scrollbar-button:vertical:end:decrement,
+::-webkit-scrollbar-button:horizontal:start:increment,
+::-webkit-scrollbar-button:horizontal:end:decrement {
+  display: none;
+}
+
 ::-webkit-scrollbar-corner {
   background: var(--bg-vgui-pressed);
 }
