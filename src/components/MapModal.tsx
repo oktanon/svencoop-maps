@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Download, ExternalLink, Copy, HelpCircle } from 'lucide-react';
 import type { MapData } from './MapCard';
+import iconSteam from '../assets/icon_steam.png';
+import borderPressed from '../assets/border-pressed.png';
+import xIcon from '../assets/X.png';
 
 interface MapModalProps {
   map: MapData;
@@ -78,11 +81,11 @@ export const MapModal: React.FC<MapModalProps> = ({ map, onClose, onShowToast, o
           alignItems: 'center', 
           justifyContent: 'space-between',
           borderBottom: '3px solid transparent',
-          borderImage: 'url("/border-pressed.png") 40 stretch',
+          borderImage: `url("${borderPressed}") 40 stretch`,
           backgroundColor: 'var(--bg-vgui-dark)'
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 'bold' }}>
-            <img src="/icon_steam.png" style={{ height: '16px', width: 'auto', imageRendering: 'pixelated' }} alt="Steam" />
+            <img src={iconSteam} style={{ height: '16px', width: 'auto', imageRendering: 'pixelated' }} alt="Steam" />
             <span style={{ fontSize: '14px', color: 'var(--text-primary)' }}>Map Details</span>
           </div>
           <button 
@@ -96,7 +99,7 @@ export const MapModal: React.FC<MapModalProps> = ({ map, onClose, onShowToast, o
             }}
             aria-label="Cerrar modal"
           >
-            <img src="/X.png" style={{ height: '10px', width: 'auto', imageRendering: 'pixelated' }} alt="Close" />
+            <img src={xIcon} style={{ height: '10px', width: 'auto', imageRendering: 'pixelated' }} alt="Close" />
           </button>
         </div>
 

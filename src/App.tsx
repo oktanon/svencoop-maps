@@ -3,6 +3,7 @@ import { Filter, LayoutGrid, List, RotateCcw, Shuffle, Sparkles, AlertCircle, He
 import { MapCard } from './components/MapCard';
 import type { MapData } from './components/MapCard';
 import { MapModal } from './components/MapModal';
+import iconSteam from './assets/icon_steam.png';
 
 function App() {
   const [maps, setMaps] = useState<MapData[]>([]);
@@ -339,14 +340,13 @@ function App() {
       <header className="app-header">
         <div className="brand-title">
           <img 
-            src="/icon_steam.png" 
+            src={iconSteam} 
             alt="Steam VGUI logo" 
             className="brand-icon" 
             style={{ height: '32px', width: 'auto', imageRendering: 'pixelated' }} 
           />
           <div className="brand-text">
-            <h1>Sven Co-op Map Explorer</h1>
-            <p>Database Portal / VGUI Alternative</p>
+            <h1>Sven Co-Op Maps</h1>
           </div>
         </div>
 
@@ -397,7 +397,7 @@ function App() {
           <aside className="filters-panel">
             <div id="header" style={{ marginBottom: '10px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontWeight: 'bold' }}>
-                <img src="/icon_steam.png" style={{ height: '16px', width: 'auto', imageRendering: 'pixelated' }} alt="Steam" />
+                <img src={iconSteam} style={{ height: '16px', width: 'auto', imageRendering: 'pixelated' }} alt="Steam" />
                 <span>Filters</span>
               </div>
             </div>
