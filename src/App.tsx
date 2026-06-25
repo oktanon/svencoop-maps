@@ -18,6 +18,7 @@ function App() {
   const [showOnlyFavorites, setShowOnlyFavorites] = useState(false);
   const [sortBy, setSortBy] = useState('rating-desc');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+  const [selectedAuthor, setSelectedAuthor] = useState<string | null>(null);
 
   // Pagination states
   const [currentPage, setCurrentPage] = useState(1);
@@ -64,7 +65,7 @@ function App() {
   // Reset pagination when filters change
   useEffect(() => {
     setCurrentPage(1);
-  }, [searchTerm, selectedDifficulty, selectedSize, selectedYear, selectedTags, showOnlyFavorites, sortBy]);
+  }, [searchTerm, selectedDifficulty, selectedSize, selectedYear, selectedTags, showOnlyFavorites, sortBy, selectedAuthor]);
 
   const showToast = (message: string) => {
     setToastMessage(message);
@@ -128,6 +129,13 @@ function App() {
     setSelectedYear('all');
     setSelectedTags([]);
     setShowOnlyFavorites(false);
+    setSelectedAuthor(null);
+  };
+
+  const handleSelectAuthor = (authorName: string) => {
+    setSelectedAuthor(authorName);
+    setSelectedMap(null);
+    showToast(`Filtrando mapas de: ${authorName}`);
   };
 
   // Pick a random map from the current filtered list
@@ -166,6 +174,13 @@ function App() {
         // Favorites filter
         if (showOnlyFavorites && !favorites.includes(map.id)) {
           return false;
+        }
+
+        // Author filter
+        if (selectedAuthor) {
+          if (!map.author?.toLowerCase().includes(selectedAuthor.toLowerCase())) {
+            return false;
+          }
         }
 
         // Difficulty filter
@@ -217,7 +232,7 @@ function App() {
             return 0;
         }
       });
-  }, [maps, searchTerm, selectedDifficulty, selectedSize, selectedYear, selectedTags, showOnlyFavorites, favorites, sortBy]);
+  }, [maps, searchTerm, selectedDifficulty, selectedSize, selectedYear, selectedTags, showOnlyFavorites, favorites, sortBy, selectedAuthor]);
 
   // Derive paginated list and total pages
   const totalPages = Math.ceil(filteredAndSortedMaps.length / itemsPerPage);
@@ -518,6 +533,43 @@ function App() {
               </div>
             </div>
 
+            {selectedAuthor && (
+              <div style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                background: 'rgba(255, 179, 0, 0.08)',
+                border: '1px solid var(--accent)',
+                color: 'var(--text-primary)',
+                padding: '6px 12px',
+                borderRadius: 'var(--radius-sm)',
+                fontSize: '0.85rem',
+                marginBottom: '15px',
+                fontFamily: 'var(--font-mono)'
+              }}>
+                <span>Mapper: <strong>{selectedAuthor}</strong></span>
+                <button
+                  onClick={() => setSelectedAuthor(null)}
+                  style={{
+                    border: 'none',
+                    background: 'transparent',
+                    color: 'var(--accent)',
+                    cursor: 'pointer',
+                    fontWeight: 'bold',
+                    padding: '2px 4px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '1rem',
+                    lineHeight: '1'
+                  }}
+                  title="Limpiar filtro de mapper"
+                >
+                  &times;
+                </button>
+              </div>
+            )}
+
             {/* Maps Grid */}
             {filteredAndSortedMaps.length > 0 ? (
               <>
@@ -530,6 +582,7 @@ function App() {
                       isFavorite={favorites.includes(map.id)}
                       onToggleFavorite={handleToggleFavorite}
                       onShowToast={showToast}
+                      onSelectAuthor={handleSelectAuthor}
                     />
                   ))}
                 </div>
@@ -555,6 +608,7 @@ function App() {
           map={selectedMap}
           onClose={() => setSelectedMap(null)}
           onShowToast={showToast}
+          onSelectAuthor={handleSelectAuthor}
         />
       )}
     </div>

@@ -123,7 +123,9 @@ async function scrapeMapDetails(map) {
     const $ = cheerio.load(html);
 
     // 1. Author and key attributes from wiki table
-    let author = 'Unknown';
+    let author = '';
+    let projectLead = '';
+    let team = '';
     let originalReleaseDate = '';
     let releaseDate = '';
     let bspNames = [];
@@ -131,17 +133,26 @@ async function scrapeMapDetails(map) {
     $('table.wiki-content-table tr').each((i, el) => {
       const label = $(el).find('td').first().text().trim();
       const val = $(el).find('td').last().text().trim();
+      const labelLower = label.toLowerCase();
 
-      if (label.toLowerCase().includes('author')) {
+      if (labelLower.includes('author') || labelLower.includes('mapper') || labelLower.includes('creator') || labelLower.includes('developer')) {
         author = val;
-      } else if (label.toLowerCase().includes('original mod release')) {
+      } else if (labelLower.includes('project lead') || labelLower.includes('project leader')) {
+        projectLead = val;
+      } else if (labelLower.includes('team')) {
+        team = val;
+      } else if (labelLower.includes('original mod release')) {
         originalReleaseDate = val;
-      } else if (label.toLowerCase().includes('date of release')) {
+      } else if (labelLower.includes('date of release')) {
         releaseDate = val;
-      } else if (label.toLowerCase().includes('.bsp filename')) {
+      } else if (labelLower.includes('.bsp filename')) {
         bspNames = val.split(/,\s*(?![^()]*\))/).map(name => name.trim()).filter(Boolean);
       }
     });
+
+    if (!author) {
+      author = projectLead || team || 'Unknown';
+    }
 
     // 2. Extract description (from Description header to next heading)
     const descHeader = $('h2, h3').filter((i, el) => $(el).text().toLowerCase().includes('description'));
@@ -166,6 +177,18 @@ async function scrapeMapDetails(map) {
       }
     }
     additionalInfo = cleanText(additionalInfo);
+
+    // 3.5. Extract known issues
+    const issuesHeader = $('h2, h3').filter((i, el) => $(el).text().toLowerCase().includes('known issues'));
+    let knownIssues = '';
+    if (issuesHeader.length) {
+      let next = issuesHeader.next();
+      while (next.length && !next.is('h2') && !next.is('h3')) {
+        knownIssues += next.text().trim() + '\n';
+        next = next.next();
+      }
+    }
+    knownIssues = cleanText(knownIssues);
 
     // 4. Download mirror links and notes
     const downloadLinks = [];
@@ -334,6 +357,7 @@ async function scrapeMapDetails(map) {
       additional_info: additionalInfo,
       download_links: downloadLinks,
       download_notes: downloadNotes,
+      known_issues: knownIssues,
       screenshots,
       votes,
       difficulty,

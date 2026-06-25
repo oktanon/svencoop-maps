@@ -6,9 +6,10 @@ interface MapModalProps {
   map: MapData;
   onClose: () => void;
   onShowToast: (message: string) => void;
+  onSelectAuthor?: (author: string) => void;
 }
 
-export const MapModal: React.FC<MapModalProps> = ({ map, onClose, onShowToast }) => {
+export const MapModal: React.FC<MapModalProps> = ({ map, onClose, onShowToast, onSelectAuthor }) => {
   const [activeImgIdx, setActiveImgIdx] = useState(0);
 
   // Close when overlay is clicked
@@ -136,7 +137,22 @@ export const MapModal: React.FC<MapModalProps> = ({ map, onClose, onShowToast })
             </div>
             
             <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-              Mapper: <strong style={{ color: 'var(--accent)' }}>{map.author || 'Unknown'}</strong>
+              Mapper:{' '}
+              {map.author ? (
+                <strong
+                  onClick={() => onSelectAuthor?.(map.author!)}
+                  style={{
+                    color: 'var(--accent)',
+                    cursor: 'pointer',
+                    textDecoration: 'underline'
+                  }}
+                  className="mapper-link"
+                >
+                  {map.author}
+                </strong>
+              ) : (
+                'Unknown'
+              )}
             </p>
 
             <div className="modal-section">
@@ -154,6 +170,23 @@ export const MapModal: React.FC<MapModalProps> = ({ map, onClose, onShowToast })
               <div className="modal-section">
                 <h3 className="modal-section-title">Información Adicional</h3>
                 <p className="modal-description" style={{ fontSize: '0.9rem' }}>{map.additional_info}</p>
+              </div>
+            )}
+
+            {map.known_issues && map.known_issues !== 'N/A' && (
+              <div className="modal-section" style={{
+                marginTop: '15px',
+                padding: '10px 12px',
+                backgroundColor: 'rgba(231, 76, 60, 0.08)',
+                borderLeft: '3px solid #e74c3c',
+                borderRadius: 'var(--radius-sm)'
+              }}>
+                <h3 className="modal-section-title" style={{ color: '#e74c3c', display: 'flex', alignItems: 'center', gap: '6px', margin: '0 0 6px 0', fontSize: '0.9rem' }}>
+                  <span>Problemas Conocidos / Known Issues</span>
+                </h3>
+                <p className="modal-description" style={{ fontSize: '0.85rem', margin: 0, whiteSpace: 'pre-line' }}>
+                  {map.known_issues}
+                </p>
               </div>
             )}
           </div>

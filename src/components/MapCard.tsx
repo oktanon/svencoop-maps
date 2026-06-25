@@ -17,6 +17,7 @@ export interface MapData {
   additional_info?: string;
   download_links?: Array<{ name: string; url: string; type: string; description?: string }>;
   download_notes?: string[];
+  known_issues?: string;
   screenshots?: string[];
   votes?: number;
   difficulty?: string;
@@ -30,6 +31,7 @@ interface MapCardProps {
   isFavorite: boolean;
   onToggleFavorite: (id: string) => void;
   onShowToast: (message: string) => void;
+  onSelectAuthor?: (author: string) => void;
 }
 
 export const MapCard: React.FC<MapCardProps> = ({
@@ -38,6 +40,7 @@ export const MapCard: React.FC<MapCardProps> = ({
   isFavorite,
   onToggleFavorite,
   onShowToast,
+  onSelectAuthor,
 }) => {
   const getDifficultyClass = (diff?: string) => {
     switch (diff?.toLowerCase()) {
@@ -144,7 +147,25 @@ export const MapCard: React.FC<MapCardProps> = ({
           </h3>
 
           <div className="card-author">
-            <span>Mapper:</span> {authorName}
+            <span>Mapper:</span>{' '}
+            {map.author ? (
+              <span
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onSelectAuthor?.(map.author!);
+                }}
+                style={{
+                  color: 'var(--accent)',
+                  cursor: 'pointer',
+                  textDecoration: 'underline'
+                }}
+                className="mapper-link"
+              >
+                {authorName}
+              </span>
+            ) : (
+              authorName
+            )}
           </div>
 
           <div className="card-tags">
