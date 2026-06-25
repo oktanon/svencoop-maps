@@ -1,0 +1,10 @@
+{
+  "name": "scmapdb-scraper",
+  "version": "1.0.0",
+  "description": "Sven Co-op Map Database Scraper",
+  "main": "scraper.js",
+  "type": "module",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12"
+  }
+}
