@@ -15,7 +15,8 @@ export interface MapData {
   bsp_names?: string[];
   description?: string;
   additional_info?: string;
-  download_links?: Array<{ name: string; url: string; type: string }>;
+  download_links?: Array<{ name: string; url: string; type: string; description?: string }>;
+  download_notes?: string[];
   screenshots?: string[];
   votes?: number;
   difficulty?: string;

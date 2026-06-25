@@ -167,26 +167,110 @@ async function scrapeMapDetails(map) {
     }
     additionalInfo = cleanText(additionalInfo);
 
-    // 4. Download mirror links
+    // 4. Download mirror links and notes
     const downloadLinks = [];
+    const downloadNotes = [];
+
+    // Let's find all download link elements
+    const downloadLinkElRefs = [];
     $('.dl a').each((i, el) => {
       const url = $(el).attr('href');
       if (url && (url.startsWith('http') || url.startsWith('ftp'))) {
-        const text = $(el).text().trim();
-        const parentText = $(el).parent().text();
-        
-        let type = 'Mirror';
-        if (parentText.toLowerCase().includes('community edit')) {
-          type = 'Community Edit';
-        } else if (parentText.toLowerCase().includes('original')) {
-          type = 'Original';
+        downloadLinkElRefs.push(el);
+      }
+    });
+
+    downloadLinkElRefs.forEach((el) => {
+      const url = $(el).attr('href');
+      const text = $(el).text().trim();
+      const parent = $(el).parent();
+      
+      const parentText = parent.text();
+      let type = 'Mirror';
+      if (parentText.toLowerCase().includes('community edit')) {
+        type = 'Community Edit';
+      } else if (parentText.toLowerCase().includes('original')) {
+        type = 'Original';
+      }
+      
+      // Extract sibling text nodes inside the parent element to get descriptions
+      const contents = parent.contents();
+      let beforeText = '';
+      let afterText = '';
+      let foundSelf = false;
+      
+      contents.each((idx, node) => {
+        if (node === el) {
+          foundSelf = true;
+        } else if (node.type === 'text') {
+          const t = $(node).text().trim();
+          if (t) {
+            if (!foundSelf) {
+              beforeText += ' ' + t;
+            } else {
+              afterText += ' ' + t;
+            }
+          }
         }
+      });
+      
+      // Clean up beforeText and afterText
+      beforeText = beforeText.trim()
+        .replace(/^(Community edit|Original|Mirror):?/i, '')
+        .replace(/:$/, '')
+        .trim();
+      afterText = afterText.trim();
+      
+      let description = '';
+      if (beforeText && afterText) {
+        description = `${beforeText} - ${afterText}`;
+      } else {
+        description = beforeText || afterText;
+      }
+      
+      let cleanedUrl = url;
+      if (
+        cleanedUrl.includes('scmapdb.com/local--files/') ||
+        cleanedUrl.includes('scmapdb.wikidot.com/local--files/') ||
+        cleanedUrl.includes('scmapdb.wdfiles.com/local--files/')
+      ) {
+        cleanedUrl = cleanedUrl
+          .replace(/^http:\/\//i, 'https://')
+          .replace(/scmapdb\.com/g, 'scmapdb.wdfiles.com')
+          .replace(/scmapdb\.wikidot\.com/g, 'scmapdb.wdfiles.com');
         
-        downloadLinks.push({
-          name: text || 'Download',
-          url,
-          type
+        cleanedUrl = cleanedUrl.replace(/\/local--files\/([^/]+)\//, (match, p1) => {
+          return `/local--files/${p1.replace(/:/g, '%3A')}/`;
         });
+      }
+      
+      const linkObj = {
+        name: text || 'Download',
+        url: cleanedUrl,
+        type
+      };
+      
+      if (description) {
+        linkObj.description = description;
+      }
+      
+      downloadLinks.push(linkObj);
+    });
+
+    // Extract notes/messages
+    $('.dl p, .dl li').each((i, el) => {
+      // Check if this paragraph is a parent of any of our download links
+      const isParentOfDownload = downloadLinkElRefs.some(linkEl => $(el).find(linkEl).length > 0 || el === $(linkEl).parent()[0]);
+      if (isParentOfDownload) return;
+
+      // Ignore helper sections/buttons
+      if ($(el).closest('.dl-upload').length > 0 || $(el).closest('.dl-how-to-install').length > 0 || $(el).closest('.dlhelp').length > 0) {
+        return;
+      }
+
+      const text = $(el).text().trim();
+      if (text) {
+        downloadNotes.push(text);
       }
     });
 
@@ -249,6 +333,7 @@ async function scrapeMapDetails(map) {
       description,
       additional_info: additionalInfo,
       download_links: downloadLinks,
+      download_notes: downloadNotes,
       screenshots,
       votes,
       difficulty,

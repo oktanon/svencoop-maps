@@ -43,6 +43,26 @@ export const MapModal: React.FC<MapModalProps> = ({ map, onClose, onShowToast })
       .replace(/scmapdb\.com/g, 'scmapdb.wikidot.com');
   };
 
+  const cleanDownloadUrl = (url: string) => {
+    if (!url) return '';
+    let cleaned = url;
+    if (
+      cleaned.includes('scmapdb.com/local--files/') ||
+      cleaned.includes('scmapdb.wikidot.com/local--files/') ||
+      cleaned.includes('scmapdb.wdfiles.com/local--files/')
+    ) {
+      cleaned = cleaned
+        .replace(/^http:\/\//i, 'https://')
+        .replace(/scmapdb\.com/g, 'scmapdb.wdfiles.com')
+        .replace(/scmapdb\.wikidot\.com/g, 'scmapdb.wdfiles.com');
+      
+      cleaned = cleaned.replace(/\/local--files\/([^/]+)\//, (_, p1) => {
+        return `/local--files/${p1.replace(/:/g, '%3A')}/`;
+      });
+    }
+    return cleaned;
+  };
+
   // Get screenshots list
   const hasScreenshots = map.screenshots && map.screenshots.length > 0;
   const screenshots = (hasScreenshots ? map.screenshots! : [map.thumbnail].filter(Boolean))
@@ -205,7 +225,7 @@ export const MapModal: React.FC<MapModalProps> = ({ map, onClose, onShowToast })
                 map.download_links.map((link, idx) => (
                   <a
                     key={idx}
-                    href={link.url}
+                    href={cleanDownloadUrl(link.url)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mirror-item"
@@ -213,6 +233,11 @@ export const MapModal: React.FC<MapModalProps> = ({ map, onClose, onShowToast })
                   >
                     <div className="mirror-info">
                       <span className="mirror-title">{link.name}</span>
+                      {link.description && (
+                        <span className="mirror-description" style={{ fontSize: '0.8rem', color: 'var(--text-muted)', display: 'block', marginTop: '2px', marginBottom: '4px', fontStyle: 'italic' }}>
+                          {link.description}
+                        </span>
+                      )}
                       <span className={`mirror-badge ${
                         link.type === 'Community Edit' ? 'mirror-badge-community' :
                         link.type === 'Original' ? 'mirror-badge-original' : 'mirror-badge-mirror'
@@ -226,6 +251,26 @@ export const MapModal: React.FC<MapModalProps> = ({ map, onClose, onShowToast })
               ) : (
                 <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontStyle: 'italic', padding: '10px 0' }}>
                   No hay links de descarga directos disponibles.
+                </div>
+              )}
+
+              {map.download_notes && map.download_notes.length > 0 && (
+                <div className="download-notes" style={{
+                  marginTop: '12px',
+                  padding: '10px 12px',
+                  backgroundColor: 'rgba(255, 179, 0, 0.08)',
+                  borderLeft: '3px solid var(--accent)',
+                  borderRadius: 'var(--radius-sm)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '8px'
+                }}>
+                  {map.download_notes.map((note, idx) => (
+                    <div key={idx} style={{ display: 'flex', gap: '8px', alignItems: 'flex-start', fontSize: '0.82rem', lineHeight: '1.4', color: 'var(--text-muted)' }}>
+                      <span style={{ color: 'var(--accent)', fontWeight: 'bold', fontSize: '0.9rem', lineHeight: '1' }}>⚠️</span>
+                      <span>{note}</span>
+                    </div>
+                  ))}
                 </div>
               )}
             </div>
