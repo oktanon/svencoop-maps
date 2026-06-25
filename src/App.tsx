@@ -38,7 +38,7 @@ function App() {
     const fetchMaps = async () => {
       try {
         setLoading(true);
-        const res = await fetch('/maps_data.json');
+        const res = await fetch(`${import.meta.env.BASE_URL}maps_data.json`);
         if (!res.ok) {
           throw new Error(`Failed to load database. Status: ${res.status}`);
         }
