@@ -165,7 +165,10 @@ export const MapModal: React.FC<MapModalProps> = ({ map, onClose, onShowToast, o
             <div className="modal-section">
               <h3 className="modal-section-title">{t.descriptionLabel}</h3>
               {map.description ? (
-                <p className="modal-description">{map.description}</p>
+                <div
+                  className="modal-description"
+                  dangerouslySetInnerHTML={{ __html: map.description }}
+                />
               ) : (
                 <p className="modal-description" style={{ fontStyle: 'italic', opacity: 0.5 }}>
                   {map.scraped ? t.noDescription : t.notScrapedYet}
@@ -176,7 +179,11 @@ export const MapModal: React.FC<MapModalProps> = ({ map, onClose, onShowToast, o
             {map.additional_info && map.additional_info !== 'N/A' && (
               <div className="modal-section">
                 <h3 className="modal-section-title">{t.additionalInfoLabel}</h3>
-                <p className="modal-description" style={{ fontSize: '0.9rem' }}>{map.additional_info}</p>
+                <div
+                  className="modal-description"
+                  style={{ fontSize: '0.9rem' }}
+                  dangerouslySetInnerHTML={{ __html: map.additional_info }}
+                />
               </div>
             )}
 

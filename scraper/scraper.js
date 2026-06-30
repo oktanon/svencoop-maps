@@ -159,24 +159,96 @@ async function scrapeMapDetails(map) {
     let description = '';
     if (descHeader.length) {
       let next = descHeader.next();
+      const descElements = [];
       while (next.length && !next.is('h2') && !next.is('h3')) {
-        description += next.text().trim() + '\n';
+        const element = next.clone();
+        
+        // Rewrite relative links to absolute URLs and open in a new tab
+        element.find('a').each((_, aEl) => {
+          const href = $(aEl).attr('href');
+          if (href) {
+            if (href.startsWith('/')) {
+              $(aEl).attr('href', `${BASE_URL}${href}`);
+            }
+            $(aEl).attr('target', '_blank');
+            $(aEl).attr('rel', 'noopener noreferrer');
+          }
+        });
+
+        // Strip inline styles, classes, and ids to prevent bleed
+        element.find('*').each((_, elNode) => {
+          const attributes = elNode.attribs || {};
+          const tagName = elNode.name;
+          if (tagName === 'a') {
+            const href = attributes.href;
+            const target = attributes.target;
+            const rel = attributes.rel;
+            elNode.attribs = {};
+            if (href) elNode.attribs.href = href;
+            if (target) elNode.attribs.target = target;
+            if (rel) elNode.attribs.rel = rel;
+          } else {
+            elNode.attribs = {};
+          }
+        });
+
+        if (element[0]) {
+          element[0].attribs = {};
+        }
+
+        descElements.push($.html(element));
         next = next.next();
       }
+      description = descElements.join('\n').trim();
     }
-    description = cleanText(description);
 
     // 3. Extract additional info
     const infoHeader = $('h2, h3').filter((i, el) => $(el).text().toLowerCase().includes('additional info'));
     let additionalInfo = '';
     if (infoHeader.length) {
       let next = infoHeader.next();
+      const infoElements = [];
       while (next.length && !next.is('h2') && !next.is('h3')) {
-        additionalInfo += next.text().trim() + '\n';
+        const element = next.clone();
+        
+        // Rewrite relative links to absolute URLs and open in a new tab
+        element.find('a').each((_, aEl) => {
+          const href = $(aEl).attr('href');
+          if (href) {
+            if (href.startsWith('/')) {
+              $(aEl).attr('href', `${BASE_URL}${href}`);
+            }
+            $(aEl).attr('target', '_blank');
+            $(aEl).attr('rel', 'noopener noreferrer');
+          }
+        });
+
+        // Strip inline styles, classes, and ids to prevent bleed
+        element.find('*').each((_, elNode) => {
+          const attributes = elNode.attribs || {};
+          const tagName = elNode.name;
+          if (tagName === 'a') {
+            const href = attributes.href;
+            const target = attributes.target;
+            const rel = attributes.rel;
+            elNode.attribs = {};
+            if (href) elNode.attribs.href = href;
+            if (target) elNode.attribs.target = target;
+            if (rel) elNode.attribs.rel = rel;
+          } else {
+            elNode.attribs = {};
+          }
+        });
+
+        if (element[0]) {
+          element[0].attribs = {};
+        }
+
+        infoElements.push($.html(element));
         next = next.next();
       }
+      additionalInfo = infoElements.join('\n').trim();
     }
-    additionalInfo = cleanText(additionalInfo);
 
     // 3.5. Extract known issues
     const issuesHeader = $('h2, h3').filter((i, el) => $(el).text().toLowerCase().includes('known issues'));
@@ -373,7 +445,8 @@ async function scrapeMapDetails(map) {
 
 async function run() {
   const isTest = process.argv.includes('--test');
-  console.log(`Starting Scraper. Mode: ${isTest ? 'TEST (limit ' + TEST_LIMIT + ' maps)' : 'FULL'}`);
+  const isForce = process.argv.includes('--force');
+  console.log(`Starting Scraper. Mode: ${isTest ? 'TEST' : 'FULL'}${isForce ? ' (FORCE re-scrape)' : ''}`);
 
   let maps = [];
   if (fs.existsSync(OUTPUT_FILE)) {
@@ -392,8 +465,8 @@ async function run() {
     console.log(`Saved initial list of ${maps.length} maps to ${OUTPUT_FILE}`);
   }
 
-  // Filter maps that need scraping
-  let pendingMaps = maps.filter(m => !m.scraped);
+  // Filter maps that need scraping (or all maps if forcing)
+  let pendingMaps = isForce ? maps : maps.filter(m => !m.scraped);
   
   if (isTest) {
     // In test mode, scrape up to TEST_LIMIT maps
