@@ -137,45 +137,96 @@ function run() {
 
     $('head').append(`<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>`);
 
-    // 3. Pre-render Static Body Content for Search Engine Crawlers
+    // 3. Pre-render Static Body Content for Search Engine Crawlers (matching MapPageView)
     const bspListHtml = map.bsp_names?.length
-      ? `<ul>${map.bsp_names.map(bsp => `<li><code>${escapeHtml(bsp)}</code></li>`).join('')}</ul>`
+      ? `<div class="sidebar-card bsp-card">
+          <h3 class="sidebar-card-title">Console Commands</h3>
+          <div class="bsp-commands-list">
+            ${map.bsp_names.map(bsp => `<div class="bsp-command-item"><code class="bsp-code">map ${escapeHtml(bsp)}</code></div>`).join('')}
+          </div>
+        </div>`
       : '';
 
     const downloadLinksHtml = map.download_links?.length
-      ? map.download_links.map(dl => `<a href="${escapeHtml(dl.url)}" target="_blank" rel="nofollow noopener">${escapeHtml(dl.name)} (${escapeHtml(dl.type)})</a>`).join(' | ')
-      : '';
+      ? map.download_links.map(dl => `<a href="${escapeHtml(dl.url)}" target="_blank" rel="nofollow noopener" class="download-link-btn"><div class="download-btn-content"><span class="dl-name">${escapeHtml(dl.name)}</span> <span class="dl-badge">${escapeHtml(dl.type)}</span></div></a>`).join('')
+      : '<p class="no-content-text">No download links available.</p>';
 
     const tagsHtml = map.tags?.length
-      ? map.tags.map(t => `<span>#${escapeHtml(t)}</span>`).join(' ')
+      ? map.tags.map(t => `<span class="tag-badge">#${escapeHtml(t)}</span>`).join(' ')
       : '';
 
     const preRenderedHtml = `
-      <article class="static-map-page" style="max-width: 900px; margin: 0 auto; padding: 20px; font-family: sans-serif;">
-        <header>
-          <h1>${escapeHtml(map.title)}</h1>
-          <p class="meta">
-            <span><strong>Author:</strong> ${escapeHtml(map.author || 'Unknown')}</span> | 
-            <span><strong>Rating:</strong> ⭐ ${map.rating || 0}/5 (${map.votes || 0} votes)</span> | 
-            <span><strong>Year:</strong> ${map.year || 'N/A'}</span>
-          </p>
+      <div class="map-page-wrapper">
+        <header class="map-page-nav-header">
+          <div class="map-page-header-container">
+            <a href="../../" class="btn btn-back" style="text-decoration: none;">← Volver a la lista de mapas</a>
+            <div class="map-page-brand">
+              <span class="brand-name">Sven Co-Op Maps</span>
+            </div>
+          </div>
         </header>
 
-        ${map.thumbnail ? `<div class="thumbnail"><img src="${escapeHtml(map.thumbnail)}" alt="${escapeHtml(map.title)} thumbnail" style="max-width: 100%; height: auto; border-radius: 8px;" /></div>` : ''}
+        <div class="map-page-content-container">
+          <nav class="map-breadcrumb">
+            <a href="../../" class="breadcrumb-link" style="color: var(--text-secondary); text-decoration: none;">Inicio</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="../../" class="breadcrumb-link" style="color: var(--text-secondary); text-decoration: none;">Mapas</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">${escapeHtml(map.title)}</span>
+          </nav>
 
-        <section class="downloads" style="margin: 20px 0; padding: 15px; background: rgba(255, 179, 0, 0.1); border-left: 4px solid #ffb300;">
-          <h2>Download Map</h2>
-          ${downloadLinksHtml || '<p>No mirror download links available.</p>'}
-        </section>
+          <div class="map-page-grid">
+            <main class="map-page-main">
+              <div class="map-gallery-card">
+                <div class="gallery-main-view">
+                  ${imageUrl ? `<img src="${escapeHtml(imageUrl)}" alt="${escapeHtml(map.title)}" class="gallery-active-image" />` : '<div class="gallery-placeholder">No Image Available</div>'}
+                </div>
+              </div>
 
-        ${bspListHtml ? `<section class="bsp-files"><h3>BSP Files</h3>${bspListHtml}</section>` : ''}
+              ${map.description ? `
+                <section class="map-section-card">
+                  <h2 class="section-title">Descripción</h2>
+                  <div class="map-description-content">${map.description}</div>
+                </section>
+              ` : ''}
 
-        ${map.description ? `<section class="description"><h2>Description</h2><div>${map.description}</div></section>` : ''}
+              ${map.additional_info ? `
+                <section class="map-section-card">
+                  <h2 class="section-title">Información Adicional</h2>
+                  <div class="map-description-content">${map.additional_info}</div>
+                </section>
+              ` : ''}
+            </main>
 
-        ${map.additional_info ? `<section class="additional-info"><h2>Additional Info</h2><div>${map.additional_info}</div></section>` : ''}
+            <aside class="map-page-sidebar">
+              <div class="sidebar-card main-info-card">
+                <h1 class="map-title-heading">${escapeHtml(map.title)}</h1>
+                <div class="specs-list">
+                  <div class="spec-item"><span class="spec-label">Mapper:</span> <span class="spec-value">${escapeHtml(map.author || 'Unknown')}</span></div>
+                  <div class="spec-item"><span class="spec-label">Rating:</span> <span class="spec-value">⭐ ${map.rating || 0}/5 (${map.votes || 0} votos)</span></div>
+                  ${map.year ? `<div class="spec-item"><span class="spec-label">Año:</span> <span class="spec-value">${map.year}</span></div>` : ''}
+                  ${map.difficulty ? `<div class="spec-item"><span class="spec-label">Dificultad:</span> <span class="spec-value">${escapeHtml(map.difficulty)}</span></div>` : ''}
+                  ${map.size ? `<div class="spec-item"><span class="spec-label">Tamaño:</span> <span class="spec-value">${escapeHtml(map.size)}</span></div>` : ''}
+                </div>
+              </div>
 
-        ${tagsHtml ? `<footer style="margin-top: 30px;"><p><strong>Tags:</strong> ${tagsHtml}</p></footer>` : ''}
-      </article>
+              <div class="sidebar-card download-card">
+                <h3 class="sidebar-card-title">Descargar Mapa</h3>
+                <div class="download-links-list">${downloadLinksHtml}</div>
+              </div>
+
+              ${bspListHtml}
+
+              ${tagsHtml ? `
+                <div class="sidebar-card tags-card">
+                  <h3 class="sidebar-card-title">Tags</h3>
+                  <div class="tags-flex">${tagsHtml}</div>
+                </div>
+              ` : ''}
+            </aside>
+          </div>
+        </div>
+      </div>
     `;
 
     $('#root').html(preRenderedHtml);

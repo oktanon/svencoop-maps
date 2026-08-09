@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { Filter, LayoutGrid, List, RotateCcw, Shuffle, Sparkles, AlertCircle, Heart } from 'lucide-react';
 import { MapCard } from './components/MapCard';
 import type { MapData } from './components/MapCard';
-import { MapModal } from './components/MapModal';
+import { MapPageView } from './components/MapPageView';
 import iconSteam from './assets/icon_steam.png';
 import { translations } from './translations';
 import type { Language } from './translations';
@@ -34,7 +34,7 @@ function App() {
   const [selectedYear, setSelectedYear] = useState('all');
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [showOnlyFavorites, setShowOnlyFavorites] = useState(false);
-  const [sortBy, setSortBy] = useState('rating-desc');
+  const [sortBy, setSortBy] = useState('date-desc');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [selectedAuthor, setSelectedAuthor] = useState<string | null>(null);
 
@@ -294,7 +294,30 @@ function App() {
         return true;
       })
       .sort((a, b) => {
+        const getMapReleaseTimestamp = (map: MapData): number => {
+          const dateStr = map.release_date || map.original_release_date;
+          if (dateStr) {
+            const cleaned = dateStr.replace(/^[A-Za-z0-9._\s-]+-\s*/, '').trim();
+            const parsed = Date.parse(cleaned);
+            if (!isNaN(parsed)) {
+              return parsed;
+            }
+            const yearMatch = dateStr.match(/\b(19\d\d|20\d\d)\b/);
+            if (yearMatch) {
+              return new Date(parseInt(yearMatch[1], 10), 0, 1).getTime();
+            }
+          }
+          if (map.year) {
+            return new Date(map.year, 0, 1).getTime();
+          }
+          return 0;
+        };
+
         switch (sortBy) {
+          case 'date-desc':
+            return getMapReleaseTimestamp(b) - getMapReleaseTimestamp(a);
+          case 'date-asc':
+            return getMapReleaseTimestamp(a) - getMapReleaseTimestamp(b);
           case 'name-asc':
             return a.title.localeCompare(b.title);
           case 'name-desc':
@@ -403,6 +426,29 @@ function App() {
       </div>
     );
   };
+
+  if (selectedMap) {
+    return (
+      <div className="app-container">
+        {toastMessage && (
+          <div className="toast-alert">
+            <Sparkles size={16} style={{ color: 'var(--accent)' }} />
+            <span>{toastMessage}</span>
+          </div>
+        )}
+        <MapPageView
+          map={selectedMap}
+          onBack={() => handleSelectMap(null)}
+          onShowToast={showToast}
+          onSelectAuthor={handleSelectAuthor}
+          isFavorite={favorites.includes(selectedMap.id)}
+          onToggleFavorite={handleToggleFavorite}
+          lang={lang}
+          onToggleLang={() => setLang(prev => prev === 'es' ? 'en' : 'es')}
+        />
+      </div>
+    );
+  }
 
   return (
     <div className="app-container">
@@ -593,6 +639,8 @@ function App() {
                   className="filter-select"
                   style={{ width: '180px', padding: '8px 12px' }}
                 >
+                  <option value="date-desc">{t.sortDateDesc}</option>
+                  <option value="date-asc">{t.sortDateAsc}</option>
                   <option value="rating-desc">{t.sortRatingDesc}</option>
                   <option value="rating-asc">{t.sortRatingAsc}</option>
                   <option value="year-desc">{t.sortYearDesc}</option>
@@ -688,17 +736,6 @@ function App() {
             )}
           </main>
         </div>
-      )}
-
-      {/* Map Detail Modal */}
-      {selectedMap && (
-        <MapModal
-          map={selectedMap}
-          onClose={() => handleSelectMap(null)}
-          onShowToast={showToast}
-          onSelectAuthor={handleSelectAuthor}
-          lang={lang}
-        />
       )}
     </div>
   );

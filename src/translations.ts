@@ -34,6 +34,8 @@ export const translations = {
     
     // Main Panel
     sortByLabel: "Ordenar por:",
+    sortDateDesc: "Fecha de Lanzamiento (Más Reciente)",
+    sortDateAsc: "Fecha de Lanzamiento (Más Antigua)",
     sortRatingDesc: "Rating (Mayor a Menor)",
     sortRatingAsc: "Rating (Menor a Mayor)",
     sortYearDesc: "Año (Más Nuevo)",
@@ -109,6 +111,8 @@ export const translations = {
     
     // Main Panel
     sortByLabel: "Sort by:",
+    sortDateDesc: "Release Date (Newest)",
+    sortDateAsc: "Release Date (Oldest)",
     sortRatingDesc: "Rating (High to Low)",
     sortRatingAsc: "Rating (Low to High)",
     sortYearDesc: "Year (Newest)",

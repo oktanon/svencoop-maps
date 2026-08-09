@@ -396,6 +396,43 @@ async function scrapeMapDetails(map) {
       });
     }
 
+    // 5.5. Extract YouTube Videos
+    const videos = [];
+    const videoIdsSet = new Set();
+    const ytRegex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/gi;
+
+    $('#page-content iframe, #page-content a').each((i, el) => {
+      const src = $(el).attr('src') || $(el).attr('href') || '';
+      let match;
+      while ((match = ytRegex.exec(src)) !== null) {
+        const videoId = match[1];
+        if (videoId && !videoIdsSet.has(videoId)) {
+          videoIdsSet.add(videoId);
+          videos.push({
+            id: videoId,
+            url: `https://www.youtube.com/watch?v=${videoId}`,
+            embedUrl: `https://www.youtube.com/embed/${videoId}`,
+            thumbnail: `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`
+          });
+        }
+      }
+    });
+
+    const htmlToSearch = `${description} ${additionalInfo}`;
+    let match;
+    while ((match = ytRegex.exec(htmlToSearch)) !== null) {
+      const videoId = match[1];
+      if (videoId && !videoIdsSet.has(videoId)) {
+        videoIdsSet.add(videoId);
+        videos.push({
+          id: videoId,
+          url: `https://www.youtube.com/watch?v=${videoId}`,
+          embedUrl: `https://www.youtube.com/embed/${videoId}`,
+          thumbnail: `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`
+        });
+      }
+    }
+
     // 6. Rating details
     let votes = 0;
     const rateText = $('.page-rate-widget-start').parent().text();
@@ -431,6 +468,7 @@ async function scrapeMapDetails(map) {
       download_notes: downloadNotes,
       known_issues: knownIssues,
       screenshots,
+      videos,
       votes,
       difficulty,
       size,

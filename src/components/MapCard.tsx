@@ -21,6 +21,7 @@ export interface MapData {
   download_notes?: string[];
   known_issues?: string;
   screenshots?: string[];
+  videos?: Array<{ id: string; url: string; embedUrl: string; thumbnail?: string }>;
   votes?: number;
   difficulty?: string;
   size?: string;
@@ -101,10 +102,27 @@ export const MapCard: React.FC<MapCardProps> = ({
     return cleanUrl(map.thumbnail);
   };
 
+  const sanitizeMapId = (id: string): string => {
+    return id ? id.replace(/[:*?"<>|\\]/g, '-') : '';
+  };
+
+  const safeId = sanitizeMapId(map.id);
+  const baseUrl = import.meta.env.BASE_URL || '/';
+  const cleanBaseUrl = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+  const mapHref = `${cleanBaseUrl}map/${safeId}/`;
+
+  const handleCardClick = (e: React.MouseEvent) => {
+    // Intercept standard left-click without modifier keys for instant SPA transition
+    if (e.button === 0 && !e.ctrlKey && !e.metaKey && !e.shiftKey && !e.altKey) {
+      e.preventDefault();
+      onSelect(map);
+    }
+  };
+
   const imgSource = getThumbnailSrc();
 
   return (
-    <div className={`map-card ${isFeatured ? 'featured' : ''}`} onClick={() => onSelect(map)}>
+    <a href={mapHref} className={`map-card ${isFeatured ? 'featured' : ''}`} onClick={handleCardClick} style={{ textDecoration: 'none', color: 'inherit' }}>
       <div className="card-image-wrap">
         <div className="card-image-fallback">
           <Info size={36} />
@@ -147,7 +165,7 @@ export const MapCard: React.FC<MapCardProps> = ({
             )}
           </div>
 
-          <h3 className="card-title" onClick={() => onSelect(map)}>
+          <h3 className="card-title">
             {map.title}
           </h3>
 
@@ -156,6 +174,7 @@ export const MapCard: React.FC<MapCardProps> = ({
             {map.author ? (
               <span
                 onClick={(e) => {
+                  e.preventDefault();
                   e.stopPropagation();
                   onSelectAuthor?.(map.author!);
                 }}
@@ -189,7 +208,10 @@ export const MapCard: React.FC<MapCardProps> = ({
       <div className="card-footer">
         <button
           className={`btn-card-action ${isFavorite ? 'favorite-active' : ''}`}
-          onClick={handleFavoriteClick}
+          onClick={(e) => {
+            e.preventDefault();
+            handleFavoriteClick(e);
+          }}
           title={t.favBtnTitle}
         >
           <Heart size={16} fill={isFavorite ? '#ff3b30' : 'none'} />
@@ -198,13 +220,16 @@ export const MapCard: React.FC<MapCardProps> = ({
 
         <button
           className="btn-card-action btn-card-bsp"
-          onClick={handleCopyBsp}
+          onClick={(e) => {
+            e.preventDefault();
+            handleCopyBsp(e);
+          }}
           title={t.copyBspTitle}
         >
           <Copy size={14} />
           <span>{t.copyBspBtn}</span>
         </button>
       </div>
-    </div>
+    </a>
   );
 };
