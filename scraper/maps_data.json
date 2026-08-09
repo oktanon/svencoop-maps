@@ -86962,7 +86962,35 @@
       "size:small",
       "zombies"
     ],
-    "scraped": false
+    "scraped": true,
+    "author": "redmyclan",
+    "original_release_date": "",
+    "release_date": "Final Version 2.0.0 - July 16, 2026",
+    "bsp_names": [
+      "th_frontline.bsp"
+    ],
+    "description": "<p>Objective : Protect leader until finish wave 8</p>\n<p>You need to kill zombie to earn point for upgrade<br>\nUse table in middle house to upgrade<br>\nFor each upgrading will increase for next price</p>\n<p>Weapon load out has it cooldown (So no player spam on them)<br>\nMounted guns can be overheat and need to cooldown</p>\n<p>higher zombie tier will give more point for upgrade</p>\n<p>For each 60 seconds will force respawn both player and NPC<br>\n(even non survival will have 30s respawn time)</p>",
+    "additional_info": "<p>This map used INS2 weapon pack and that causes huge pack file.<br>\nSo I cut some weapons that don't use in the game to reduce file size.</p>\n<p>If not contain it that game will be un playable.<br>\nAnd knowing that many who download don't even know how to install INS2 weapon pack either.</p>",
+    "download_links": [
+      {
+        "name": "scmapdb",
+        "url": "https://scmapdb.wdfiles.com/local--files/map%3Afront-line-of-hunger/th_frontline_v200.rar",
+        "type": "Mirror"
+      }
+    ],
+    "download_notes": [],
+    "known_issues": "",
+    "screenshots": [
+      "http://scmapdb.wdfiles.com/local--files/map:front-line-of-hunger/a0.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:front-line-of-hunger/a1.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:front-line-of-hunger/a2.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:front-line-of-hunger/a3.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:front-line-of-hunger/a4.jpg"
+    ],
+    "votes": 0,
+    "difficulty": "medium",
+    "size": "small",
+    "year": 2026
   },
   {
     "id": "irreality",
@@ -86984,7 +87012,41 @@
       "space",
       "walkthrough"
     ],
-    "scraped": false
+    "scraped": true,
+    "author": "Reuniclus-579",
+    "original_release_date": "Oct 1 , 2009",
+    "release_date": "Jul 7, 2026",
+    "bsp_names": [
+      "irreality1",
+      "irreality2"
+    ],
+    "description": "<p>Caught in some sort of temporal and dimensional gateway, you must use logic and care to escape.</p>\n<p>What seems obvious at first may not be what you think it is.</p>\n<p>Your world is about to get turned upside down and inside out!</p>",
+    "additional_info": "<p>Original mod <a href=\"https://www.runthinkshootlive.com/posts/irreality/\" target=\"_blank\" rel=\"noopener noreferrer\">RTSL</a></p>",
+    "download_links": [
+      {
+        "name": "SCMapDB",
+        "url": "https://scmapdb.wdfiles.com/local--files/map%3Airreality/irreality.zip",
+        "type": "Mirror"
+      }
+    ],
+    "download_notes": [],
+    "known_issues": "",
+    "screenshots": [
+      "http://scmapdb.wdfiles.com/local--files/map:irreality/iy1.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:irreality/iy2.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:irreality/iy3.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:irreality/iy4.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:irreality/iy5.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:irreality/iy6.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:irreality/iy7.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:irreality/iy8.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:irreality/iy91.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:irreality/iy92.jpg"
+    ],
+    "votes": 0,
+    "difficulty": "medium",
+    "size": "medium",
+    "year": 2026
   },
   {
     "id": "mystery-house",
@@ -87003,7 +87065,35 @@
       "size:small",
       "walkthrough"
     ],
-    "scraped": false
+    "scraped": true,
+    "author": "Reuniclus-579",
+    "original_release_date": "Feb 18 , 2014",
+    "release_date": "Jul 22, 2026",
+    "bsp_names": [
+      "sc_mysteryhouse"
+    ],
+    "description": "<p>While travelling home, your motorcycle experiences trouble.</p>\n<p>You see a house and hope to find help inside.</p>\n<p>What happens next is the stuff of nightmares – specifically, YOUR nightmare.</p>",
+    "additional_info": "<p>Original mod <a href=\"https://www.runthinkshootlive.com/posts/mystery-house-parts-1-2/\" target=\"_blank\" rel=\"noopener noreferrer\">RTSL</a></p>",
+    "download_links": [
+      {
+        "name": "SCMapDB",
+        "url": "https://scmapdb.wdfiles.com/local--files/map%3Amystery-house/mysteryhouse.zip",
+        "type": "Mirror"
+      }
+    ],
+    "download_notes": [],
+    "known_issues": "",
+    "screenshots": [
+      "http://scmapdb.wdfiles.com/local--files/map:mystery-house/mh1.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:mystery-house/mh2.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:mystery-house/mh3.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:mystery-house/mh4.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:mystery-house/mh5.jpg"
+    ],
+    "votes": 0,
+    "difficulty": "medium",
+    "size": "small",
+    "year": 2026
   },
   {
     "id": "portrait-of-freeman",
@@ -87021,7 +87111,46 @@
       "size:medium",
       "walkthrough"
     ],
-    "scraped": false
+    "scraped": true,
+    "author": "Reuniclus-579",
+    "original_release_date": "Apr 19 , 2003",
+    "release_date": "Jul 15, 2026",
+    "bsp_names": [
+      "pof0",
+      "pof0a",
+      "pof1",
+      "pof2",
+      "pof3",
+      "pof4",
+      "pof5"
+    ],
+    "description": "<p>Author never gave a description in the original mod.</p>",
+    "additional_info": "<p>Original mod <a href=\"https://www.runthinkshootlive.com/posts/portrait-of-freeman/\" target=\"_blank\" rel=\"noopener noreferrer\">RTSL</a></p>",
+    "download_links": [
+      {
+        "name": "SCMapDB",
+        "url": "https://scmapdb.wdfiles.com/local--files/map%3Aportrait-of-freeman/sc_pofV1c.zip",
+        "type": "Mirror"
+      }
+    ],
+    "download_notes": [],
+    "known_issues": "",
+    "screenshots": [
+      "http://scmapdb.wdfiles.com/local--files/map:portrait-of-freeman/pof0.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:portrait-of-freeman/pof1.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:portrait-of-freeman/pof2.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:portrait-of-freeman/pof3.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:portrait-of-freeman/pof4.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:portrait-of-freeman/pof5.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:portrait-of-freeman/pof6.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:portrait-of-freeman/pof7.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:portrait-of-freeman/pof8.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:portrait-of-freeman/pof9.jpg"
+    ],
+    "votes": 0,
+    "difficulty": "medium",
+    "size": "medium",
+    "year": 2026
   },
   {
     "id": "strange-house",
@@ -87037,6 +87166,35 @@
       "maze",
       "size:small"
     ],
-    "scraped": false
+    "scraped": true,
+    "author": "EXISTION",
+    "original_release_date": "",
+    "release_date": "Final - April 19, 2026",
+    "bsp_names": [
+      "strange_house"
+    ],
+    "description": "<p>Descend from the roof to the first floor and find your way out, making your way through crowds of enemies.</p>",
+    "additional_info": "",
+    "download_links": [
+      {
+        "name": "SCMapDB",
+        "url": "https://scmapdb.wdfiles.com/local--files/map%3Astrange-house/strange_house.zip",
+        "type": "Mirror"
+      }
+    ],
+    "download_notes": [],
+    "known_issues": "",
+    "screenshots": [
+      "http://scmapdb.wdfiles.com/local--files/map:strange-house/strange_house1.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:strange-house/strange_house2.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:strange-house/strange_house3.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:strange-house/strange_house4.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:strange-house/strange_house5.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:strange-house/strange_house6.jpg"
+    ],
+    "votes": 0,
+    "difficulty": "easy",
+    "size": "small",
+    "year": 2026
   }
 ]
