@@ -75,6 +75,67 @@ function App() {
     fetchMaps();
   }, [t.dbLoadError]);
 
+  // Helper to sanitize map IDs for URLs and filesystems
+  const sanitizeMapId = (id: string): string => {
+    return id ? id.replace(/[:*?"<>|\\]/g, '-') : '';
+  };
+
+  // Helper to extract map ID from current URL path (/map/{id}/)
+  const getMapIdFromUrl = (): string | null => {
+    const pathname = window.location.pathname;
+    const match = pathname.match(/\/map\/([^/]+)/);
+    return match ? decodeURIComponent(match[1]) : null;
+  };
+
+  // Synchronize URL and map selection
+  const handleSelectMap = (map: MapData | null) => {
+    setSelectedMap(map);
+    const baseUrl = import.meta.env.BASE_URL || '/';
+    const cleanBaseUrl = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+
+    if (map) {
+      const safeId = sanitizeMapId(map.id);
+      const newPath = `${cleanBaseUrl}map/${safeId}/`;
+      if (window.location.pathname !== newPath) {
+        window.history.pushState({ mapId: map.id }, '', newPath);
+      }
+    } else {
+      if (window.location.pathname.includes('/map/')) {
+        window.history.pushState(null, '', cleanBaseUrl);
+      }
+    }
+  };
+
+  // Sync state with URL when maps data finishes loading
+  useEffect(() => {
+    if (maps.length === 0) return;
+    const mapId = getMapIdFromUrl();
+    if (mapId) {
+      const targetMap = maps.find((m) => m.id === mapId || sanitizeMapId(m.id) === mapId);
+      if (targetMap) {
+        setSelectedMap(targetMap);
+      }
+    }
+  }, [maps]);
+
+  // Handle browser Back/Forward (popstate) buttons
+  useEffect(() => {
+    const handlePopState = () => {
+      const mapId = getMapIdFromUrl();
+      if (mapId) {
+        const targetMap = maps.find((m) => m.id === mapId || sanitizeMapId(m.id) === mapId);
+        if (targetMap) {
+          setSelectedMap(targetMap);
+          return;
+        }
+      }
+      setSelectedMap(null);
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, [maps]);
+
   // Save favorites to localStorage when they change
   useEffect(() => {
     localStorage.setItem('scmapdb_favorites', JSON.stringify(favorites));
@@ -152,7 +213,7 @@ function App() {
 
   const handleSelectAuthor = (authorName: string) => {
     setSelectedAuthor(authorName);
-    setSelectedMap(null);
+    handleSelectMap(null);
     showToast(t.filteringAuthor.replace('{author}', authorName));
   };
 
@@ -160,11 +221,11 @@ function App() {
   const handlePickRandom = () => {
     if (filteredAndSortedMaps.length > 0) {
       const randomIdx = Math.floor(Math.random() * filteredAndSortedMaps.length);
-      setSelectedMap(filteredAndSortedMaps[randomIdx]);
+      handleSelectMap(filteredAndSortedMaps[randomIdx]);
       showToast(t.randomPickToast.replace('{title}', filteredAndSortedMaps[randomIdx].title));
     } else if (maps.length > 0) {
       const randomIdx = Math.floor(Math.random() * maps.length);
-      setSelectedMap(maps[randomIdx]);
+      handleSelectMap(maps[randomIdx]);
       showToast(t.randomPickToast.replace('{title}', maps[randomIdx].title));
     } else {
       showToast(t.noMapsLoaded);
@@ -604,7 +665,7 @@ function App() {
                     <MapCard
                       key={map.id}
                       map={map}
-                      onSelect={setSelectedMap}
+                      onSelect={handleSelectMap}
                       isFavorite={favorites.includes(map.id)}
                       onToggleFavorite={handleToggleFavorite}
                       onShowToast={showToast}
@@ -633,7 +694,7 @@ function App() {
       {selectedMap && (
         <MapModal
           map={selectedMap}
-          onClose={() => setSelectedMap(null)}
+          onClose={() => handleSelectMap(null)}
           onShowToast={showToast}
           onSelectAuthor={handleSelectAuthor}
           lang={lang}

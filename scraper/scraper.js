@@ -446,23 +446,51 @@ async function scrapeMapDetails(map) {
 async function run() {
   const isTest = process.argv.includes('--test');
   const isForce = process.argv.includes('--force');
+  const isSkipList = process.argv.includes('--skip-list');
   console.log(`Starting Scraper. Mode: ${isTest ? 'TEST' : 'FULL'}${isForce ? ' (FORCE re-scrape)' : ''}`);
 
   let maps = [];
+  const existingMapById = new Map();
+
   if (fs.existsSync(OUTPUT_FILE)) {
     try {
-      maps = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf8'));
+      const data = fs.readFileSync(OUTPUT_FILE, 'utf8');
+      maps = JSON.parse(data);
       console.log(`Loaded ${maps.length} existing maps from ${OUTPUT_FILE}`);
+      maps.forEach(m => existingMapById.set(m.id, m));
     } catch (e) {
       console.error('Error reading output file, starting fresh:', e.message);
     }
   }
 
-  // If we don't have any maps list, fetch the listing pages
-  if (maps.length === 0) {
-    maps = await getMapsList();
+  // Fetch the latest index/listings from wikidot unless --skip-list is passed
+  if (!isSkipList) {
+    console.log('Checking wikidot for fresh map list and updates...');
+    const freshList = await getMapsList();
+    let newCount = 0;
+    let updatedCount = 0;
+
+    freshList.forEach(freshItem => {
+      if (existingMapById.has(freshItem.id)) {
+        const existing = existingMapById.get(freshItem.id);
+        // Update listing fields that might change over time
+        existing.rating = freshItem.rating;
+        existing.title = freshItem.title || existing.title;
+        existing.thumbnail = freshItem.thumbnail || existing.thumbnail;
+        if (freshItem.tags && freshItem.tags.length > 0) {
+          existing.tags = freshItem.tags;
+        }
+        updatedCount++;
+      } else {
+        // New map discovered!
+        maps.push(freshItem);
+        existingMapById.set(freshItem.id, freshItem);
+        newCount++;
+      }
+    });
+
+    console.log(`Index sync complete: ${newCount} new maps discovered, ${updatedCount} existing maps updated.`);
     fs.writeFileSync(OUTPUT_FILE, JSON.stringify(maps, null, 2));
-    console.log(`Saved initial list of ${maps.length} maps to ${OUTPUT_FILE}`);
   }
 
   // Filter maps that need scraping (or all maps if forcing)
@@ -473,10 +501,10 @@ async function run() {
     pendingMaps = pendingMaps.slice(0, TEST_LIMIT);
   }
 
-  console.log(`Remaining maps to scrape: ${pendingMaps.length}`);
+  console.log(`Remaining maps to scrape details for: ${pendingMaps.length}`);
 
   if (pendingMaps.length === 0) {
-    console.log('All maps are already scraped!');
+    console.log('All maps are fully scraped!');
     return;
   }
 
@@ -500,6 +528,17 @@ async function run() {
 
     // Save incrementally
     fs.writeFileSync(OUTPUT_FILE, JSON.stringify(maps, null, 2));
+
+    // Also sync to scraper/maps_data.json if OUTPUT_FILE is public/maps_data.json
+    const scraperJsonPath = path.join(__dirname, 'maps_data.json');
+    if (OUTPUT_FILE !== scraperJsonPath && fs.existsSync(path.dirname(scraperJsonPath))) {
+      try {
+        fs.writeFileSync(scraperJsonPath, JSON.stringify(maps, null, 2));
+      } catch (err) {
+        // Ignore fallback write errors
+      }
+    }
+
     console.log(`Progress saved. Total maps database size: ${maps.length}`);
 
     if (i + CONCURRENCY_LIMIT < pendingMaps.length) {

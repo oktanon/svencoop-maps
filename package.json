@@ -5,11 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && node scripts/generate-static-pages.js",
     "lint": "oxlint",
     "preview": "vite preview"
   },
   "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
     "lucide-react": "^1.21.0",
     "react": "^19.2.7",
     "react-dom": "^19.2.7"

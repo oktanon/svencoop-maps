@@ -1014,16 +1014,18 @@
     "title": "7 Hours War Ep2",
     "url": "https://scmapdb.wikidot.com/map:7-hour-wars-ep2",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:7-hour-wars-ep2/4201.jpg/medium.jpg",
-    "rating": 3.3,
+    "rating": 3.4,
     "tags": [
       "2025",
       "angelscript",
       "boss",
+      "combine",
       "community-edit",
       "difficulty:hard",
       "horde",
       "music",
       "night",
+      "secrets",
       "size:large",
       "survival",
       "town",
@@ -1084,7 +1086,6 @@
       "city",
       "defense",
       "difficulty:medium",
-      "featured",
       "horde",
       "losable",
       "size:medium",
@@ -2017,12 +2018,15 @@
     "title": "Adam Fun",
     "url": "https://scmapdb.wikidot.com/map:adam-fun",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:adam-fun/adamfun1.png/medium.jpg",
-    "rating": 1,
+    "rating": 3,
     "tags": [
       "2008",
+      "escape",
       "fun",
       "no-end",
-      "puzzle"
+      "puzzle",
+      "skills",
+      "tfc"
     ],
     "scraped": true,
     "author": "Adam",
@@ -2060,7 +2064,7 @@
     "title": "Adam's Dungeon",
     "url": "https://scmapdb.wikidot.com/map:adam-s-dungeon",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:adam-s-dungeon/adams_dungeon-20231225-01.jpg/medium.jpg",
-    "rating": 3.9,
+    "rating": 3.6,
     "tags": [
       "2006",
       "boss",
@@ -2284,7 +2288,7 @@
     "title": "Aemos",
     "url": "https://scmapdb.wikidot.com/map:aemos",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:aemos/0-aemos_top.jpg/medium.jpg",
-    "rating": 3.5,
+    "rating": 3.2,
     "tags": [
       "2004",
       "city",
@@ -2624,7 +2628,7 @@
     "title": "Afrika Korps",
     "url": "https://scmapdb.wikidot.com/map:afrika-korps",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:afrika-korps/0-afrikakorps1-top.jpg/medium.jpg",
-    "rating": 4.2,
+    "rating": 4.3,
     "tags": [
       "2003",
       "boms",
@@ -2720,7 +2724,7 @@
     "title": "Afrika Korps Bonus",
     "url": "https://scmapdb.wikidot.com/map:afrika-korps-bonus",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:afrika-korps-bonus/0-afrikakorps_bonus-3.jpg/medium.jpg",
-    "rating": 3.9,
+    "rating": 4,
     "tags": [
       "2008",
       "community-edit",
@@ -2795,7 +2799,6 @@
       "co-oprequired",
       "defense",
       "difficulty:medium",
-      "featured",
       "scary",
       "size:large",
       "survival",
@@ -3733,7 +3736,7 @@
     "title": "Alternative Way",
     "url": "https://scmapdb.wikidot.com/map:alternative-way",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:alternative-way/0-altway_poster.bmp/medium.jpg",
-    "rating": 2.5,
+    "rating": 2.3,
     "tags": [
       "2004",
       "2025",
@@ -4747,7 +4750,7 @@
     "title": "Arcade",
     "url": "https://scmapdb.wikidot.com/map:arcade",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:arcade/0-arcade-top.jpg/medium.jpg",
-    "rating": 4.2,
+    "rating": 4.3,
     "tags": [
       "2016",
       "fun",
@@ -6671,7 +6674,7 @@
     "title": "Ayakashi Banquet",
     "url": "https://scmapdb.wikidot.com/map:ayakashi-banquet",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:ayakashi-banquet/1.jpg/medium.jpg",
-    "rating": 3.7,
+    "rating": 3.4,
     "tags": [
       "2007",
       "boss",
@@ -7476,7 +7479,8 @@
       "co-oprequired",
       "fun",
       "secrets",
-      "size:medium"
+      "size:medium",
+      "water"
     ],
     "scraped": true,
     "author": "g1l",
@@ -9621,8 +9625,11 @@
       "2019",
       "abandoned",
       "black-mesa",
+      "difficulty:medium",
       "music",
+      "puzzle",
       "size:large",
+      "survival",
       "walkthrough"
     ],
     "scraped": true,
@@ -9896,7 +9903,7 @@
     "title": "Black Mesa Training Simulation: Resonance Cascade",
     "url": "https://scmapdb.wikidot.com/map:blackmesa-training-simulation:resonance-cascade",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:blackmesa-training-simulation:resonance-cascade/aa_bts_rc.png/medium.jpg",
-    "rating": 4.4,
+    "rating": 4.3,
     "tags": [
       "2024",
       "black-mesa",
@@ -9974,6 +9981,7 @@
     "tags": [
       "2005",
       "2010",
+      "city",
       "community-edit",
       "conversion",
       "difficulty:medium",
@@ -10404,7 +10412,7 @@
     "title": "Bomberman Battles",
     "url": "https://scmapdb.wikidot.com/map:bomberman-battles",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:bomberman-battles/1/medium.jpg",
-    "rating": 4.3,
+    "rating": 4.1,
     "tags": [
       "2023",
       "fun",
@@ -10753,12 +10761,14 @@
     "title": "Bossbattle",
     "url": "https://scmapdb.wikidot.com/map:bossbattle",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:bossbattle/bossbtl00.jpg/medium.jpg",
-    "rating": 4.2,
+    "rating": 4.3,
     "tags": [
       "2017",
       "arena",
       "boss",
       "co-oprequired",
+      "difficulty:medium",
+      "fun",
       "losable",
       "music",
       "size:small"
@@ -10855,7 +10865,7 @@
     "title": "Bot Party",
     "url": "https://scmapdb.wikidot.com/map:bot-party",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:bot-party/0_top.jpg/medium.jpg",
-    "rating": 3.9,
+    "rating": 3.7,
     "tags": [
       "2017",
       "fun",
@@ -12274,11 +12284,12 @@
     "title": "Caget",
     "url": "https://scmapdb.wikidot.com/map:caget",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:caget/0-sc_caget_top.jpg/medium.jpg",
-    "rating": 3.6,
+    "rating": 3.5,
     "tags": [
       "2003",
       "boss",
       "difficulty:hard",
+      "escape",
       "size:large",
       "walkthrough"
     ],
@@ -13434,7 +13445,7 @@
     "title": "Chan Toybox",
     "url": "https://scmapdb.wikidot.com/map:chan-toybox",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:chan-toybox/3iRGIsqFgo.jpg/medium.jpg",
-    "rating": 3.5,
+    "rating": 3.3,
     "tags": [
       "2023",
       "fun",
@@ -14405,7 +14416,7 @@
     "title": "Classic Arcade First Person Shooter",
     "url": "https://scmapdb.wikidot.com/map:classic-arcade-first-person-shooter",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:classic-arcade-first-person-shooter/0-classic-01.jpg/medium.jpg",
-    "rating": 3.9,
+    "rating": 3.6,
     "tags": [
       "2005",
       "community-edit",
@@ -15980,7 +15991,7 @@
     "title": "Conundrum 3",
     "url": "https://scmapdb.wikidot.com/map:conundrum-3",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:conundrum-3/63d6e82b33d9e.jpg/medium.jpg",
-    "rating": 4.4,
+    "rating": 3.9,
     "tags": [
       "2023",
       "community-edit",
@@ -16164,7 +16175,7 @@
     "title": "Cow Tycoon",
     "url": "https://scmapdb.wikidot.com/map:cow-tycoon",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:cow-tycoon/!0.jpg/medium.jpg",
-    "rating": 4.3,
+    "rating": 4.1,
     "tags": [
       "2023",
       "difficulty:hard",
@@ -16208,9 +16219,10 @@
     "title": "Crablegs",
     "url": "https://scmapdb.wikidot.com/map:crablegs",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:crablegs/0-crablegs_top.jpg/medium.jpg",
-    "rating": 1.3,
+    "rating": 1.2,
     "tags": [
       "2000",
+      "difficulty:easy",
       "horde",
       "size:small"
     ],
@@ -16734,7 +16746,7 @@
     "id": "crime-city",
     "title": "Crime City",
     "url": "https://scmapdb.wikidot.com/map:crime-city",
-    "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:crime-city/0crime1/medium.jpg",
+    "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:crime-city/00crimefront.png/medium.jpg",
     "rating": 4.2,
     "tags": [
       "2022",
@@ -17548,7 +17560,7 @@
     "title": "Crystal",
     "url": "https://scmapdb.wikidot.com/map:crystal",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:crystal/0-crystal0007.jpg/medium.jpg",
-    "rating": 4.1,
+    "rating": 3.9,
     "tags": [
       "2007",
       "2008",
@@ -19458,7 +19470,8 @@
       "scary",
       "series",
       "size:large",
-      "walkthrough"
+      "walkthrough",
+      "water"
     ],
     "scraped": true,
     "author": "goanna",
@@ -19823,7 +19836,7 @@
     "title": "Death-Wish",
     "url": "https://scmapdb.wikidot.com/map:death-wish",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:death-wish/0test1111.png/medium.jpg",
-    "rating": 4.3,
+    "rating": 3.9,
     "tags": [
       "2025",
       "boss",
@@ -19998,7 +20011,8 @@
       "co-oprequired",
       "defense",
       "losable",
-      "size:small"
+      "size:small",
+      "water"
     ],
     "scraped": true,
     "author": "enuze",
@@ -20962,7 +20976,7 @@
     "title": "Desert Circle",
     "url": "https://scmapdb.wikidot.com/map:desert-circle",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:desert-circle/Kopie%20von%20descrcl0028.jpg/medium.jpg",
-    "rating": 4.1,
+    "rating": 3.9,
     "tags": [
       "2013",
       "boss",
@@ -23062,7 +23076,7 @@
     "title": "Durga",
     "url": "https://scmapdb.wikidot.com/map:durga",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:durga/0-durga-top.jpg/medium.jpg",
-    "rating": 2.5,
+    "rating": 2,
     "tags": [
       "2001",
       "community-edit",
@@ -23709,7 +23723,7 @@
     "title": "Echoes",
     "url": "https://scmapdb.wikidot.com/map:half-life:echoes",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:half-life:echoes/0-echoes-poster.png/medium.jpg",
-    "rating": 4.5,
+    "rating": 4.4,
     "tags": [
       "2018",
       "2019",
@@ -25357,7 +25371,7 @@
     "title": "Evilmansion",
     "url": "https://scmapdb.wikidot.com/map:evilmansion",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:evilmansion/cover.jpg/medium.jpg",
-    "rating": 4.1,
+    "rating": 4,
     "tags": [
       "2017",
       "halloween",
@@ -25996,7 +26010,7 @@
     "title": "Fall Guys",
     "url": "https://scmapdb.wikidot.com/map:fall-guys",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:fall-guys/10.png/medium.jpg",
-    "rating": 4.1,
+    "rating": 3.9,
     "tags": [
       "2021",
       "2022",
@@ -26419,7 +26433,7 @@
       "2007",
       "2026",
       "conversion",
-      "difficulty:easy",
+      "difficulty:medium",
       "escape",
       "size:small",
       "walkthrough",
@@ -26717,13 +26731,15 @@
     "title": "Fight For Life",
     "url": "https://scmapdb.wikidot.com/map:fight-for-life",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:fight-for-life/ffl1.jpg/medium.jpg",
-    "rating": 4,
+    "rating": 3.3,
     "tags": [
       "2009",
       "2026",
+      "co-oprequired",
       "conversion",
       "difficulty:easy",
       "escape",
+      "series",
       "size:small",
       "survival",
       "walkthrough"
@@ -30535,6 +30551,9 @@
       "2011",
       "2024",
       "conversion",
+      "difficulty:hard",
+      "horde",
+      "jumping",
       "music",
       "size:small",
       "walkthrough",
@@ -32187,11 +32206,14 @@
     "title": "Half Life 2 Prison 02",
     "url": "https://scmapdb.wikidot.com/map:half-life-2-prison-02",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:half-life-2-prison-02/000prison.png/medium.jpg",
-    "rating": 2.7,
+    "rating": 2.8,
     "tags": [
       "2023",
+      "combine",
       "conversion",
       "difficulty:hard",
+      "escape",
+      "series",
       "size:small",
       "walkthrough"
     ],
@@ -32329,9 +32351,10 @@
     "title": "Half-Life 2 Coast XMas",
     "url": "https://scmapdb.wikidot.com/map:half-life-2-coast-xmas",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:half-life-2-coast-xmas/00coastxmas.jpg/medium.jpg",
-    "rating": 2.7,
+    "rating": 2.8,
     "tags": [
       "2026",
+      "boss",
       "conversion",
       "difficulty:medium",
       "holidays",
@@ -32581,7 +32604,7 @@
     "title": "Half-Life: Uplink",
     "url": "https://scmapdb.wikidot.com/map:half-life:uplink",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:half-life:uplink/0-uplink.jpg/medium.jpg",
-    "rating": 3.8,
+    "rating": 3.6,
     "tags": [
       "2016",
       "conversion",
@@ -34715,7 +34738,7 @@
       "conversion",
       "escape",
       "secrets",
-      "size:large",
+      "size:medium",
       "walkthrough",
       "xen"
     ],
@@ -36380,12 +36403,14 @@
     "title": "Hunt the Cunt",
     "url": "https://scmapdb.wikidot.com/map:hunt-the-cunt",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:hunt-the-cunt/0_htc_poster.jpg/medium.jpg",
-    "rating": 3.2,
+    "rating": 3.3,
     "tags": [
       "2017",
       "2022",
       "black-mesa",
       "conversion",
+      "difficulty:medium",
+      "jumping",
       "music",
       "series",
       "size:large",
@@ -36689,7 +36714,8 @@
       "horde",
       "no-end",
       "rubbish",
-      "size:small"
+      "size:small",
+      "water"
     ],
     "scraped": true,
     "author": "Keen",
@@ -36980,7 +37006,7 @@
     "title": "Infested",
     "url": "https://scmapdb.wikidot.com/map:infested",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:infested/0-infested1.jpg/medium.jpg",
-    "rating": 4.3,
+    "rating": 4.2,
     "tags": [
       "2004",
       "2008",
@@ -37230,6 +37256,8 @@
       "black-mesa",
       "community-edit",
       "conversion",
+      "difficulty:hard",
+      "jumping",
       "music",
       "series",
       "size:large",
@@ -37477,7 +37505,8 @@
       "series",
       "size:large",
       "traps",
-      "walkthrough"
+      "walkthrough",
+      "water"
     ],
     "scraped": true,
     "author": "Mr_InSaNe",
@@ -40032,7 +40061,7 @@
     "title": "Keen Race 2017",
     "url": "https://scmapdb.wikidot.com/map:keen-race-2017",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:keen-race-2017/0keenrace.bmp/medium.jpg",
-    "rating": 2.7,
+    "rating": 2.8,
     "tags": [
       "2017",
       "co-oprequired",
@@ -40229,7 +40258,7 @@
     "title": "Ken West Gym",
     "url": "https://scmapdb.wikidot.com/map:ken-west-gym",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:ken-west-gym/kw_gym1.png/medium.jpg",
-    "rating": 2.5,
+    "rating": 2.4,
     "tags": [
       "2001",
       "difficulty:easy",
@@ -40483,6 +40512,7 @@
       "2012",
       "defense",
       "horde",
+      "needs-pics",
       "scary",
       "size:small"
     ],
@@ -41046,7 +41076,7 @@
     "title": "Lab Break",
     "url": "https://scmapdb.wikidot.com/map:lab-break",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:lab-break/img0_cover/medium.jpg",
-    "rating": 2.4,
+    "rating": 2.5,
     "tags": [
       "2023",
       "boss",
@@ -41757,7 +41787,8 @@
       "difficulty:hard",
       "no-end",
       "puzzle",
-      "size:large"
+      "size:large",
+      "water"
     ],
     "scraped": true,
     "author": "MOL",
@@ -42577,7 +42608,7 @@
     "title": "LIGHT UP THE NIGHT",
     "url": "https://scmapdb.wikidot.com/map:light-up-the-night",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:light-up-the-night/2.jpg/medium.jpg",
-    "rating": 4.4,
+    "rating": 4.1,
     "tags": [
       "2024",
       "conversion",
@@ -43471,7 +43502,8 @@
       "fun",
       "maze",
       "rcbot",
-      "size:small"
+      "size:small",
+      "water"
     ],
     "scraped": true,
     "author": "Majin, HomicidalApe",
@@ -45002,7 +45034,7 @@
     "title": "Mega Monster Massacre",
     "url": "https://scmapdb.wikidot.com/map:mega-monster-massacre",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:mega-monster-massacre/0-megamonstermassacre__08-04-09_23-20-12.jpg/medium.jpg",
-    "rating": 3.6,
+    "rating": 3.3,
     "tags": [
       "2001",
       "creepsworld-top50",
@@ -45149,6 +45181,8 @@
     "tags": [
       "2009",
       "city",
+      "co-oprequired",
+      "difficulty:easy",
       "size:medium",
       "walkthrough"
     ],
@@ -45499,7 +45533,8 @@
       "community-edit",
       "rubbish",
       "size:medium",
-      "walkthrough"
+      "walkthrough",
+      "water"
     ],
     "scraped": true,
     "author": "MG386",
@@ -46092,7 +46127,8 @@
       "conversion",
       "fun",
       "size:medium",
-      "tfc"
+      "tfc",
+      "water"
     ],
     "scraped": true,
     "author": "Timothy Taylor (DuckHunt)",
@@ -46175,11 +46211,12 @@
     "title": "Minimicus",
     "url": "https://scmapdb.wikidot.com/map:minimicus-2017",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:minimicus-2017/svencoop%202017-03-10%2009-20-15-24.jpg/medium.jpg",
-    "rating": 1.2,
+    "rating": 1.3,
     "tags": [
       "2003",
       "2017",
       "conversion",
+      "difficulty:easy",
       "needs-fixing",
       "rats",
       "series",
@@ -47806,7 +47843,7 @@
     "title": "Natural Selection: Escape",
     "url": "https://scmapdb.wikidot.com/map:natural-selection:escape",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:natural-selection:escape/7ghgt8.png/medium.jpg",
-    "rating": 4.4,
+    "rating": 4.3,
     "tags": [
       "2024",
       "boms",
@@ -50853,7 +50890,7 @@
     "title": "Otokotati no Kouzan",
     "url": "https://scmapdb.wikidot.com/map:otokotati-no-kouzan",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:otokotati-no-kouzan/2016-02-09_00001.jpg/medium.jpg",
-    "rating": 4.3,
+    "rating": 4.1,
     "tags": [
       "2009",
       "boss",
@@ -52139,7 +52176,8 @@
       "difficulty:easy",
       "horde",
       "rubbish",
-      "size:small"
+      "size:small",
+      "water"
     ],
     "scraped": true,
     "author": "Keen",
@@ -53596,7 +53634,7 @@
     "title": "Preperation X",
     "url": "https://scmapdb.wikidot.com/map:preperation-x",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:preperation-x/0-prep_series_3.jpg/medium.jpg",
-    "rating": 4,
+    "rating": 3,
     "tags": [
       "2002",
       "city",
@@ -54471,7 +54509,7 @@
     "title": "Psyko",
     "url": "https://scmapdb.wikidot.com/map:psyko",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:psyko/0-sc_psyko-9.jpg/medium.jpg",
-    "rating": 4.1,
+    "rating": 4.2,
     "tags": [
       "2010",
       "boss",
@@ -57405,7 +57443,7 @@
     "title": "Ragemap 2022",
     "url": "https://scmapdb.wikidot.com/map:ragemap-2022",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:ragemap-2022/0___ragemap2022.jpg/medium.jpg",
-    "rating": 3.4,
+    "rating": 3.3,
     "tags": [
       "2022",
       "co-oprequired",
@@ -57564,7 +57602,8 @@
       "puzzle",
       "ragemap",
       "size:large",
-      "walkthrough"
+      "walkthrough",
+      "water"
     ],
     "scraped": true,
     "author": "Hezus, Giegue, Erty, grunt, BonkTurnip",
@@ -58196,11 +58235,13 @@
     "title": "Reactivist",
     "url": "https://scmapdb.wikidot.com/map:reactivist",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:reactivist/001.jpg/medium.jpg",
-    "rating": 4.1,
+    "rating": 3.9,
     "tags": [
       "2019",
       "abandoned",
+      "co-oprequired",
       "community-edit",
+      "difficulty:easy",
       "size:large",
       "walkthrough"
     ],
@@ -59038,7 +59079,7 @@
     "title": "Resident Evil: Covert Operations",
     "url": "https://scmapdb.wikidot.com/map:resident-evil:covert-operations",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:resident-evil:covert-operations/0-reco0004.jpg/medium.jpg",
-    "rating": 3.5,
+    "rating": 3.3,
     "tags": [
       "2004",
       "losable",
@@ -59299,7 +59340,7 @@
     "title": "Residual Life 1.5",
     "url": "https://scmapdb.wikidot.com/map:residual-life",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:residual-life/poster-rl/medium.jpg",
-    "rating": 3.7,
+    "rating": 3.5,
     "tags": [
       "2012",
       "2017",
@@ -60674,7 +60715,7 @@
     "title": "Ricochet",
     "url": "https://scmapdb.wikidot.com/map:ricochet",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:ricochet/0poster.png/medium.jpg",
-    "rating": 4.4,
+    "rating": 4.3,
     "tags": [
       "2000",
       "2023",
@@ -62319,6 +62360,7 @@
       "music",
       "puzzle",
       "size:medium",
+      "snow",
       "tfc"
     ],
     "scraped": true,
@@ -62786,11 +62828,13 @@
     "title": "Scary Dark House",
     "url": "https://scmapdb.wikidot.com/map:scary-dark-house",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:scary-dark-house/000sdh.jpg/medium.jpg",
-    "rating": 2.7,
+    "rating": 3,
     "tags": [
       "2023",
+      "boss",
       "difficulty:medium",
       "halloween",
+      "horde",
       "scary",
       "size:small",
       "walkthrough"
@@ -64256,7 +64300,7 @@
     "title": "SecretCity 4",
     "url": "https://scmapdb.wikidot.com/map:secretcity-4",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:secretcity-4/0-secretcity4-2.jpg/medium.jpg",
-    "rating": 3.6,
+    "rating": 3.8,
     "tags": [
       "2006",
       "difficulty:hard",
@@ -64603,7 +64647,7 @@
     "title": "Sectore Levels",
     "url": "https://scmapdb.wikidot.com/map:sectore-levels",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:sectore-levels/20230301194538_1.jpg/medium.jpg",
-    "rating": 4.6,
+    "rating": 4.2,
     "tags": [
       "2023",
       "co-oprequired",
@@ -64828,7 +64872,7 @@
     "title": "Septic Morass",
     "url": "https://scmapdb.wikidot.com/map:septic-morass",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:septic-morass/0-septmorass1.jpg/medium.jpg",
-    "rating": 3,
+    "rating": 2.7,
     "tags": [
       "2008",
       "abandoned",
@@ -65070,7 +65114,8 @@
       "difficulty:medium",
       "losable",
       "size:large",
-      "walkthrough"
+      "walkthrough",
+      "water"
     ],
     "scraped": true,
     "author": "MysticMDT",
@@ -67912,7 +67957,7 @@
     "title": "Space Viking 1",
     "url": "https://scmapdb.wikidot.com/map:space-viking-1",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:space-viking-1/0-sc_spaceviking10011.jpg/medium.jpg",
-    "rating": 4.1,
+    "rating": 3.7,
     "tags": [
       "2001",
       "boms",
@@ -68108,11 +68153,12 @@
     "title": "Spacewar",
     "url": "https://scmapdb.wikidot.com/map:spacewar",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:spacewar/0-spacewar3.jpg/medium.jpg",
-    "rating": 2,
+    "rating": 2.5,
     "tags": [
       "2006",
       "boss",
       "community-edit",
+      "difficulty:medium",
       "horde",
       "size:small",
       "space"
@@ -70091,6 +70137,8 @@
       "black-mesa",
       "community-fixed",
       "creepsworld-top50",
+      "difficulty:medium",
+      "escape",
       "official",
       "official-screlease",
       "rcbot",
@@ -70147,11 +70195,12 @@
     "title": "Surface Ex-Tension 2: Extended Resistance",
     "url": "https://scmapdb.wikidot.com/map:surface-ex-tension-2:extended-resistance",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:surface-ex-tension-2:extended-resistance/0-extended_large1.jpg/medium.jpg",
-    "rating": 3,
+    "rating": 3.3,
     "tags": [
       "2003",
       "black-mesa",
       "community-edit",
+      "difficulty:medium",
       "official",
       "official-screlease",
       "rcbot",
@@ -71322,7 +71371,7 @@
     "title": "SvenContra2",
     "url": "https://scmapdb.wikidot.com/map:svencontra2",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:svencontra2/0_sc2cover.jpg/medium.jpg",
-    "rating": 4.2,
+    "rating": 4.3,
     "tags": [
       "2022",
       "difficulty:hard",
@@ -71648,7 +71697,7 @@
     "rating": 4,
     "tags": [
       "2003",
-      "difficulty:easy",
+      "difficulty:hard",
       "fun",
       "jumping",
       "needs-fixing",
@@ -75158,7 +75207,8 @@
       "puzzle",
       "secrets",
       "size:medium",
-      "tfc"
+      "tfc",
+      "water"
     ],
     "scraped": true,
     "author": "Foster Hoskins",
@@ -75323,7 +75373,7 @@
     "title": "The Grinch's Last Christmas",
     "url": "https://scmapdb.wikidot.com/map:the-grinch-s-last-christmas",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:the-grinch-s-last-christmas/aaa111.jpg/medium.jpg",
-    "rating": 3.8,
+    "rating": 4,
     "tags": [
       "2025",
       "boss",
@@ -76317,7 +76367,7 @@
     "title": "The Room",
     "url": "https://scmapdb.wikidot.com/map:the-room",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:the-room/0-theroompic5.jpg/medium.jpg",
-    "rating": 4.4,
+    "rating": 4.3,
     "tags": [
       "2008",
       "2009",
@@ -77012,10 +77062,13 @@
     "title": "Them",
     "url": "https://scmapdb.wikidot.com/map:them",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:them/0-them_top.jpg/medium.jpg",
-    "rating": 3,
+    "rating": 2.5,
     "tags": [
       "2004",
+      "difficulty:easy",
+      "horde",
       "scary",
+      "secrets",
       "size:medium",
       "walkthrough",
       "zombies"
@@ -77151,7 +77204,7 @@
     "title": "They Hunger Co-op: Episode 2",
     "url": "https://scmapdb.wikidot.com/map:they-hunger-co-op:episode-2",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:they-hunger-co-op:episode-2/0-theyhungerep2_poster.png/medium.jpg",
-    "rating": 4.3,
+    "rating": 4.1,
     "tags": [
       "2000",
       "2011",
@@ -77207,10 +77260,11 @@
     "title": "They Hunger Co-op: Episode 3",
     "url": "https://scmapdb.wikidot.com/map:they-hunger-co-op:episode-3",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:they-hunger-co-op:episode-3/0-theyhungerep3_poster.png/medium.jpg",
-    "rating": 4.4,
+    "rating": 4.3,
     "tags": [
       "2001",
       "2016",
+      "boss",
       "conversion",
       "custom",
       "difficulty:medium",
@@ -77284,6 +77338,7 @@
       "size:large",
       "survival",
       "svencoop5",
+      "timed",
       "walkthrough",
       "zombies"
     ],
@@ -78988,7 +79043,7 @@
     "title": "Toysoldiers",
     "url": "https://scmapdb.wikidot.com/map:toysoldiers",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:toysoldiers/0-toysoldiers-Operation-Green-Room.jpg/medium.jpg",
-    "rating": 4.5,
+    "rating": 4.4,
     "tags": [
       "2019",
       "boms",
@@ -79049,7 +79104,7 @@
     "title": "Train Help",
     "url": "https://scmapdb.wikidot.com/map:train-help",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:train-help/000th.jpg/medium.jpg",
-    "rating": 2.7,
+    "rating": 2.8,
     "tags": [
       "2025",
       "conversion",
@@ -79369,7 +79424,8 @@
       "horde",
       "no-end",
       "rubbish",
-      "size:small"
+      "size:small",
+      "water"
     ],
     "scraped": true,
     "author": "Unknown",
@@ -79632,10 +79688,12 @@
       "2007",
       "city",
       "difficulty:easy",
+      "itemhunt",
       "music",
       "series",
       "size:large",
-      "walkthrough"
+      "walkthrough",
+      "water"
     ],
     "scraped": true,
     "author": "Poda",
@@ -80512,7 +80570,9 @@
     "rating": 3.6,
     "tags": [
       "2019",
+      "boss",
       "community-edit",
+      "difficulty:medium",
       "fun",
       "horde",
       "size:medium",
@@ -80614,6 +80674,8 @@
       "2017",
       "boss",
       "city",
+      "custom",
+      "difficulty:hard",
       "horde",
       "music",
       "secrets",
@@ -83265,11 +83327,11 @@
     "title": "Warning City: The Salvation",
     "url": "https://scmapdb.wikidot.com/map:warning-city:the-salvation",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:warning-city:the-salvation/52cf341dc8cce.jpg/medium.jpg",
-    "rating": 2.3,
+    "rating": 2.5,
     "tags": [
       "2014",
       "city",
-      "co-oprequired",
+      "difficulty:medium",
       "escape",
       "horde",
       "series",
@@ -84879,11 +84941,13 @@
     "title": "X-Treme Violence",
     "url": "https://scmapdb.wikidot.com/map:x-treme-violence",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:x-treme-violence/0-x-treme_violence.jpg/medium.jpg",
-    "rating": 3.5,
+    "rating": 3.7,
     "tags": [
       "2003",
       "2022",
+      "city",
       "conversion",
+      "difficulty:easy",
       "size:small",
       "survival",
       "walkthrough"
@@ -85157,7 +85221,7 @@
     "title": "Zelda OOT Conversion",
     "url": "https://scmapdb.wikidot.com/map:zelda-oot-conversion",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:zelda-oot-conversion/2012-06-18_00001.jpg/medium.jpg",
-    "rating": 4.3,
+    "rating": 4.4,
     "tags": [
       "2012",
       "abandoned",
@@ -86620,5 +86684,359 @@
       "⚠️ Community edits are recommended due to bug fixes, but they may not play entirely the same as the original."
     ],
     "known_issues": ""
+  },
+  {
+    "id": "confronted-with-consequences",
+    "title": "Confronted With Consequences",
+    "url": "https://scmapdb.wikidot.com/map:confronted-with-consequences",
+    "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:confronted-with-consequences/cwcr1.jpg/medium.jpg",
+    "rating": 3,
+    "tags": [
+      "1999",
+      "2016",
+      "2026",
+      "conversion",
+      "walkthrough"
+    ],
+    "scraped": true,
+    "author": "Reuniclus-579",
+    "original_release_date": "Jun 29, 1999",
+    "release_date": "Jun 28, 2026",
+    "bsp_names": [
+      "cwcr1a",
+      "cwcr1b",
+      "cwcr2"
+    ],
+    "description": "<p>You are, as always, Gordon Freeman. After you got that mess the scientists made under control, the scientists and the government have set up a research lab, called New Mexico Alien Research Centre. This lab is, of course, secret.</p>\n<p>But the aliens have somehow managed to open the port between their dimension and ours. They are now teleporting to the lab, and attacking it and everything in it, to free their fellow soldiers/citizens/friends or whatever they call them.</p>\n<p>Somehow, somebody (probably some really rich guys with alot of connections) have gotten news about this, and they have sent in hired soldiers to clear up the mess and take as many aliens as possible for their own interest. We have reason to believe that they are after the gargantua in the test-labs. We want you to get in there and kill it, then escape. All this comes as a shock on us. We thought the portal was closed, but clearly it has been reopened. Because of soldiers already being there, we don’t want to create more mess by sending in more soldiers to fight with both aliens and other soldiers.</p>\n<p>Therefore we send you in, just kill the gargantua, and escape. Oh, by the way. The labs are connected in different power systems. One of them is shut down, so some lights are off, and some doors are not operational. We suspect that you’ll have to turn the power on in order to escape. You have access to all retinal scanners, since you was the one who closed the portal in the first place. You will always be welcome in our labs.</p>\n<p>Still, the military knows nothing of this, they will not be pleased to know this. So we won’t tell them. But, hurry, kill the gargantua before they get it. I guess this is one of the consequences we have to put up with when dealing with aliens from another dimensions.</p>\n<p>Thanks to new technology, we will be able to send you brief messages, every now and then. When most needed.</p>",
+    "additional_info": "<p>Conversion is remake version<br>\nOriginal mod <a href=\"https://www.moddb.com/mods/confronted-with-consequences-2016-remake\" target=\"_blank\" rel=\"noopener noreferrer\">remake version</a><br>\nOriginal mod <a href=\"https://www.moddb.com/mods/confronted-with-consequences\" target=\"_blank\" rel=\"noopener noreferrer\">old version</a></p>",
+    "download_links": [
+      {
+        "name": "SCMapDB",
+        "url": "https://scmapdb.wdfiles.com/local--files/map%3Aconfronted-with-consequences/cwcr2016.zip",
+        "type": "Mirror"
+      }
+    ],
+    "download_notes": [],
+    "known_issues": "",
+    "screenshots": [
+      "http://scmapdb.wdfiles.com/local--files/map:confronted-with-consequences/cwcr1.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:confronted-with-consequences/cwcr2.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:confronted-with-consequences/cwcr3.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:confronted-with-consequences/cwcr4.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:confronted-with-consequences/cwcr5.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:confronted-with-consequences/cwcr6.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:confronted-with-consequences/cwcr7.jpg"
+    ],
+    "votes": 0,
+    "difficulty": "unrated",
+    "size": "unrated",
+    "year": 2026
+  },
+  {
+    "id": "crime-city-2",
+    "title": "Crime City 2",
+    "url": "https://scmapdb.wikidot.com/map:crime-city-2",
+    "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:crime-city-2/00crime2front.png/medium.jpg",
+    "rating": 4.6,
+    "tags": [
+      "2026",
+      "city",
+      "featured",
+      "music",
+      "open-world",
+      "playable-solo",
+      "secrets",
+      "size:large",
+      "survival",
+      "total-conversion"
+    ],
+    "scraped": true,
+    "author": "Miz",
+    "original_release_date": "",
+    "release_date": "Final - June 27, 2026",
+    "bsp_names": [
+      "crimecity2"
+    ],
+    "description": "<p><span>Overview</span></p>\n<p>You arrived into this city on a train and your primary objective is to leave.<br>\nThis is an open world map with multiple paths to complete it, and is best suited for a smaller group or single player.<br>\nDo some jobs for the local criminals (Romano family, Hellhounds MC, Comandos cartel, Mobius INC.) and get enough money to leave this place.</p>\n<p>Each faction has 4 missions and a prerequisite task for joining them, the factions mostly lock eachother out as the missions progress.<br>\nThis map is survival mode by default so make sure to buy the medkit and take care of eachother, some fights can be hard.</p>\n<p>(Disclaimer: the map is large and has several open areas, some spots are prone to frame drops)<br>\n(Some teleport doors might also telefrag players, best to go through one at a time)</p>\n<p><span>Money</span></p>\n<p>You can get Digibux for completing missions, as well as finding it hidden around the city.<br>\nYou can use money to buy weapons, ammo, health, armor, property as well as unlocking bus lines and gambling.</p>\n<p><span>Crime</span></p>\n<p>If a civilian dies, even by an enemy, the police will become hostile to you for the rest of the map.<br>\nDon't aim at them or stand in front of them in gunfights!</p>\n<p>Gangs and the police will become your enemy upon taking damage.</p>\n<p>If you mess up and anger any faction you didn't want to anger, you can restart the map from the train station or by typing \"restart\" into the console.</p>",
+    "additional_info": "",
+    "download_links": [
+      {
+        "name": "SCMapDB",
+        "url": "https://scmapdb.wdfiles.com/local--files/map%3Acrime-city-2/crimecity2e2.zip",
+        "type": "Mirror",
+        "description": "Version e2"
+      }
+    ],
+    "download_notes": [],
+    "known_issues": "",
+    "screenshots": [
+      "http://scmapdb.wdfiles.com/local--files/map:crime-city-2/00crime2front.png",
+      "http://scmapdb.wdfiles.com/local--files/map:crime-city-2/1crime2.PNG",
+      "http://scmapdb.wdfiles.com/local--files/map:crime-city-2/2crime2.PNG",
+      "http://scmapdb.wdfiles.com/local--files/map:crime-city-2/3crime2.PNG",
+      "http://scmapdb.wdfiles.com/local--files/map:crime-city-2/4crime2.PNG",
+      "http://scmapdb.wdfiles.com/local--files/map:crime-city-2/5crime2.PNG",
+      "http://scmapdb.wdfiles.com/local--files/map:crime-city-2/6crime2.PNG",
+      "http://scmapdb.wdfiles.com/local--files/map:crime-city-2/7crime2.PNG",
+      "http://scmapdb.wdfiles.com/local--files/map:crime-city-2/8crime2.PNG"
+    ],
+    "votes": 0,
+    "difficulty": "unrated",
+    "size": "large",
+    "year": 2026
+  },
+  {
+    "id": "cwcpack-initiative",
+    "title": "CWCpack Initiative",
+    "url": "https://scmapdb.wikidot.com/map:cwcpack-initiative",
+    "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:cwcpack-initiative/cwc1.jpg/medium.jpg",
+    "rating": 3.5,
+    "tags": [
+      "2002",
+      "2026",
+      "conversion",
+      "difficulty:hard",
+      "jumping",
+      "puzzle",
+      "secrets",
+      "series",
+      "size:large",
+      "walkthrough",
+      "xen"
+    ],
+    "scraped": true,
+    "author": "Reuniclus-579",
+    "original_release_date": "Oct 1 , 2002",
+    "release_date": "Jun 28, 2026",
+    "bsp_names": [
+      "cwc1",
+      "cwc2",
+      "cwc3",
+      "cwc3a",
+      "cwc4",
+      "cwc4a"
+    ],
+    "description": "<p>A singleplayer mappack – a whole episode, but almost every map is made by a different mapper (beginners and experienced) without knowing the other maps, with only given entrance and exit areas, so that all the maps could be joined in one big episode.</p>",
+    "additional_info": "<p>Original mod <a href=\"https://www.moddb.com/mods/cwc-pack-initiative\" target=\"_blank\" rel=\"noopener noreferrer\">ModDB (Conversion is english version)</a></p>",
+    "download_links": [
+      {
+        "name": "SCMapDB",
+        "url": "https://scmapdb.wdfiles.com/local--files/map%3Acwcpack-initiative/cwcpack-initiativeV1a.zip",
+        "type": "Mirror"
+      }
+    ],
+    "download_notes": [],
+    "known_issues": "",
+    "screenshots": [
+      "http://scmapdb.wdfiles.com/local--files/map:cwcpack-initiative/cwc1.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:cwcpack-initiative/cwc2.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:cwcpack-initiative/cwc3.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:cwcpack-initiative/cwc4.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:cwcpack-initiative/cwc5.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:cwcpack-initiative/cwc6.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:cwcpack-initiative/cwc7.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:cwcpack-initiative/cwc8.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:cwcpack-initiative/cwc9a.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:cwcpack-initiative/cwc9b.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:cwcpack-initiative/cwc9c.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:cwcpack-initiative/cwc9d.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:cwcpack-initiative/cwc9e.jpg"
+    ],
+    "votes": 0,
+    "difficulty": "hard",
+    "size": "large",
+    "year": 2026
+  },
+  {
+    "id": "failure",
+    "title": "Failure",
+    "url": "https://scmapdb.wikidot.com/map:failure",
+    "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:failure/fe1.jpg/medium.jpg",
+    "rating": 3.7,
+    "tags": [
+      "2001",
+      "2026",
+      "boss",
+      "conversion",
+      "difficulty:hard",
+      "series",
+      "size:medium",
+      "walkthrough",
+      "xen"
+    ],
+    "scraped": true,
+    "author": "Reuniclus-579",
+    "original_release_date": "Aug 16 , 2001",
+    "release_date": "Jul 7, 2026",
+    "bsp_names": [
+      "failure_1",
+      "failure_2",
+      "failure_3"
+    ],
+    "description": "<p>You have failed. the Nihilanth still lives. Fortunately, before your failure, scientists managed to teleport you to a secret lab. The problem is that a secret agency has constructed a special device, letting the Nihilanth come to earth. You must destroy this device, before the worst can happen.</p>",
+    "additional_info": "<p>Original mod <a href=\"https://www.runthinkshootlive.com/posts/failure/\" target=\"_blank\" rel=\"noopener noreferrer\">RTSL</a></p>",
+    "download_links": [
+      {
+        "name": "SCMapDB",
+        "url": "https://scmapdb.wdfiles.com/local--files/map%3Afailure/failureV1b.zip",
+        "type": "Mirror"
+      }
+    ],
+    "download_notes": [],
+    "known_issues": "",
+    "screenshots": [
+      "http://scmapdb.wdfiles.com/local--files/map:failure/fe1.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:failure/fe2.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:failure/fe3.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:failure/fe4.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:failure/fe5.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:failure/fe6.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:failure/fe7.jpg"
+    ],
+    "votes": 0,
+    "difficulty": "hard",
+    "size": "medium",
+    "year": 2026
+  },
+  {
+    "id": "freemans-tomb",
+    "title": "Freeman’s Tomb",
+    "url": "https://scmapdb.wikidot.com/map:freemans-tomb",
+    "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:freemans-tomb/ft1.jpg/medium.jpg",
+    "rating": 2,
+    "tags": [
+      "2006",
+      "2026",
+      "conversion",
+      "difficulty:easy",
+      "escape",
+      "size:small",
+      "traps",
+      "walkthrough"
+    ],
+    "scraped": true,
+    "author": "Reuniclus-579",
+    "original_release_date": "Mar 21 , 2006",
+    "release_date": "Jul 7, 2026",
+    "bsp_names": [
+      "the_crypt"
+    ],
+    "description": "<p>You are about to enter Freeman’s Tomb… a dangerous place for one man, so be careful, there are some traps waiting for you.</p>\n<p>You must head for the Tomb to unleash the power of the place…</p>",
+    "additional_info": "<p>Original mod <a href=\"https://www.runthinkshootlive.com/posts/freemans-tomb/\" target=\"_blank\" rel=\"noopener noreferrer\">RTSL</a></p>",
+    "download_links": [
+      {
+        "name": "SCMapDB",
+        "url": "https://scmapdb.wdfiles.com/local--files/map%3Afreemans-tomb/crypt.zip",
+        "type": "Mirror"
+      }
+    ],
+    "download_notes": [],
+    "known_issues": "",
+    "screenshots": [
+      "http://scmapdb.wdfiles.com/local--files/map:freemans-tomb/ft1.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:freemans-tomb/ft2.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:freemans-tomb/ft3.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:freemans-tomb/ft4.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:freemans-tomb/ft5.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:freemans-tomb/ft6.jpg"
+    ],
+    "votes": 0,
+    "difficulty": "easy",
+    "size": "small",
+    "year": 2026
+  },
+  {
+    "id": "front-line-of-hunger",
+    "title": "Front Line of Hunger",
+    "url": "https://scmapdb.wikidot.com/map:front-line-of-hunger",
+    "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:front-line-of-hunger/a0.jpg/medium.jpg",
+    "rating": 3.3,
+    "tags": [
+      "2026",
+      "defense",
+      "difficulty:medium",
+      "featured",
+      "horde",
+      "insurgency-weapons",
+      "losable",
+      "size:small",
+      "zombies"
+    ],
+    "scraped": false
+  },
+  {
+    "id": "irreality",
+    "title": "Irreality",
+    "url": "https://scmapdb.wikidot.com/map:irreality",
+    "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:irreality/iy1.jpg/medium.jpg",
+    "rating": 4,
+    "tags": [
+      "2009",
+      "2026",
+      "conversion",
+      "difficulty:medium",
+      "escape",
+      "itemhunt",
+      "maze",
+      "music",
+      "puzzle",
+      "size:medium",
+      "space",
+      "walkthrough"
+    ],
+    "scraped": false
+  },
+  {
+    "id": "mystery-house",
+    "title": "Mystery House",
+    "url": "https://scmapdb.wikidot.com/map:mystery-house",
+    "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:mystery-house/mh1.jpg/medium.jpg",
+    "rating": 4,
+    "tags": [
+      "2014",
+      "2026",
+      "boss",
+      "conversion",
+      "difficulty:medium",
+      "music",
+      "puzzle",
+      "size:small",
+      "walkthrough"
+    ],
+    "scraped": false
+  },
+  {
+    "id": "portrait-of-freeman",
+    "title": "Portrait of Freeman",
+    "url": "https://scmapdb.wikidot.com/map:portrait-of-freeman",
+    "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:portrait-of-freeman/pof0.jpg/medium.jpg",
+    "rating": 3.3,
+    "tags": [
+      "2003",
+      "2026",
+      "boss",
+      "conversion",
+      "difficulty:medium",
+      "series",
+      "size:medium",
+      "walkthrough"
+    ],
+    "scraped": false
+  },
+  {
+    "id": "strange-house",
+    "title": "Strange house",
+    "url": "https://scmapdb.wikidot.com/map:strange-house",
+    "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:strange-house/strange_house1.jpg/medium.jpg",
+    "rating": 2.7,
+    "tags": [
+      "2026",
+      "difficulty:easy",
+      "escape",
+      "horde",
+      "maze",
+      "size:small"
+    ],
+    "scraped": false
   }
 ]
