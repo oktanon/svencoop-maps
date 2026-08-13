@@ -14,6 +14,7 @@ function App() {
 
   // Language state
   const [lang, setLang] = useState<Language>(() => {
+    if (typeof window === 'undefined') return 'es';
     const saved = localStorage.getItem('scmapdb_lang');
     if (saved === 'es' || saved === 'en') return saved as Language;
     const browserLang = navigator.language || (navigator as any).userLanguage || 'en';
@@ -22,7 +23,9 @@ function App() {
 
   // Save language preference
   useEffect(() => {
-    localStorage.setItem('scmapdb_lang', lang);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('scmapdb_lang', lang);
+    }
   }, [lang]);
 
   const t = translations[lang];
@@ -38,12 +41,24 @@ function App() {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [selectedAuthor, setSelectedAuthor] = useState<string | null>(null);
 
+  // Read URL search parameters on mount
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const searchParam = params.get('search');
+      if (searchParam) {
+        setSelectedAuthor(searchParam);
+      }
+    }
+  }, []);
+
   // Pagination states
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(12);
 
   // Favorites state
   const [favorites, setFavorites] = useState<string[]>(() => {
+    if (typeof window === 'undefined') return [];
     const saved = localStorage.getItem('scmapdb_favorites');
     return saved ? JSON.parse(saved) : [];
   });
@@ -138,7 +153,9 @@ function App() {
 
   // Save favorites to localStorage when they change
   useEffect(() => {
-    localStorage.setItem('scmapdb_favorites', JSON.stringify(favorites));
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('scmapdb_favorites', JSON.stringify(favorites));
+    }
   }, [favorites]);
 
   // Reset pagination when filters change

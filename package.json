@@ -1,15 +1,17 @@
 {
-  "name": "frontend-temp",
+  "name": "svencoop-maps",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build && node scripts/generate-static-pages.js",
-    "lint": "oxlint",
-    "preview": "vite preview"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "dependencies": {
+    "@astrojs/react": "^6.0.2",
+    "@astrojs/sitemap": "^3.7.3",
+    "astro": "^7.2.1",
     "cheerio": "^1.0.0-rc.12",
     "lucide-react": "^1.21.0",
     "react": "^19.2.7",

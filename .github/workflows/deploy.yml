@@ -52,7 +52,7 @@ jobs:
           commit_message: "chore(data): auto-update maps database [skip ci]"
           file_pattern: "public/maps_data.json scraper/maps_data.json"
 
-      - name: Build static site & map pages
+      - name: Build Astro static site & prerender map pages
         run: npm run build
         env:
           SITE_URL: ${{ steps.deployment.outputs.page_url }}

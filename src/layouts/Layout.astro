@@ -1,0 +1,99 @@
+---
+import '../index.css';
+import '../App.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonicalUrl?: string;
+  map?: any;
+}
+
+const { title, description, image, canonicalUrl, map } = Astro.props;
+
+const siteUrl = (Astro.site ? Astro.site.toString() : 'https://oktanon.github.io/svencoop-maps').replace(/\/$/, '');
+
+function stripHtml(html: string) {
+  if (!html) return '';
+  return html.replace(/<[^>]*>?/gm, ' ').replace(/\s+/g, ' ').trim();
+}
+
+let pageTitle = title || (map ? `${map.title} - Sven Co-op Map Database` : "Sven Co-op Map Database");
+let descSnippet = description;
+let imageUrl = image;
+
+if (map) {
+  if (!descSnippet) {
+    const rawDesc = map.description ? stripHtml(map.description) : '';
+    descSnippet = rawDesc
+      ? rawDesc.slice(0, 160) + (rawDesc.length > 160 ? '...' : '')
+      : `Download and view details for ${map.title}, a Sven Co-op map by ${map.author || 'Unknown author'}. Rating: ${map.rating || 'N/A'}/5.`;
+  }
+  if (!imageUrl) {
+    imageUrl = map.thumbnail || map.screenshots?.[0] || `${siteUrl}/Half-Life-Background.png`;
+  }
+} else {
+  if (!descSnippet) {
+    descSnippet = "Database and archive for Sven Co-op custom maps, featuring screenshots, downloads, console commands, ratings, and filters.";
+  }
+  if (!imageUrl) {
+    imageUrl = `${siteUrl}/Half-Life-Background.png`;
+  }
+}
+
+const currentUrl = canonicalUrl || Astro.url.href;
+const baseUrl = import.meta.env.BASE_URL || '/';
+const cleanBaseUrl = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+
+const jsonLd = map ? {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  'name': map.title,
+  'applicationCategory': 'GameMap',
+  'operatingSystem': 'Windows',
+  'description': descSnippet,
+  'image': imageUrl,
+  'author': map.author ? { '@type': 'Person', 'name': map.author } : undefined,
+  'aggregateRating': map.rating ? {
+    '@type': 'AggregateRating',
+    'ratingValue': map.rating,
+    'bestRating': 5,
+    'ratingCount': map.votes || 1
+  } : undefined
+} : null;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href={`${cleanBaseUrl}favicon.svg`} />
+    <title>{pageTitle}</title>
+    <meta name="description" content={descSnippet} />
+    <link rel="canonical" href={currentUrl} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={map ? "article" : "website"} />
+    <meta property="og:url" content={currentUrl} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={descSnippet} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:site_name" content="Sven Co-op Map Database" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={currentUrl} />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={descSnippet} />
+    <meta name="twitter:image" content={imageUrl} />
+
+    {jsonLd && (
+      <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    )}
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,28 @@
+---
+import fs from 'fs';
+import path from 'path';
+import Layout from '../../layouts/Layout.astro';
+import { MapPageStandalone } from '../../components/MapPageStandalone';
+import type { MapData } from '../../components/MapCard';
+
+export async function getStaticPaths() {
+  const filePath = path.join(process.cwd(), 'public', 'maps_data.json');
+  const maps: MapData[] = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+
+  return maps
+    .filter((map) => map && map.id)
+    .map((map) => {
+      const safeId = map.id.replace(/[:*?"<>|\\]/g, '-');
+      return {
+        params: { id: safeId },
+        props: { map },
+      };
+    });
+}
+
+const { map } = Astro.props;
+---
+
+<Layout map={map}>
+  <MapPageStandalone client:load map={map} />
+</Layout>
