@@ -12825,7 +12825,7 @@
     "title": "Casino Vulcano",
     "url": "https://scmapdb.wikidot.com/map:casino-vulcano",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:casino-vulcano/01.jpg/medium.jpg",
-    "rating": 2.1,
+    "rating": 2,
     "tags": [
       "2024",
       "community-edit",
@@ -21121,9 +21121,11 @@
     "title": "Desk",
     "url": "https://scmapdb.wikidot.com/map:desk",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:desk/0top.jpg/medium.jpg",
-    "rating": 1.3,
+    "rating": 1.5,
     "tags": [
       "2002",
+      "difficulty:hard",
+      "horde",
       "rats",
       "size:small",
       "walkthrough"
@@ -22690,9 +22692,10 @@
     "title": "Duck Hunt",
     "url": "https://scmapdb.wikidot.com/map:duck-hunt",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:duck-hunt/000duckhunt.jpg/medium.jpg",
-    "rating": 3.6,
+    "rating": 3.5,
     "tags": [
       "2008",
+      "boss",
       "community-edit",
       "difficulty:easy",
       "fun",
@@ -39913,7 +39916,7 @@
     "title": "Keen Halloween",
     "url": "https://scmapdb.wikidot.com/map:keen-halloween",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:keen-halloween/00khremastered.jpg/medium.jpg",
-    "rating": 3.5,
+    "rating": 3.6,
     "tags": [
       "2008",
       "2012",
@@ -87195,6 +87198,118 @@
     "votes": 0,
     "difficulty": "easy",
     "size": "small",
+    "year": 2026
+  },
+  {
+    "id": "edge-of-darkness",
+    "title": "Edge of Darkness",
+    "url": "https://scmapdb.wikidot.com/map:edge-of-darkness",
+    "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:edge-of-darkness/eod1.jpg/medium.jpg",
+    "rating": 4.5,
+    "tags": [
+      "2000",
+      "2026",
+      "boss",
+      "conversion",
+      "escape",
+      "series",
+      "survival",
+      "walkthrough"
+    ],
+    "scraped": true,
+    "author": "Reuniclus-579",
+    "original_release_date": "Jun 13 , 2000",
+    "release_date": "Aug 12, 2026",
+    "bsp_names": [
+      "eod1",
+      "eod2",
+      "eod3",
+      "eod4",
+      "eod5"
+    ],
+    "description": "<p>After proving your skill and cunning by escaping the Black Mesa complex alive, you have been called on by a shadowy organisation – the Alien Counter-Insurgency Bureau – to help protect mankind from the threat posed by Xen.</p>\n<p>Tonight, the A.C.I.B. has need of your special abilities to counter a new threat to civilisation. You have been given a rendez-vous in the warehouse district of the city to receive your mission briefing.</p>",
+    "additional_info": "<p>Original mod <a href=\"https://www.runthinkshootlive.com/posts/edge-of-darkness/\" target=\"_blank\" rel=\"noopener noreferrer\">RTSL</a></p>",
+    "download_links": [
+      {
+        "name": "SCMapDB",
+        "url": "https://scmapdb.wdfiles.com/local--files/map%3Aedge-of-darkness/edge-of-darkness.zip",
+        "type": "Mirror"
+      }
+    ],
+    "download_notes": [],
+    "known_issues": "",
+    "screenshots": [
+      "http://scmapdb.wdfiles.com/local--files/map:edge-of-darkness/eod1.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:edge-of-darkness/eod2.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:edge-of-darkness/eod3.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:edge-of-darkness/eod4.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:edge-of-darkness/eod5.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:edge-of-darkness/eod6.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:edge-of-darkness/eod7.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:edge-of-darkness/eod8.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:edge-of-darkness/eod91.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:edge-of-darkness/eod92.jpg"
+    ],
+    "videos": [],
+    "votes": 0,
+    "difficulty": "unrated",
+    "size": "unrated",
+    "year": 2026
+  },
+  {
+    "id": "the-escape",
+    "title": "The Escape",
+    "url": "https://scmapdb.wikidot.com/map:the-escape",
+    "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:the-escape/te1.jpg/medium.jpg",
+    "rating": 0,
+    "tags": [
+      "2012",
+      "2026",
+      "boss",
+      "conversion",
+      "escape",
+      "music",
+      "series",
+      "walkthrough"
+    ],
+    "scraped": true,
+    "author": "Reuniclus-579",
+    "original_release_date": "Nov 17 , 2012",
+    "release_date": "Aug 12, 2026",
+    "bsp_names": [
+      "te1",
+      "te2",
+      "te3",
+      "te4",
+      "te5"
+    ],
+    "description": "<p>You are freeman and you decide to choose the ultimate fight with aliens at the end of half life, it's your turn to try to escape for another time !</p>",
+    "additional_info": "<p>Original mod <a href=\"https://www.moddb.com/mods/neophus\" target=\"_blank\" rel=\"noopener noreferrer\">ModDB (Conversion is english version)</a></p>",
+    "download_links": [
+      {
+        "name": "SCMapDB",
+        "url": "https://scmapdb.wdfiles.com/local--files/map%3Athe-escape/TheEscapeV1a.7z",
+        "type": "Mirror"
+      }
+    ],
+    "download_notes": [],
+    "known_issues": "",
+    "screenshots": [
+      "http://scmapdb.wdfiles.com/local--files/map:the-escape/te1.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:the-escape/te2.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:the-escape/te3.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:the-escape/te4.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:the-escape/te5.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:the-escape/te6.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:the-escape/te7.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:the-escape/te8.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:the-escape/te91.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:the-escape/te92.jpg"
+    ],
+    "videos": [],
+    "votes": 0,
+    "difficulty": "unrated",
+    "size": "unrated",
     "year": 2026
   }
 ]
