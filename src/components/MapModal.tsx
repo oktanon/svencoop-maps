@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Download, ExternalLink, Copy, HelpCircle } from 'lucide-react';
 import type { MapData } from './MapCard';
 import iconSteam from '../assets/icon_steam.png';
-import borderPressed from '../assets/border-pressed.png';
-import xIcon from '../assets/X.png';
 import { translations } from '../translations';
 import type { Language } from '../translations';
 

@@ -75,6 +75,12 @@ export const translations = {
     noDownloads: "No hay links de descarga directos disponibles.",
     viewOriginalBtn: "Ver Web Original",
     unknownMapper: "Desconocido",
+    featuredGalleryTitle: "Mapas Destacados",
+    publishedOnPage: "Publicado en la página",
+    originalModRelease: "Lanzamiento original mod",
+    originalYear: "Año original",
+    hideGallery: "Ocultar galeria",
+    showGallery: "Mostrar galeria",
   },
   en: {
     // Header & Brand
@@ -152,6 +158,12 @@ export const translations = {
     noDownloads: "No direct download links available.",
     viewOriginalBtn: "View Original Site",
     unknownMapper: "Unknown",
+    featuredGalleryTitle: "Featured Maps",
+    publishedOnPage: "Published on page",
+    originalModRelease: "Original mod release",
+    originalYear: "Original year",
+    hideGallery: "Hide gallery",
+    showGallery: "Show gallery",
   }
 };
 

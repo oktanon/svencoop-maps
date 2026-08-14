@@ -1,11 +1,33 @@
 import { useState, useEffect, useMemo } from 'react';
-import { Filter, LayoutGrid, List, RotateCcw, Shuffle, Sparkles, AlertCircle, Heart } from 'lucide-react';
+import { Filter, LayoutGrid, List, RotateCcw, Shuffle, Sparkles, AlertCircle, Heart, Gamepad2, Dices } from 'lucide-react';
 import { MapCard } from './components/MapCard';
 import type { MapData } from './components/MapCard';
 import { MapPageView } from './components/MapPageView';
-import iconSteam from './assets/icon_steam.png';
+import { FeaturedGallery } from './components/FeaturedGallery';
 import { translations } from './translations';
 import type { Language } from './translations';
+
+interface FilterState {
+  searchTerm: string;
+  selectedDifficulty: string;
+  selectedSize: string;
+  selectedYear: string;
+  selectedTags: string[];
+  sortBy: string;
+  selectedAuthor: string | null;
+  currentPage: number;
+}
+
+const initialFilters: FilterState = {
+  searchTerm: '',
+  selectedDifficulty: 'all',
+  selectedSize: 'all',
+  selectedYear: 'all',
+  selectedTags: [],
+  sortBy: 'date-desc',
+  selectedAuthor: null,
+  currentPage: 1,
+};
 
 function App() {
   const [maps, setMaps] = useState<MapData[]>([]);
@@ -30,16 +52,43 @@ function App() {
 
   const t = translations[lang];
 
-  // Filter & Search states
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedDifficulty, setSelectedDifficulty] = useState('all');
-  const [selectedSize, setSelectedSize] = useState('all');
-  const [selectedYear, setSelectedYear] = useState('all');
-  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  // Independent Filter & Search states for Main Catalog vs Favorites
+  const [mainFilters, setMainFilters] = useState<FilterState>(initialFilters);
+  const [favFilters, setFavFilters] = useState<FilterState>(initialFilters);
   const [showOnlyFavorites, setShowOnlyFavorites] = useState(false);
-  const [sortBy, setSortBy] = useState('date-desc');
+
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
-  const [selectedAuthor, setSelectedAuthor] = useState<string | null>(null);
+  const [isGalleryVisible, setIsGalleryVisible] = useState(true);
+
+  // Helper to access and update the currently active view's filter state
+  const activeFilters = showOnlyFavorites ? favFilters : mainFilters;
+  const setActiveFilters = showOnlyFavorites ? setFavFilters : setMainFilters;
+
+  const updateActiveFilter = <K extends keyof FilterState>(
+    key: K,
+    value: FilterState[K] | ((prev: FilterState[K]) => FilterState[K])
+  ) => {
+    setActiveFilters((prev) => ({
+      ...prev,
+      [key]: typeof value === 'function' ? (value as (prevVal: FilterState[K]) => FilterState[K])(prev[key]) : value,
+      ...(key !== 'currentPage' ? { currentPage: 1 } : {}),
+    }));
+  };
+
+  // Auto-hide gallery when main filters or sorting are modified
+  useEffect(() => {
+    if (
+      mainFilters.searchTerm.trim() !== '' ||
+      mainFilters.selectedDifficulty !== 'all' ||
+      mainFilters.selectedSize !== 'all' ||
+      mainFilters.selectedYear !== 'all' ||
+      mainFilters.selectedTags.length > 0 ||
+      mainFilters.sortBy !== 'date-desc' ||
+      mainFilters.selectedAuthor !== null
+    ) {
+      setIsGalleryVisible(false);
+    }
+  }, [mainFilters]);
 
   // Read URL search parameters on mount
   useEffect(() => {
@@ -47,13 +96,12 @@ function App() {
       const params = new URLSearchParams(window.location.search);
       const searchParam = params.get('search');
       if (searchParam) {
-        setSelectedAuthor(searchParam);
+        setMainFilters((prev) => ({ ...prev, selectedAuthor: searchParam }));
       }
     }
   }, []);
 
-  // Pagination states
-  const [currentPage, setCurrentPage] = useState(1);
+  // Items per page
   const [itemsPerPage, setItemsPerPage] = useState(12);
 
   // Favorites state
@@ -158,15 +206,10 @@ function App() {
     }
   }, [favorites]);
 
-  // Reset pagination when filters change
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [searchTerm, selectedDifficulty, selectedSize, selectedYear, selectedTags, showOnlyFavorites, sortBy, selectedAuthor]);
-
   const showToast = (message: string) => {
     setToastMessage(message);
     setTimeout(() => {
-      setToastMessage(prev => (prev === message ? null : prev));
+      setToastMessage((prev) => (prev === message ? null : prev));
     }, 3000);
   };
 
@@ -176,10 +219,17 @@ function App() {
     );
   };
 
-  // Derive unique tags and counts from all maps to build tag filters
+  const relevantMapsForFilters = useMemo(() => {
+    if (showOnlyFavorites) {
+      return maps.filter((m) => favorites.includes(m.id));
+    }
+    return maps;
+  }, [maps, showOnlyFavorites, favorites]);
+
+  // Derive unique tags and counts for active context
   const popularTags = useMemo(() => {
     const counts: Record<string, number> = {};
-    maps.forEach((map) => {
+    relevantMapsForFilters.forEach((map) => {
       map.tags.forEach((tag) => {
         // Skip technical or system tags
         if (
@@ -199,37 +249,31 @@ function App() {
       .sort((a, b) => b[1] - a[1])
       .slice(0, 30) // Show top 30 tags
       .map(([tag]) => tag);
-  }, [maps]);
+  }, [relevantMapsForFilters]);
 
-  // Derive unique years
+  // Derive unique years for active context
   const availableYears = useMemo(() => {
     const yearsSet = new Set<number>();
-    maps.forEach((map) => {
+    relevantMapsForFilters.forEach((map) => {
       if (map.year) yearsSet.add(map.year);
     });
     return Array.from(yearsSet).sort((a, b) => b - a);
-  }, [maps]);
+  }, [relevantMapsForFilters]);
 
   // Toggle active tag in filter
   const handleTagToggle = (tag: string) => {
-    setSelectedTags((prev) =>
-      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]
+    updateActiveFilter('selectedTags', (prevTags) =>
+      prevTags.includes(tag) ? prevTags.filter((t) => t !== tag) : [...prevTags, tag]
     );
   };
 
-  // Clear all filters
+  // Clear active filters
   const handleResetFilters = () => {
-    setSearchTerm('');
-    setSelectedDifficulty('all');
-    setSelectedSize('all');
-    setSelectedYear('all');
-    setSelectedTags([]);
-    setShowOnlyFavorites(false);
-    setSelectedAuthor(null);
+    setActiveFilters(initialFilters);
   };
 
   const handleSelectAuthor = (authorName: string) => {
-    setSelectedAuthor(authorName);
+    updateActiveFilter('selectedAuthor', authorName);
     handleSelectMap(null);
     showToast(t.filteringAuthor.replace('{author}', authorName));
   };
@@ -240,6 +284,13 @@ function App() {
       const randomIdx = Math.floor(Math.random() * filteredAndSortedMaps.length);
       handleSelectMap(filteredAndSortedMaps[randomIdx]);
       showToast(t.randomPickToast.replace('{title}', filteredAndSortedMaps[randomIdx].title));
+    } else if (showOnlyFavorites && favorites.length > 0) {
+      const favMaps = maps.filter((m) => favorites.includes(m.id));
+      if (favMaps.length > 0) {
+        const randomIdx = Math.floor(Math.random() * favMaps.length);
+        handleSelectMap(favMaps[randomIdx]);
+        showToast(t.randomPickToast.replace('{title}', favMaps[randomIdx].title));
+      }
     } else if (maps.length > 0) {
       const randomIdx = Math.floor(Math.random() * maps.length);
       handleSelectMap(maps[randomIdx]);
@@ -251,7 +302,10 @@ function App() {
 
   // Perform client-side filter and sort
   const filteredAndSortedMaps = useMemo(() => {
-    return maps
+    const sourceMaps = showOnlyFavorites ? maps.filter((m) => favorites.includes(m.id)) : maps;
+    const { searchTerm, selectedDifficulty, selectedSize, selectedYear, selectedTags, selectedAuthor, sortBy } = activeFilters;
+
+    return sourceMaps
       .filter((map) => {
         // Search query check
         if (searchTerm.trim()) {
@@ -259,17 +313,12 @@ function App() {
           const titleMatch = map.title.toLowerCase().includes(query);
           const authorMatch = map.author?.toLowerCase().includes(query);
           const descMatch = map.description?.toLowerCase().includes(query);
-          const bspMatch = map.bsp_names?.some(b => b.toLowerCase().includes(query));
-          const tagsMatch = map.tags.some(t => t.toLowerCase().includes(query));
-          
+          const bspMatch = map.bsp_names?.some((b) => b.toLowerCase().includes(query));
+          const tagsMatch = map.tags.some((t) => t.toLowerCase().includes(query));
+
           if (!titleMatch && !authorMatch && !descMatch && !bspMatch && !tagsMatch) {
             return false;
           }
-        }
-
-        // Favorites filter
-        if (showOnlyFavorites && !favorites.includes(map.id)) {
-          return false;
         }
 
         // Author filter
@@ -351,20 +400,20 @@ function App() {
             return 0;
         }
       });
-  }, [maps, searchTerm, selectedDifficulty, selectedSize, selectedYear, selectedTags, showOnlyFavorites, favorites, sortBy, selectedAuthor]);
+  }, [maps, showOnlyFavorites, favorites, activeFilters]);
 
   // Derive paginated list and total pages
   const totalPages = Math.ceil(filteredAndSortedMaps.length / itemsPerPage);
   const paginatedMaps = useMemo(() => {
-    const startIndex = (currentPage - 1) * itemsPerPage;
+    const startIndex = (activeFilters.currentPage - 1) * itemsPerPage;
     return filteredAndSortedMaps.slice(startIndex, startIndex + itemsPerPage);
-  }, [filteredAndSortedMaps, currentPage, itemsPerPage]);
+  }, [filteredAndSortedMaps, activeFilters.currentPage, itemsPerPage]);
 
   const renderPagination = () => {
     if (totalPages <= 1) return null;
 
     const maxPagesToShow = 5;
-    let startPage = Math.max(1, currentPage - 2);
+    let startPage = Math.max(1, activeFilters.currentPage - 2);
     let endPage = Math.min(totalPages, startPage + maxPagesToShow - 1);
 
     if (endPage - startPage < maxPagesToShow - 1) {
@@ -375,8 +424,8 @@ function App() {
       <div className="pagination-container">
         <button
           className="btn pagination-btn"
-          disabled={currentPage === 1}
-          onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
+          disabled={activeFilters.currentPage === 1}
+          onClick={() => updateActiveFilter('currentPage', Math.max(1, activeFilters.currentPage - 1))}
         >
           {t.paginationPrev}
         </button>
@@ -384,8 +433,8 @@ function App() {
         {startPage > 1 && (
           <>
             <button
-              className={`pagination-page ${currentPage === 1 ? 'active' : ''}`}
-              onClick={() => setCurrentPage(1)}
+              className={`pagination-page ${activeFilters.currentPage === 1 ? 'active' : ''}`}
+              onClick={() => updateActiveFilter('currentPage', 1)}
             >
               1
             </button>
@@ -396,8 +445,8 @@ function App() {
         {Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i).map((p) => (
           <button
             key={p}
-            className={`pagination-page ${currentPage === p ? 'active' : ''}`}
-            onClick={() => setCurrentPage(p)}
+            className={`pagination-page ${activeFilters.currentPage === p ? 'active' : ''}`}
+            onClick={() => updateActiveFilter('currentPage', p)}
           >
             {p}
           </button>
@@ -407,8 +456,8 @@ function App() {
           <>
             {endPage < totalPages - 1 && <span className="pagination-dots">...</span>}
             <button
-              className={`pagination-page ${currentPage === totalPages ? 'active' : ''}`}
-              onClick={() => setCurrentPage(totalPages)}
+              className={`pagination-page ${activeFilters.currentPage === totalPages ? 'active' : ''}`}
+              onClick={() => updateActiveFilter('currentPage', totalPages)}
             >
               {totalPages}
             </button>
@@ -417,8 +466,8 @@ function App() {
 
         <button
           className="btn pagination-btn"
-          disabled={currentPage === totalPages}
-          onClick={() => setCurrentPage((prev) => Math.min(totalPages, prev + 1))}
+          disabled={activeFilters.currentPage === totalPages}
+          onClick={() => updateActiveFilter('currentPage', Math.min(totalPages, activeFilters.currentPage + 1))}
         >
           {t.paginationNext}
         </button>
@@ -429,7 +478,7 @@ function App() {
             value={itemsPerPage}
             onChange={(e) => {
               setItemsPerPage(Number(e.target.value));
-              setCurrentPage(1);
+              updateActiveFilter('currentPage', 1);
             }}
             className="filter-select"
             style={{ width: '80px', padding: '6px 10px' }}
@@ -444,6 +493,11 @@ function App() {
     );
   };
 
+  const handleGoToFavorites = () => {
+    handleSelectMap(null);
+    setShowOnlyFavorites(true);
+  };
+
   if (selectedMap) {
     return (
       <div className="app-container">
@@ -456,12 +510,22 @@ function App() {
         <MapPageView
           map={selectedMap}
           onBack={() => handleSelectMap(null)}
+          onGoHome={() => {
+            handleSelectMap(null);
+            setMainFilters(initialFilters);
+            setShowOnlyFavorites(false);
+            setIsGalleryVisible(true);
+          }}
           onShowToast={showToast}
           onSelectAuthor={handleSelectAuthor}
           isFavorite={favorites.includes(selectedMap.id)}
           onToggleFavorite={handleToggleFavorite}
           lang={lang}
-          onToggleLang={() => setLang(prev => prev === 'es' ? 'en' : 'es')}
+          onToggleLang={() => setLang((prev) => (prev === 'es' ? 'en' : 'es'))}
+          onPickRandom={handlePickRandom}
+          favoritesCount={favorites.length}
+          showOnlyFavorites={showOnlyFavorites}
+          onGoToFavorites={handleGoToFavorites}
         />
       </div>
     );
@@ -479,39 +543,41 @@ function App() {
 
       {/* Header section */}
       <header className="app-header">
-        <div className="brand-title">
-          <img 
-            src={iconSteam} 
-            alt="Steam VGUI logo" 
-            className="brand-icon" 
-            style={{ height: '32px', width: 'auto', imageRendering: 'pixelated' }} 
-          />
+        <a
+          href={import.meta.env.BASE_URL || '/'}
+          onClick={(e) => {
+            e.preventDefault();
+            handleSelectMap(null);
+            setShowOnlyFavorites(false);
+          }}
+          className="brand-title"
+          style={{ textDecoration: 'none' }}
+        >
+          <Gamepad2 size={28} color="var(--accent-gold)" />
           <div className="brand-text">
-            <h1>{t.title}</h1>
+            <h1 style={{ color: 'var(--accent-gold)' }}>SVEN CO-OP MAPS</h1>
           </div>
-        </div>
+        </a>
 
         <div className="action-row">
-          <button className="btn btn-primary" onClick={handlePickRandom}>
-            <Shuffle size={16} />
-            <span>{t.randomMap}</span>
-          </button>
-          
-          <button
-            className={`btn ${showOnlyFavorites ? 'btn-primary' : ''}`}
-            onClick={() => setShowOnlyFavorites(prev => !prev)}
-          >
-            <Heart size={16} fill={showOnlyFavorites ? 'currentColor' : 'none'} />
-            <span>{t.myFavorites.replace('{count}', favorites.length.toString())}</span>
+          <button className="btn" onClick={handlePickRandom} title={t.randomMap}>
+            <Dices size={18} />
           </button>
 
           <button
-            className="btn"
-            onClick={() => setLang(prev => prev === 'es' ? 'en' : 'es')}
-            title={lang === 'es' ? 'Switch to English' : 'Cambiar a Español'}
-            style={{ minWidth: '45px', padding: '6px' }}
+            className={`btn ${showOnlyFavorites ? 'btn-gold-solid' : ''}`}
+            onClick={handleGoToFavorites}
+            title={t.myFavorites.replace('{count}', favorites.length.toString())}
           >
-            <span style={{ fontWeight: 'bold' }}>{lang.toUpperCase()}</span>
+            <Heart size={18} fill={showOnlyFavorites ? 'currentColor' : 'none'} />
+          </button>
+
+          <button
+            className="btn btn-gold-solid"
+            onClick={() => setLang((prev) => (prev === 'es' ? 'en' : 'es'))}
+            title={lang === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+          >
+            EN / ES
           </button>
         </div>
       </header>
@@ -547,7 +613,6 @@ function App() {
           <aside className="filters-panel">
             <div id="header" style={{ marginBottom: '10px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontWeight: 'bold' }}>
-                <img src={iconSteam} style={{ height: '16px', width: 'auto', imageRendering: 'pixelated' }} alt="Steam" />
                 <span>{t.filtersHeader}</span>
               </div>
             </div>
@@ -557,8 +622,8 @@ function App() {
                 <input
                   type="text"
                   placeholder={t.searchPlaceholder}
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
+                  value={activeFilters.searchTerm}
+                  onChange={(e) => updateActiveFilter('searchTerm', e.target.value)}
                   className="search-input"
                 />
                 <Filter size={18} className="search-icon" />
@@ -568,8 +633,8 @@ function App() {
             <div>
               <span className="filter-section-title">{t.difficultyLabel}</span>
               <select
-                value={selectedDifficulty}
-                onChange={(e) => setSelectedDifficulty(e.target.value)}
+                value={activeFilters.selectedDifficulty}
+                onChange={(e) => updateActiveFilter('selectedDifficulty', e.target.value)}
                 className="filter-select"
               >
                 <option value="all">{t.allOptions}</option>
@@ -583,8 +648,8 @@ function App() {
             <div>
               <span className="filter-section-title">{t.sizeLabel}</span>
               <select
-                value={selectedSize}
-                onChange={(e) => setSelectedSize(e.target.value)}
+                value={activeFilters.selectedSize}
+                onChange={(e) => updateActiveFilter('selectedSize', e.target.value)}
                 className="filter-select"
               >
                 <option value="all">{t.allOptionsSize}</option>
@@ -599,8 +664,8 @@ function App() {
               <div>
                 <span className="filter-section-title">{t.yearLabel}</span>
                 <select
-                  value={selectedYear}
-                  onChange={(e) => setSelectedYear(e.target.value)}
+                  value={activeFilters.selectedYear}
+                  onChange={(e) => updateActiveFilter('selectedYear', e.target.value)}
                   className="filter-select"
                 >
                   <option value="all">{t.allYears}</option>
@@ -618,7 +683,7 @@ function App() {
                 <span className="filter-section-title">{t.popularTagsLabel}</span>
                 <div className="tag-list-filter">
                   {popularTags.map((tag) => {
-                    const isActive = selectedTags.includes(tag);
+                    const isActive = activeFilters.selectedTags.includes(tag);
                     return (
                       <span
                         key={tag}
@@ -635,24 +700,57 @@ function App() {
 
             <div className="stats-box">
               <span>{t.resultsCount} </span>
-              <strong className="stats-count">{filteredAndSortedMaps.length}</strong> / {maps.length}
+              <strong className="stats-count">{filteredAndSortedMaps.length}</strong> / {showOnlyFavorites ? favorites.length : maps.length}
             </div>
 
-            <button className="btn" onClick={handleResetFilters} style={{ justifyContent: 'center' }}>
-              <RotateCcw size={16} />
+            <button className="btn-clear-filters" onClick={handleResetFilters}>
               <span>{t.clearFilters}</span>
             </button>
           </aside>
 
           {/* Right Content Area */}
           <main className="content-area">
+            {showOnlyFavorites ? (
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  backgroundColor: 'var(--bg-surface)',
+                  border: '1px solid var(--border-color)',
+                  borderRadius: 'var(--radius-lg)',
+                  padding: '16px 20px',
+                  marginBottom: '10px'
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <Heart size={24} fill="#e74c3c" color="#e74c3c" />
+                  <h2 style={{ fontSize: '20px', fontWeight: '800', color: '#ffffff', margin: 0 }}>
+                    {lang === 'es' ? 'Mis Mapas Favoritos' : 'My Favorite Maps'} ({favorites.length})
+                  </h2>
+                </div>
+                <button className="btn btn-gold" onClick={() => setShowOnlyFavorites(false)}>
+                  ← {lang === 'es' ? 'Ver Todos los Mapas' : 'View All Maps'}
+                </button>
+              </div>
+            ) : (
+              isGalleryVisible && (
+                <FeaturedGallery
+                  maps={maps}
+                  onSelectMap={handleSelectMap}
+                  lang={lang}
+                  onHideGallery={() => setIsGalleryVisible(false)}
+                />
+              )
+            )}
+
             {/* Toolbar Panel */}
             <div className="toolbar-panel">
               <div className="sort-container">
                 <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{t.sortByLabel}</span>
                 <select
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value)}
+                  value={activeFilters.sortBy}
+                  onChange={(e) => updateActiveFilter('sortBy', e.target.value)}
                   className="filter-select"
                   style={{ width: '180px', padding: '8px 12px' }}
                 >
@@ -685,7 +783,7 @@ function App() {
               </div>
             </div>
 
-            {selectedAuthor && (
+            {activeFilters.selectedAuthor && (
               <div style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -699,9 +797,9 @@ function App() {
                 marginBottom: '15px',
                 fontFamily: 'var(--font-mono)'
               }}>
-                <span>{t.mapperFilterLabel.replace('{author}', selectedAuthor)}</span>
+                <span>{t.mapperFilterLabel.replace('{author}', activeFilters.selectedAuthor)}</span>
                 <button
-                  onClick={() => setSelectedAuthor(null)}
+                  onClick={() => updateActiveFilter('selectedAuthor', null)}
                   style={{
                     border: 'none',
                     background: 'transparent',
@@ -736,6 +834,7 @@ function App() {
                       onShowToast={showToast}
                       onSelectAuthor={handleSelectAuthor}
                       lang={lang}
+                      viewMode={viewMode}
                     />
                   ))}
                 </div>

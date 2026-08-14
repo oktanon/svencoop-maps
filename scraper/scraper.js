@@ -117,6 +117,50 @@ async function getMapsList() {
   return Array.from(mapsMap.values());
 }
 
+async function getFeaturedMapIds() {
+  const FEATURED_URL = `${BASE_URL}/tag:featured`;
+  console.log('Fetching featured maps list...');
+  const featuredIds = new Set();
+
+  try {
+    const html = await fetchWithRetry(FEATURED_URL);
+    const $ = cheerio.load(html);
+
+    $('.lister-container-tags-map-small .list-pages-item').each((i, el) => {
+      const titleAnchor = $(el).find('.lister-item-title a');
+      const urlPath = titleAnchor.attr('href') || '';
+      const id = urlPath.replace('/map:', '').trim();
+      if (id) featuredIds.add(id);
+    });
+
+    // Check if there are multiple pages
+    const pagerText = $('.pager-no').first().text().trim();
+    let totalPages = 1;
+    const match = pagerText.match(/page \d+ of (\d+)/i);
+    if (match) {
+      totalPages = parseInt(match[1], 10);
+    }
+
+    for (let p = 2; p <= totalPages; p++) {
+      console.log(`Fetching featured page ${p}/${totalPages}...`);
+      const pageHtml = await fetchWithRetry(`${FEATURED_URL}/p/${p}`);
+      const page$ = cheerio.load(pageHtml);
+      page$('.lister-container-tags-map-small .list-pages-item').each((i, el) => {
+        const titleAnchor = page$(el).find('.lister-item-title a');
+        const urlPath = titleAnchor.attr('href') || '';
+        const id = urlPath.replace('/map:', '').trim();
+        if (id) featuredIds.add(id);
+      });
+      await sleep(500);
+    }
+  } catch (error) {
+    console.error('Error fetching featured maps list:', error.message);
+  }
+
+  console.log(`Found ${featuredIds.size} featured maps.`);
+  return featuredIds;
+}
+
 async function scrapeMapDetails(map) {
   try {
     const html = await fetchWithRetry(map.url);
@@ -141,9 +185,9 @@ async function scrapeMapDetails(map) {
         projectLead = val;
       } else if (labelLower.includes('team')) {
         team = val;
-      } else if (labelLower.includes('original mod release')) {
+      } else if (labelLower.includes('original mod release') || labelLower.includes('original release')) {
         originalReleaseDate = val;
-      } else if (labelLower.includes('date of release')) {
+      } else if (labelLower.includes('date of release') || labelLower.includes('release date')) {
         releaseDate = val;
       } else if (labelLower.includes('.bsp filename')) {
         bspNames = val.split(/,\s*(?![^()]*\))/).map(name => name.trim()).filter(Boolean);
@@ -399,39 +443,46 @@ async function scrapeMapDetails(map) {
     // 5.5. Extract YouTube Videos
     const videos = [];
     const videoIdsSet = new Set();
-    const ytRegex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/gi;
+    const ytPatterns = [
+      /(?:youtube(?:-nocookie)?\.com\/(?:embed\/|v\/|shorts\/|live\/))([a-zA-Z0-9_-]{11})/gi,
+      /(?:youtube(?:-nocookie)?\.com\/watch\?(?:[^"'\s<>]*&)?v=)([a-zA-Z0-9_-]{11})/gi,
+      /(?:youtu\.be\/)([a-zA-Z0-9_-]{11})/gi
+    ];
 
-    $('#page-content iframe, #page-content a').each((i, el) => {
-      const src = $(el).attr('src') || $(el).attr('href') || '';
-      let match;
-      while ((match = ytRegex.exec(src)) !== null) {
-        const videoId = match[1];
-        if (videoId && !videoIdsSet.has(videoId)) {
-          videoIdsSet.add(videoId);
-          videos.push({
-            id: videoId,
-            url: `https://www.youtube.com/watch?v=${videoId}`,
-            embedUrl: `https://www.youtube.com/embed/${videoId}`,
-            thumbnail: `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`
-          });
-        }
-      }
-    });
-
-    const htmlToSearch = `${description} ${additionalInfo}`;
-    let match;
-    while ((match = ytRegex.exec(htmlToSearch)) !== null) {
-      const videoId = match[1];
-      if (videoId && !videoIdsSet.has(videoId)) {
-        videoIdsSet.add(videoId);
+    const addVideoId = (vidId) => {
+      if (vidId && vidId.length === 11 && !videoIdsSet.has(vidId)) {
+        videoIdsSet.add(vidId);
         videos.push({
-          id: videoId,
-          url: `https://www.youtube.com/watch?v=${videoId}`,
-          embedUrl: `https://www.youtube.com/embed/${videoId}`,
-          thumbnail: `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`
+          id: vidId,
+          url: `https://www.youtube.com/watch?v=${vidId}`,
+          embedUrl: `https://www.youtube.com/embed/${vidId}`,
+          thumbnail: `https://img.youtube.com/vi/${vidId}/hqdefault.jpg`
         });
       }
-    }
+    };
+
+    const scanStringForVideos = (str) => {
+      if (!str) return;
+      ytPatterns.forEach(pattern => {
+        let m;
+        while ((m = pattern.exec(str)) !== null) {
+          addVideoId(m[1]);
+        }
+      });
+    };
+
+    // 1. Search in all iframes, embeds, objects and links on the page
+    $('iframe, embed, object, a').each((_, el) => {
+      const src = $(el).attr('src') || $(el).attr('data') || $(el).attr('href') || '';
+      scanStringForVideos(src);
+    });
+
+    // 2. Search in description and additional info
+    scanStringForVideos(description);
+    scanStringForVideos(additionalInfo);
+
+    // 3. Search in full page content as fallback
+    scanStringForVideos(html);
 
     // 6. Rating details
     let votes = 0;
@@ -456,11 +507,20 @@ async function scrapeMapDetails(map) {
       }
     });
 
+    let originalYear = null;
+    if (originalReleaseDate) {
+      const origYearMatch = originalReleaseDate.match(/\b(19\d\d|20\d\d)\b/);
+      if (origYearMatch) {
+        originalYear = parseInt(origYearMatch[1], 10);
+      }
+    }
+
     return {
       ...map,
       author,
       original_release_date: originalReleaseDate,
       release_date: releaseDate,
+      original_year: originalYear,
       bsp_names: bspNames,
       description,
       additional_info: additionalInfo,
@@ -485,7 +545,10 @@ async function run() {
   const isTest = process.argv.includes('--test');
   const isForce = process.argv.includes('--force');
   const isSkipList = process.argv.includes('--skip-list');
-  console.log(`Starting Scraper. Mode: ${isTest ? 'TEST' : 'FULL'}${isForce ? ' (FORCE re-scrape)' : ''}`);
+  const targetArg = process.argv.find(arg => arg.startsWith('--target='));
+  const targetIds = targetArg ? targetArg.replace('--target=', '').split(',').map(s => s.trim()).filter(Boolean) : null;
+  
+  console.log(`Starting Scraper. Mode: ${isTest ? 'TEST' : targetIds ? `TARGET (${targetIds.join(', ')})` : 'FULL'}${isForce ? ' (FORCE re-scrape)' : ''}`);
 
   let maps = [];
   const existingMapById = new Map();
@@ -501,8 +564,8 @@ async function run() {
     }
   }
 
-  // Fetch the latest index/listings from wikidot unless --skip-list is passed
-  if (!isSkipList) {
+  // Fetch the latest index/listings from wikidot unless --skip-list is passed or targeting specific maps
+  if (!isSkipList && !targetIds) {
     console.log('Checking wikidot for fresh map list and updates...');
     const freshList = await getMapsList();
     let newCount = 0;
@@ -528,14 +591,37 @@ async function run() {
     });
 
     console.log(`Index sync complete: ${newCount} new maps discovered, ${updatedCount} existing maps updated.`);
+
+    // Fetch featured maps and merge 'featured' tag
+    const featuredIds = await getFeaturedMapIds();
+    let featuredTagged = 0;
+    maps.forEach(m => {
+      const isFeatured = featuredIds.has(m.id);
+      const hasFeaturedTag = m.tags.includes('featured');
+
+      if (isFeatured && !hasFeaturedTag) {
+        m.tags.push('featured');
+        featuredTagged++;
+      } else if (!isFeatured && hasFeaturedTag) {
+        m.tags = m.tags.filter(t => t !== 'featured');
+      }
+    });
+    console.log(`Featured tag applied to ${featuredTagged} maps. Total featured: ${featuredIds.size}`);
+
     fs.writeFileSync(OUTPUT_FILE, JSON.stringify(maps, null, 2));
   }
 
-  // Filter maps that need scraping (or all maps if forcing)
-  let pendingMaps = isForce ? maps : maps.filter(m => !m.scraped);
+  // Filter maps that need scraping
+  let pendingMaps = maps;
+  if (targetIds && targetIds.length > 0) {
+    pendingMaps = maps.filter(m => targetIds.includes(m.id));
+  } else if (isForce) {
+    pendingMaps = maps;
+  } else {
+    pendingMaps = maps.filter(m => !m.scraped);
+  }
   
   if (isTest) {
-    // In test mode, scrape up to TEST_LIMIT maps
     pendingMaps = pendingMaps.slice(0, TEST_LIMIT);
   }
 

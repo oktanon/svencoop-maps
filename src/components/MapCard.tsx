@@ -26,6 +26,7 @@ export interface MapData {
   difficulty?: string;
   size?: string;
   year?: number | null;
+  original_year?: number | null;
 }
 
 interface MapCardProps {
@@ -36,7 +37,24 @@ interface MapCardProps {
   onShowToast: (message: string) => void;
   onSelectAuthor?: (author: string) => void;
   lang: Language;
+  viewMode?: 'grid' | 'list';
 }
+
+const cleanHtmlToPlainText = (html?: string): string => {
+  if (!html) return '';
+  return html
+    .replace(/<br\s*\/?>/gi, ' ')
+    .replace(/<\/p>/gi, ' ')
+    .replace(/<[^>]*>/g, '')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/\s+/g, ' ')
+    .trim();
+};
 
 export const MapCard: React.FC<MapCardProps> = ({
   map,
@@ -46,30 +64,17 @@ export const MapCard: React.FC<MapCardProps> = ({
   onShowToast,
   onSelectAuthor,
   lang,
+  viewMode = 'grid',
 }) => {
   const t = translations[lang];
-  const getDifficultyClass = (diff?: string) => {
-    switch (diff?.toLowerCase()) {
-      case 'easy':
-        return 'badge-easy';
-      case 'medium':
-        return 'badge-medium';
-      case 'hard':
-        return 'badge-hard';
-      default:
-        return '';
-    }
-  };
 
   const handleCopyBsp = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (map.bsp_names && map.bsp_names.length > 0) {
-      // Pick the main BSP name (first in the list)
       const bsp = map.bsp_names[0];
       navigator.clipboard.writeText(`map ${bsp}`);
       onShowToast(t.copiedConsole.replace('{cmd}', `map ${bsp}`));
     } else {
-      // Fallback if not fully scraped, try clean map ID
       const bspFallback = map.id.replace(/-/g, '_');
       navigator.clipboard.writeText(`map ${bspFallback}`);
       onShowToast(t.copiedConsole.replace('{cmd}', `map ${bspFallback}`));
@@ -81,10 +86,6 @@ export const MapCard: React.FC<MapCardProps> = ({
     onToggleFavorite(map.id);
   };
 
-  // Check if map is featured (e.g. high rating or featured tag)
-  const isFeatured = map.tags.includes('featured') || map.rating >= 4.2;
-
-  // Format author name nicely
   const authorName = map.author || 'Unknown Author';
 
   const cleanUrl = (url: string) => {
@@ -112,7 +113,6 @@ export const MapCard: React.FC<MapCardProps> = ({
   const mapHref = `${cleanBaseUrl}map/${safeId}/`;
 
   const handleCardClick = (e: React.MouseEvent) => {
-    // Intercept standard left-click without modifier keys for instant SPA transition
     if (e.button === 0 && !e.ctrlKey && !e.metaKey && !e.shiftKey && !e.altKey) {
       e.preventDefault();
       onSelect(map);
@@ -120,116 +120,148 @@ export const MapCard: React.FC<MapCardProps> = ({
   };
 
   const imgSource = getThumbnailSrc();
+  const descriptionSnippet = cleanHtmlToPlainText(map.description);
+  const isListView = viewMode === 'list';
 
   return (
-    <a href={mapHref} className={`map-card ${isFeatured ? 'featured' : ''}`} onClick={handleCardClick} style={{ textDecoration: 'none', color: 'inherit' }}>
-      <div className="card-image-wrap">
-        <div className="card-image-fallback">
-          <Info size={36} />
-          <span>{t.fallbackCardTitle}</span>
-        </div>
-
+    <a
+      href={mapHref}
+      className={`map-card ${isListView ? 'map-card-list' : ''}`}
+      onClick={handleCardClick}
+      style={{ textDecoration: 'none', color: 'inherit' }}
+    >
+      <div className="map-card-thumbnail-wrapper">
         {imgSource ? (
           <img
             src={imgSource}
             alt={map.title}
-            className="card-image"
+            className="map-card-thumbnail"
             loading="lazy"
             onError={(e) => {
               (e.currentTarget as HTMLImageElement).style.display = 'none';
             }}
           />
-        ) : null}
-
-        {map.rating > 0 && (
-          <div className="card-rating-badge">
-            <Star size={14} className="rating-star-icon" />
-            <span>{map.rating.toFixed(1)}</span>
+        ) : (
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', color: 'var(--text-muted)' }}>
+            <Info size={24} />
           </div>
         )}
       </div>
 
-      <div className="card-body">
-        <div className="card-details-main">
-          <div className="card-meta-top">
-            {map.difficulty && map.difficulty !== 'unrated' && (
-              <span className={`badge-label ${getDifficultyClass(map.difficulty)}`}>
-                {map.difficulty}
+      <div className="map-card-content">
+        <div className="map-card-header">
+          <h3 className="map-card-title">{map.title}</h3>
+          {!isListView && (
+            <div className="map-card-rating">
+              <Star size={15} fill="currentColor" color="var(--accent-gold)" />
+              <span>{map.rating > 0 ? map.rating.toFixed(1) : '5.0'}</span>
+            </div>
+          )}
+        </div>
+
+        <div className="map-card-mapper">
+          <span>Mapper: </span>
+          <span
+            className="map-card-mapper-name"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              onSelectAuthor?.(authorName);
+            }}
+            style={{ cursor: 'pointer' }}
+          >
+            {authorName}
+          </span>
+        </div>
+
+        {isListView && descriptionSnippet && (
+          <p className="map-card-description-snippet" title={descriptionSnippet}>
+            {descriptionSnippet}
+          </p>
+        )}
+
+        <div className="map-card-tags">
+          {map.difficulty && map.difficulty !== 'unrated' && (
+            <span className="map-tag-pill map-badge-difficulty">
+              {map.difficulty}
+            </span>
+          )}
+          {map.size && map.size !== 'unrated' && (
+            <span className="map-tag-pill map-badge-size">
+              {map.size}
+            </span>
+          )}
+          {map.tags
+            .filter((t) => !t.startsWith('difficulty:') && !t.startsWith('size:') && !t.match(/^\d{4}$/))
+            .slice(0, isListView ? 6 : 5)
+            .map((tag) => (
+              <span key={tag} className="map-tag-pill">
+                {tag}
               </span>
-            )}
-            {map.size && map.size !== 'unrated' && (
-              <span className="badge-label">{map.size}</span>
-            )}
-            {map.year && (
-              <span className="badge-label badge-year">{map.year}</span>
-            )}
-          </div>
-
-          <h3 className="card-title">
-            {map.title}
-          </h3>
-
-          <div className="card-author">
-            <span>Mapper:</span>{' '}
-            {map.author ? (
-              <span
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  onSelectAuthor?.(map.author!);
-                }}
-                style={{
-                  color: 'var(--accent)',
-                  cursor: 'pointer',
-                  textDecoration: 'underline'
-                }}
-                className="mapper-link"
-              >
-                {authorName}
-              </span>
-            ) : (
-              authorName
-            )}
-          </div>
-
-          <div className="card-tags">
-            {map.tags
-              .filter(t => !t.startsWith('difficulty:') && !t.startsWith('size:') && !t.match(/^\d{4}$/))
-              .slice(0, 3)
-              .map((tag) => (
-                <span key={tag} className="card-tag">
-                  #{tag}
-                </span>
-              ))}
-          </div>
+            ))}
         </div>
       </div>
 
-      <div className="card-footer">
-        <button
-          className={`btn-card-action ${isFavorite ? 'favorite-active' : ''}`}
-          onClick={(e) => {
-            e.preventDefault();
-            handleFavoriteClick(e);
-          }}
-          title={t.favBtnTitle}
-        >
-          <Heart size={16} fill={isFavorite ? '#ff3b30' : 'none'} />
-          <span>{t.favoriteBtn}</span>
-        </button>
+      {isListView ? (
+        <div className="map-card-list-side">
+          <div className="map-card-rating">
+            <Star size={16} fill="currentColor" color="var(--accent-gold)" />
+            <span>{map.rating > 0 ? map.rating.toFixed(1) : '5.0'}</span>
+          </div>
 
-        <button
-          className="btn-card-action btn-card-bsp"
-          onClick={(e) => {
-            e.preventDefault();
-            handleCopyBsp(e);
-          }}
-          title={t.copyBspTitle}
-        >
-          <Copy size={14} />
-          <span>{t.copyBspBtn}</span>
-        </button>
-      </div>
+          <div className="map-card-actions">
+            <button
+              className={`btn-card-favorite ${isFavorite ? 'active' : ''}`}
+              onClick={(e) => {
+                e.preventDefault();
+                handleFavoriteClick(e);
+              }}
+              title={t.favBtnTitle}
+            >
+              <Heart size={15} fill={isFavorite ? 'currentColor' : 'none'} />
+              <span>{t.favoriteBtn}</span>
+            </button>
+
+            <button
+              className="btn-card-copy-bsp"
+              onClick={(e) => {
+                e.preventDefault();
+                handleCopyBsp(e);
+              }}
+              title={t.copyBspTitle}
+            >
+              <Copy size={14} />
+              <span>{t.copyBspBtn}</span>
+            </button>
+          </div>
+        </div>
+      ) : (
+        <div className="map-card-actions">
+          <button
+            className={`btn-card-favorite ${isFavorite ? 'active' : ''}`}
+            onClick={(e) => {
+              e.preventDefault();
+              handleFavoriteClick(e);
+            }}
+            title={t.favBtnTitle}
+          >
+            <Heart size={15} fill={isFavorite ? 'currentColor' : 'none'} />
+            <span>{t.favoriteBtn}</span>
+          </button>
+
+          <button
+            className="btn-card-copy-bsp"
+            onClick={(e) => {
+              e.preventDefault();
+              handleCopyBsp(e);
+            }}
+            title={t.copyBspTitle}
+          >
+            <Copy size={14} />
+            <span>{t.copyBspBtn}</span>
+          </button>
+        </div>
+      )}
     </a>
   );
 };
