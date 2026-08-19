@@ -7004,11 +7004,12 @@
       "2020",
       "conversion",
       "music",
-      "needs-picswalkthrough",
+      "needs-pics",
       "outdated",
       "series",
       "size:large",
-      "survival"
+      "survival",
+      "walkthrough"
     ],
     "scraped": true,
     "author": "DAVLevels",
@@ -10445,9 +10446,11 @@
     "title": "BMTCoop",
     "url": "https://scmapdb.wikidot.com/map:bmtcoop",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:bmtcoop/0-bmtcoop0008.jpg/medium.jpg",
-    "rating": 3,
+    "rating": 2.8,
     "tags": [
       "2001",
+      "boss",
+      "difficulty:easy",
       "size:small",
       "walkthrough"
     ],
@@ -13529,7 +13532,7 @@
     "title": "Central Assault",
     "url": "https://scmapdb.wikidot.com/map:central-assault",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:central-assault/0-cassault1-top.jpg/medium.jpg",
-    "rating": 3.8,
+    "rating": 3.6,
     "tags": [
       "2002",
       "boms",
@@ -14573,7 +14576,7 @@
     "title": "Civil Defence",
     "url": "https://scmapdb.wikidot.com/map:civil-defence",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:civil-defence/civildefence00.jpg/medium.jpg",
-    "rating": 4.3,
+    "rating": 3.8,
     "tags": [
       "2004",
       "city",
@@ -15008,7 +15011,7 @@
     "title": "Clone Lab",
     "url": "https://scmapdb.wikidot.com/map:clone-lab",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:clone-lab/0-clonelab-top.jpg/medium.jpg",
-    "rating": 3.7,
+    "rating": 3.5,
     "tags": [
       "2002",
       "difficulty:easy",
@@ -15904,6 +15907,7 @@
     "tags": [
       "2006",
       "black-mesa",
+      "boss",
       "co-oprequired",
       "difficulty:medium",
       "size:medium",
@@ -26677,7 +26681,7 @@
     "title": "Fallback: Ice",
     "url": "https://scmapdb.wikidot.com/map:fallback:ice",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:fallback:ice/0fallbackice.jpg/medium.jpg",
-    "rating": 3.1,
+    "rating": 3.2,
     "tags": [
       "2013",
       "2023",
@@ -40035,7 +40039,7 @@
     "title": "Just Zombies",
     "url": "https://scmapdb.wikidot.com/map:justzombies",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:justzombies/20170423234733_1.jpg/medium.jpg",
-    "rating": 4.1,
+    "rating": 4.2,
     "tags": [
       "2017",
       "co-oprequired",
@@ -52508,7 +52512,7 @@
     "title": "Pagoda",
     "url": "https://scmapdb.wikidot.com/map:pagoda",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:pagoda/0.jpg/medium.jpg",
-    "rating": 1.8,
+    "rating": 1.9,
     "tags": [
       "2015",
       "2021",
@@ -75606,6 +75610,7 @@
       "boss",
       "conversion",
       "escape",
+      "horde",
       "jumping",
       "music",
       "secrets",
@@ -89023,6 +89028,79 @@
     "votes": 0,
     "difficulty": "unrated",
     "size": "unrated",
+    "year": 2026
+  },
+  {
+    "id": "operation-epstein-fury:island-force",
+    "title": "Operation Epstein Fury: Island Force",
+    "url": "https://scmapdb.wikidot.com/map:operation-epstein-fury:island-force",
+    "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:operation-epstein-fury:island-force/000eps_title.png/medium.jpg",
+    "rating": 4,
+    "tags": [
+      "2026",
+      "difficulty:hard",
+      "insurgency-weapons",
+      "itemhunt",
+      "playable-solo",
+      "rescue",
+      "secrets",
+      "size:medium",
+      "solo/coop",
+      "walkthrough"
+    ],
+    "scraped": true,
+    "author": "Dr. Varhansen",
+    "original_release_date": "",
+    "release_date": "Final - August 10, 2026",
+    "original_year": null,
+    "bsp_names": [
+      "epsteinisland"
+    ],
+    "description": "<p><strong>TOP SECRET // CLASSIFIED OPERATIONS BRIEFING</strong><br>\n<strong>OPERATION:</strong> EPICSTEIN FURY<br>\n<strong>AO:</strong> ST. JAMES ARCHIPELAGO, USVI<br>\n<strong>CLEARANCE:</strong> LEVEL 4 EYES ONLY<br>\n<strong>TACTICAL MODE:</strong> CO-OPERATIVE ENGAGEMENT (2-32 OPERATIVES)</p>\n<p><strong>1. SITUATION REPORT (SITREP)</strong></p>\n<p>Satellite imagery has identified an active high-security operation on the private island compound. Intelligence indicates the site serves as a nexus for human trafficking, clandestine high-level meetings, and bio-technological experimentation.</p>\n<p>A heavy PMC garrison (designated <strong>\"Private Defense Force Security\"</strong> or <strong>PDFS</strong>) has locked down the perimeter. The island's signature hilltop landmark masks a deep-subterranean vault considered to house hostages and extremelly hostile targets.</p>\n<p>Operatives are to insert at the isolated sundial beach landing, systematically clear the island's facilities, eliminate all high-value targets, and secure high-risk non-combatants.</p>\n<p><strong>2. MISSION OBJECTIVES</strong></p>\n<ol>\n<li><strong>PRIMARY:</strong> Rescue all trafficked girls located throughout the compound sectors.</li>\n<li><strong>PRIMARY:</strong> Eliminate HVTs Jeffrey Epstein, Ghislaine Maxwell, and all key co-conspirators.</li>\n<li><strong>PRIMARY:</strong> Infiltrate underground vault and sweep the sector for primary objectives.</li>\n</ol>\n<ol>\n<li><strong>SECONDARY:</strong> Shoot down illegal airspace violators. Hired PMCs are paradropping enemy reinforcements using a civilian Boeing 727.</li>\n<li><strong>SECONDARY:</strong> Destroy 6G mind-control towers and religious idols to capture key zones and enable osprey allied reinforcement waves.</li>\n<li><strong>SECONDARY:</strong> Collect and redact all classified documents to allow for supply paradrops.</li>\n</ol>\n<ol>\n<li><strong>TERTIARY:</strong> Destroy surveillance equipment and power generators to reduce enemy defenses.</li>\n<li><strong>TERTIARY:</strong> Exterminate all flora and fauna. Subject models indicate widespread genetic modification and extreme biological hazards.</li>\n</ol>\n<p><strong>3. TACTICAL PHASE STAGING</strong></p>\n<div>\n<pre><code>[ SECTOR I: OMINOUS SUNDIAL ] - Amphibious insertion\n[ SECTOR II: TEMPLE OF BAAL ] - Dome hilltop breach\n[ SECTOR III: STAFF BARRACKS ] - Inward push\n[ SECTOR IV: YOGA BEACH ] - Cabanas beach hut clearance\n[ SECTOR V: PERGOLA POOL] - Perimeter path assault\n[ SECTOR VI: CAPRI DOCK ] - Boat intercept\n[ SECTOR VII: MAIN COMPOUND ] - Interior CQB &amp; HVT hunt\n[ SECTOR VIII: UNDERGROUND VAULT ] - Interior CQB &amp; co-conspirator hunt</code></pre></div>\n<ul>\n<li><strong>Sector I: Ominous Sundial</strong>\n<ul>\n<li><em>Environment:</em> Rocky shores, tide pools, exposed beach paths.</li>\n<li><em>Threat Level:</em> High (Crossfire from coastal guards and aggressive bio-modified wildlife).</li>\n<li><em>Tactical Advice:</em> Maintain tight formation coming off the boat. Neutralize local fauna immediately before pushing up the beach trail.</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li><strong>Sector II: Temple of Baal</strong>\n<ul>\n<li><em>Environment:</em> Elevated ridge surrounding the iconic blue-and-white dome structure.</li>\n<li><em>Threat Level:</em> Critical (Heavy PMC perimeter security and regional mind-control towers).</li>\n<li><em>Tactical Advice:</em> Focus fire on the 6G towers in this sector to open airspace for initial osprey troop drops.</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li><strong>Sector III: Staff Barracks</strong>\n<ul>\n<li><em>Environment:</em> Narrow access roads, security outposts, perimeter quarters.</li>\n<li><em>Threat Level:</em> Moderate–High (Tight sightlines, roving PMC patrols).</li>\n<li><em>Tactical Advice:</em> Sweep buildings thoroughly for hidden intelligence documents before pushing deeper inland.</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li><strong>Sector IV: Yoga Beach</strong>\n<ul>\n<li><em>Environment:</em> Shoreline party cabanas, outdoor pavilions, sandy choke points.</li>\n<li><em>Threat Level:</em> High (Crossfire from beach huts and concealed snipers).</li>\n<li><em>Tactical Advice:</em> Neutralize local idols to claim control of the beach-head.</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li><strong>Sector V: Pergola Pool</strong>\n<ul>\n<li><em>Environment:</em> Luxury pool complex, open patio pathways, stone pergolas.</li>\n<li><em>Threat Level:</em> High (Zero cover across pool deck, heavy sentry automatic fire).</li>\n<li><em>Tactical Advice:</em> Advance along the perimeter walkways; avoid lingering in the central open waters.</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li><strong>Sector VI: Capri Dock</strong>\n<ul>\n<li><em>Environment:</em> Reinforced boat slips, cargo pallets, coastal piers.</li>\n<li><em>Threat Level:</em> High (Mounted gun emplacements and waterborne threats).</li>\n<li><em>Tactical Advice:</em> Secure the docks to prevent enemy escape via maritime craft.</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li><strong>Sector VII: Main Compound</strong>\n<ul>\n<li><em>Environment:</em> Multi-level luxury residence, private offices, secure suites.</li>\n<li><em>Threat Level:</em> Extreme (Armored bodyguards, close-quarters room breaches).</li>\n<li><em>Tactical Advice:</em> Clear rooms methodically to locate HVTs Epstein and Maxwell while securing any trapped non-combatants.</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li><strong>Sector VIII: Underground Vault</strong>\n<ul>\n<li><em>Environment:</em> Subterranean bunker, narrow access tunnels.</li>\n<li><em>Threat Level:</em> Extreme (Fortified choke points, heavily armed co-conspirators).</li>\n<li><em>Tactical Advice:</em> Bring heavy ordnance for tight-corridor breaches. Secure final evidence nodes and eliminate remaining leadership to complete the sweep.</li>\n</ul>\n</li>\n</ul>",
+    "additional_info": "<ul>\n<li>The maps are adapted for the INS2 weapons pack, but if scripts fail to load you will still get default weapons</li>\n<li>Starting equipment is random each time you spawn. You get the basic amphibious assault gear (pistol, smg, medkit, knife, grenade)</li>\n<li>There are more weapons scattered around the island</li>\n<li>Duke Nukem joins the team, and only one player at a time can be duke nukem. He gets his own starting equipment which is a bit more powerful (deagle and m16)</li>\n<li>There are a few secrets in the map. Its all about exploring and shooting everything you see to unlock them</li>\n<li>The map contains many references to memes, conspiracy theories and not so theories</li>\n</ul>",
+    "download_links": [
+      {
+        "name": "SCMapDB",
+        "url": "https://scmapdb.wdfiles.com/local--files/map%3Aoperation-epstein-fury%3Aisland-force/epstein_island_force_v1.zip",
+        "type": "Original",
+        "description": "- v1"
+      },
+      {
+        "name": "GoogleDrive",
+        "url": "https://drive.google.com/file/d/1FgZGVBY0M6fqaa_sKeZZ7P1oj6b5vkx6/view?usp=sharing",
+        "type": "Mirror",
+        "description": "- v1"
+      }
+    ],
+    "download_notes": [],
+    "known_issues": "",
+    "screenshots": [
+      "http://scmapdb.wdfiles.com/local--files/map:operation-epstein-fury:island-force/000eps_title.png",
+      "http://scmapdb.wdfiles.com/local--files/map:operation-epstein-fury:island-force/screenshot006.png",
+      "http://scmapdb.wdfiles.com/local--files/map:operation-epstein-fury:island-force/screenshot01.png",
+      "http://scmapdb.wdfiles.com/local--files/map:operation-epstein-fury:island-force/screenshot02.png",
+      "http://scmapdb.wdfiles.com/local--files/map:operation-epstein-fury:island-force/screenshot03.png",
+      "http://scmapdb.wdfiles.com/local--files/map:operation-epstein-fury:island-force/screenshot04.png",
+      "http://scmapdb.wdfiles.com/local--files/map:operation-epstein-fury:island-force/screenshot06.png",
+      "http://scmapdb.wdfiles.com/local--files/map:operation-epstein-fury:island-force/screenshot07.png",
+      "http://scmapdb.wdfiles.com/local--files/map:operation-epstein-fury:island-force/screenshot08.png",
+      "http://scmapdb.wdfiles.com/local--files/map:operation-epstein-fury:island-force/screenz02.png",
+      "http://scmapdb.wdfiles.com/local--files/map:operation-epstein-fury:island-force/screenz03.png",
+      "http://scmapdb.wdfiles.com/local--files/map:operation-epstein-fury:island-force/screenz04.png",
+      "http://scmapdb.wdfiles.com/local--files/map:operation-epstein-fury:island-force/screenz05.png",
+      "http://scmapdb.wdfiles.com/local--files/map:operation-epstein-fury:island-force/screenz07.png"
+    ],
+    "videos": [
+      {
+        "id": "ZbOMrRj6vGU",
+        "url": "https://www.youtube.com/watch?v=ZbOMrRj6vGU",
+        "embedUrl": "https://www.youtube.com/embed/ZbOMrRj6vGU",
+        "thumbnail": "https://img.youtube.com/vi/ZbOMrRj6vGU/hqdefault.jpg"
+      }
+    ],
+    "votes": 0,
+    "difficulty": "hard",
+    "size": "medium",
     "year": 2026
   }
 ]
