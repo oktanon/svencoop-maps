@@ -71066,7 +71066,7 @@
     "id": "street-run-beta-2",
     "title": "Street Run",
     "url": "https://scmapdb.wikidot.com/map:street-run-beta-2",
-    "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:street-run-beta-2/sc_streetrun0022.jpg/medium.jpg",
+    "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:street-run-beta-2/sc_streetrun_001.jpg/medium.jpg",
     "rating": 3.5,
     "tags": [
       "2010",
@@ -89034,8 +89034,8 @@
     "id": "operation-epstein-fury:island-force",
     "title": "Operation Epstein Fury: Island Force",
     "url": "https://scmapdb.wikidot.com/map:operation-epstein-fury:island-force",
-    "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:operation-epstein-fury:island-force/000eps_title.png/medium.jpg",
-    "rating": 4,
+    "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:operation-epstein-fury:island-force/000epstitle.jpg/medium.jpg",
+    "rating": 4.6,
     "tags": [
       "2026",
       "difficulty:hard",
@@ -89098,6 +89098,68 @@
         "thumbnail": "https://img.youtube.com/vi/ZbOMrRj6vGU/hqdefault.jpg"
       }
     ],
+    "votes": 0,
+    "difficulty": "hard",
+    "size": "medium",
+    "year": 2026
+  },
+  {
+    "id": "death-wish-bonus",
+    "title": "Death-Wish BONUS+",
+    "url": "https://scmapdb.wikidot.com/map:death-wish-bonus",
+    "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:death-wish-bonus/0deathwishbonus.jpg/medium.jpg",
+    "rating": 0,
+    "tags": [
+      "2026",
+      "boss",
+      "co-oprequired",
+      "difficulty:hard",
+      "horde",
+      "music",
+      "scary",
+      "size:medium",
+      "skills",
+      "survival"
+    ],
+    "scraped": true,
+    "author": "AEAR",
+    "original_release_date": "",
+    "release_date": "Version 1.0 - August 23th, 2026.",
+    "original_year": null,
+    "bsp_names": [
+      "deathwish_bonus"
+    ],
+    "description": "<p>Death-Wish BONUS is map that continued some of Death-Wish 1 story (Kinda , Waves Map).</p>\n<p>When the player in Death-Wish 1 got bad ending , the scientists that trapped him in Death-Wish 1 told him</p>\n<p>that you ready to sent to hell.</p>\n<p>The player find himself somewhere in hell , after the scientists throw him in portal to hell to fight the monsters there.</p>\n<p>Players must survive all the monsters's waves , and their fates after this is still unknown…</p>\n<p>to start the map , find all the 4 symbols and place them at spawn</p>",
+    "additional_info": "<p>Features :</p>\n<ul>\n<li>this map have a jukebox with 13 songs , can be all turn off by button (reset every 30 seconds)</li>\n</ul>\n<ul>\n<li>custom monsters attack</li>\n</ul>\n<ul>\n<li>Some Easter Eggs (cant be used , useless)</li>\n</ul>\n<ul>\n<li>This map using ( Insurgency weapons by kerncore )</li>\n</ul>\n<ul>\n<li>And more…</li>\n</ul>",
+    "download_links": [
+      {
+        "name": "GoogleDrive",
+        "url": "https://drive.google.com/file/d/1tob7WJ28aJDBEL5Wh_LYtAMLNZFHDuiv/view?usp=sharing",
+        "type": "Mirror"
+      },
+      {
+        "name": "Gamebanana",
+        "url": "https://gamebanana.com/mods/708648",
+        "type": "Mirror"
+      }
+    ],
+    "download_notes": [],
+    "known_issues": "small issue , the musics are ( ambient_generic ) not ( ambient_music ) which mean you cant change the music volume through game setting - the map might be huge for who use low end pc why you didn't change it to music ? A : for some reasons the songs wont work , no matter what i do . (tried spawnflags , tried change it to wav files , nothing works sadly)",
+    "screenshots": [
+      "http://scmapdb.wdfiles.com/local--files/map:death-wish-bonus/0deathwishbonus.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:death-wish-bonus/20260822173717_1.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:death-wish-bonus/20260822181853_1.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:death-wish-bonus/20260822181855_1.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:death-wish-bonus/20260822181932_1.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:death-wish-bonus/20260822181955_1.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:death-wish-bonus/20260822184529_1.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:death-wish-bonus/20260822185343_1.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:death-wish-bonus/20260822185351_1.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:death-wish-bonus/20260822185404_1.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:death-wish-bonus/20260822185409_1.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:death-wish-bonus/20260822185445_1.jpg"
+    ],
+    "videos": [],
     "votes": 0,
     "difficulty": "hard",
     "size": "medium",
