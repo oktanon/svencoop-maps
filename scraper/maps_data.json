@@ -20228,7 +20228,7 @@
     "title": "Death-Wish",
     "url": "https://scmapdb.wikidot.com/map:death-wish",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:death-wish/0test1111.png/medium.jpg",
-    "rating": 3.9,
+    "rating": 3.7,
     "tags": [
       "2025",
       "boss",
@@ -38194,7 +38194,7 @@
     "title": "Insanity",
     "url": "https://scmapdb.wikidot.com/map:insanity",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:insanity/20190105214512_1.jpg/medium.jpg",
-    "rating": 4,
+    "rating": 4.3,
     "tags": [
       "2010",
       "difficulty:hard",
@@ -83873,7 +83873,7 @@
     "title": "VGer",
     "url": "https://scmapdb.wikidot.com/map:vger",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:vger/0-vger-top.jpg/medium.jpg",
-    "rating": 4.3,
+    "rating": 4.4,
     "tags": [
       "2001",
       "community-edit",
@@ -89164,5 +89164,38 @@
     "difficulty": "hard",
     "size": "medium",
     "year": 2026
+  },
+  {
+    "id": "half-life:insecure",
+    "title": "Half-Life: Insecure",
+    "url": "https://scmapdb.wikidot.com/map:half-life:insecure",
+    "thumbnail": "",
+    "rating": 0,
+    "tags": [],
+    "scraped": true,
+    "author": "MPS.",
+    "original_release_date": "",
+    "release_date": "August 27, 2026",
+    "original_year": null,
+    "bsp_names": [
+      "insecure_00 ~ insecure_07 (31 maps)"
+    ],
+    "description": "<p>Relive the events of the Black Mesa incident as security officer Andrew Cooper. Trapped in the facility after the resonance cascade, your priority is to escape alive before the situation gets any worse.</p>\n<p>Exploration might be essential for your survival.</p>",
+    "additional_info": "<ul>\n<li>This campaign supports classic mode! Can be toggled from the vote menu or by typing 'voteclassicmode' on console.</li>\n<li>This port includes some slight changes and more enemies compared to the original Half-Life: Insecure mod.</li>\n<li>This mod includes built-in anti-rush features. Disabled by default.</li>\n<li>Supplies inside armory rooms are individual for all players.</li>\n</ul>",
+    "download_links": [
+      {
+        "name": "GoogleDrive",
+        "url": "https://drive.google.com/file/d/1p6iwzqVIn6c33VNrVVelMOphCHMisjq_/view?usp=drive_link",
+        "type": "Mirror"
+      }
+    ],
+    "download_notes": [],
+    "known_issues": "",
+    "screenshots": [],
+    "videos": [],
+    "votes": 0,
+    "difficulty": "unrated",
+    "size": "unrated",
+    "year": null
   }
 ]
