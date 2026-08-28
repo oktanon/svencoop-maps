@@ -88407,6 +88407,7 @@
       "2016",
       "2026",
       "conversion",
+      "secrets",
       "walkthrough"
     ],
     "scraped": true,
@@ -88573,7 +88574,7 @@
       "boss",
       "conversion",
       "difficulty:hard",
-      "series",
+      "secrets",
       "size:medium",
       "walkthrough",
       "xen"
@@ -88826,7 +88827,7 @@
       "boss",
       "conversion",
       "difficulty:medium",
-      "series",
+      "secrets",
       "size:medium",
       "walkthrough"
     ],
@@ -88930,7 +88931,7 @@
       "boss",
       "conversion",
       "escape",
-      "series",
+      "secrets",
       "survival",
       "walkthrough"
     ],
@@ -88987,7 +88988,7 @@
       "conversion",
       "escape",
       "music",
-      "series",
+      "secrets",
       "walkthrough"
     ],
     "scraped": true,
@@ -89108,7 +89109,7 @@
     "title": "Death-Wish BONUS+",
     "url": "https://scmapdb.wikidot.com/map:death-wish-bonus",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:death-wish-bonus/0deathwishbonus.jpg/medium.jpg",
-    "rating": 0,
+    "rating": 3,
     "tags": [
       "2026",
       "boss",
@@ -89169,9 +89170,21 @@
     "id": "half-life:insecure",
     "title": "Half-Life: Insecure",
     "url": "https://scmapdb.wikidot.com/map:half-life:insecure",
-    "thumbnail": "",
-    "rating": 0,
-    "tags": [],
+    "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:half-life:insecure/hl_insecure_picture_logo%20(2).png/medium.jpg",
+    "rating": 5,
+    "tags": [
+      "2025",
+      "2026",
+      "black-mesa",
+      "conversion",
+      "difficulty:medium",
+      "losable",
+      "series",
+      "size:large",
+      "survival",
+      "walkthrough",
+      "xen"
+    ],
     "scraped": true,
     "author": "MPS.",
     "original_release_date": "",
@@ -89197,5 +89210,63 @@
     "difficulty": "unrated",
     "size": "unrated",
     "year": null
+  },
+  {
+    "id": "timefall",
+    "title": "Timefall",
+    "url": "https://scmapdb.wikidot.com/map:timefall",
+    "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:timefall/tf1.jpg/medium.jpg",
+    "rating": 0,
+    "tags": [
+      "2004",
+      "2026",
+      "conversion",
+      "puzzle",
+      "secrets",
+      "walkthrough"
+    ],
+    "scraped": true,
+    "author": "Reuniclus-579",
+    "original_release_date": "Feb 21 , 2004",
+    "release_date": "Aug 28, 2026",
+    "original_year": 2004,
+    "bsp_names": [
+      "timefall1",
+      "timefall2",
+      "timefall3",
+      "timefall4",
+      "timefall4a",
+      "timefall4b",
+      "timefall5",
+      "timefall6"
+    ],
+    "description": "<p>My name is Jordan Freeman. My only family is my grandfather, Gordon,<br>\nand he is old and sick.<br>\nToday the old man got up early,and woke me too…from the bad dreams I always have.<br>\nHe took me up to the old closed area…people call it 'Evil Black Mesa'?<br>\nFor me it is not so bad a place. There, I can be alone. There, the old man has taught<br>\nme many things; how to handle weapons, rock-climbing, and other survival techniques.<br>\nToday he tells me my training is complete and I must begin my first mission.<br>\nI don't understand all his talk about a 'first mission' but I trust him and<br>\nI listen carefully. He says I must climb up the black wall, nearly to the top.<br>\nOn the other side is a cave, climb down and find a way out and home.<br>\nGood luck and be careful, he says, as he turns to walk back down to our little village</p>",
+    "additional_info": "<p>Original mod <a href=\"https://www.moddb.com/mods/hl-timefall\" target=\"_blank\" rel=\"noopener noreferrer\">ModDB</a></p>",
+    "download_links": [
+      {
+        "name": "SCMapDB",
+        "url": "https://scmapdb.wdfiles.com/local--files/map%3Atimefall/Timefall.zip",
+        "type": "Mirror"
+      }
+    ],
+    "download_notes": [],
+    "known_issues": "",
+    "screenshots": [
+      "http://scmapdb.wdfiles.com/local--files/map:timefall/tf1.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:timefall/tf2.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:timefall/tf3.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:timefall/tf4.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:timefall/tf5.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:timefall/tf6.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:timefall/tf7.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:timefall/tf8.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:timefall/tf91.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:timefall/tf92.jpg"
+    ],
+    "videos": [],
+    "votes": 0,
+    "difficulty": "unrated",
+    "size": "unrated",
+    "year": 2026
   }
 ]
