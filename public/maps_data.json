@@ -1097,7 +1097,7 @@
     "title": "7 Hours War Killing Combines",
     "url": "https://scmapdb.wikidot.com/map:7-hours-war-killing-combines",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:7-hours-war-killing-combines/2000.jpg/medium.jpg",
-    "rating": 2.8,
+    "rating": 3,
     "tags": [
       "2025",
       "angelscript",
@@ -75056,14 +75056,16 @@
     "title": "Tetris",
     "url": "https://scmapdb.wikidot.com/map:tetris",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:tetris/0-sc_tetris60000.jpg/medium.jpg",
-    "rating": 4.1,
+    "rating": 4.2,
     "tags": [
       "2005",
       "2008",
       "boms",
       "boss",
       "co-oprequired",
+      "custom",
       "difficulty:hard",
+      "fun",
       "music",
       "official",
       "official-screlease",
@@ -75136,8 +75138,11 @@
     "tags": [
       "2018",
       "boss",
+      "custom",
       "difficulty:medium",
+      "fun",
       "music",
+      "puzzle",
       "size:medium",
       "walkthrough"
     ],
@@ -89112,7 +89117,7 @@
     "title": "Death-Wish BONUS+",
     "url": "https://scmapdb.wikidot.com/map:death-wish-bonus",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:death-wish-bonus/0deathwishbonus.jpg/medium.jpg",
-    "rating": 3,
+    "rating": 2.7,
     "tags": [
       "2026",
       "boss",
