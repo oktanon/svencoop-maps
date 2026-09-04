@@ -3739,6 +3739,7 @@
       "conversion",
       "difficulty:medium",
       "music",
+      "series",
       "size:large"
     ],
     "scraped": true,
@@ -12472,6 +12473,7 @@
       "playable-solo",
       "prison",
       "secrets",
+      "series",
       "size:large",
       "survival",
       "walkthrough"
@@ -14824,6 +14826,7 @@
       "community-edit",
       "conversion",
       "difficulty:medium",
+      "series",
       "size:large",
       "xen"
     ],
@@ -15957,6 +15960,7 @@
       "difficulty:medium",
       "randmap",
       "rubbish",
+      "series",
       "size:medium",
       "walkthrough"
     ],
@@ -24975,6 +24979,7 @@
       "boss",
       "community-edit",
       "secrets",
+      "series",
       "walkthrough"
     ],
     "scraped": true,
@@ -34389,6 +34394,7 @@
       "difficulty:medium",
       "featured",
       "music",
+      "series",
       "size:large",
       "spooky",
       "survival",
@@ -35438,6 +35444,7 @@
       "conversion",
       "escape",
       "secrets",
+      "series",
       "size:medium",
       "walkthrough",
       "xen"
@@ -41458,6 +41465,7 @@
       "losable",
       "maze",
       "music",
+      "series",
       "walkthrough",
       "xen"
     ],
@@ -58596,6 +58604,7 @@
       "music",
       "puzzle",
       "ragemap",
+      "series",
       "size:large",
       "walkthrough"
     ],
@@ -58671,6 +58680,7 @@
       "music",
       "puzzle",
       "ragemap",
+      "series",
       "size:large",
       "walkthrough"
     ],
@@ -59213,6 +59223,7 @@
       "conversion",
       "difficulty:medium",
       "scary",
+      "series",
       "size:large",
       "walkthrough"
     ],
@@ -60907,6 +60918,7 @@
       "boss",
       "conversion",
       "secrets",
+      "series",
       "walkthrough",
       "xen"
     ],
@@ -61689,6 +61701,7 @@
       "losable",
       "music",
       "secrets",
+      "series",
       "size:large",
       "space",
       "walkthrough"
@@ -71925,6 +71938,7 @@
       "jumping",
       "music",
       "puzzle",
+      "series",
       "size:medium",
       "walkthrough"
     ],
@@ -72704,6 +72718,7 @@
       "black-mesa",
       "conversion",
       "difficulty:medium",
+      "series",
       "size:large",
       "survival"
     ],
@@ -75623,6 +75638,7 @@
       "jumping",
       "music",
       "secrets",
+      "series",
       "size:large",
       "walkthrough",
       "water"
@@ -78505,6 +78521,7 @@
       "2026",
       "conversion",
       "escape",
+      "series",
       "space",
       "walkthrough",
       "xen"
@@ -82462,6 +82479,7 @@
       "difficulty:medium",
       "merged",
       "recreation",
+      "series",
       "size:medium",
       "walkthrough"
     ],
@@ -88417,6 +88435,7 @@
       "2026",
       "conversion",
       "secrets",
+      "series",
       "walkthrough"
     ],
     "scraped": true,
@@ -88584,6 +88603,7 @@
       "conversion",
       "difficulty:hard",
       "secrets",
+      "series",
       "size:medium",
       "walkthrough",
       "xen"
@@ -88735,6 +88755,7 @@
       "maze",
       "music",
       "puzzle",
+      "series",
       "size:medium",
       "space",
       "walkthrough"
@@ -88837,6 +88858,7 @@
       "conversion",
       "difficulty:medium",
       "secrets",
+      "series",
       "size:medium",
       "walkthrough"
     ],
@@ -88941,6 +88963,7 @@
       "conversion",
       "escape",
       "secrets",
+      "series",
       "survival",
       "walkthrough"
     ],
@@ -88998,6 +89021,7 @@
       "escape",
       "music",
       "secrets",
+      "series",
       "walkthrough"
     ],
     "scraped": true,
@@ -89045,7 +89069,7 @@
     "title": "Operation Epstein Fury: Island Force",
     "url": "https://scmapdb.wikidot.com/map:operation-epstein-fury:island-force",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:operation-epstein-fury:island-force/000epstitle.jpg/medium.jpg",
-    "rating": 3.8,
+    "rating": 3.6,
     "tags": [
       "2026",
       "difficulty:hard",
