@@ -17146,6 +17146,7 @@
       "boms",
       "co-oprequired",
       "community-edit",
+      "difficulty:medium",
       "series",
       "size:medium",
       "walkthrough"
@@ -17206,6 +17207,7 @@
       "co-oprequired",
       "community-edit",
       "creepsworld-top50",
+      "difficulty:medium",
       "official",
       "official-screlease",
       "rcbot",
@@ -89256,6 +89258,7 @@
       "conversion",
       "puzzle",
       "secrets",
+      "series",
       "walkthrough"
     ],
     "scraped": true,
