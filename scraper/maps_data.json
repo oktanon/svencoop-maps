@@ -1097,7 +1097,7 @@
     "title": "7 Hours War Killing Combines",
     "url": "https://scmapdb.wikidot.com/map:7-hours-war-killing-combines",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:7-hours-war-killing-combines/2000.jpg/medium.jpg",
-    "rating": 2.8,
+    "rating": 3,
     "tags": [
       "2025",
       "angelscript",
@@ -3739,6 +3739,7 @@
       "conversion",
       "difficulty:medium",
       "music",
+      "series",
       "size:large"
     ],
     "scraped": true,
@@ -12472,6 +12473,7 @@
       "playable-solo",
       "prison",
       "secrets",
+      "series",
       "size:large",
       "survival",
       "walkthrough"
@@ -13436,7 +13438,7 @@
     "title": "Catharsis",
     "url": "https://scmapdb.wikidot.com/map:catharsis",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:catharsis/Catharsis%20Main.png/medium.jpg",
-    "rating": 4,
+    "rating": 4.2,
     "tags": [
       "2023",
       "black-mesa",
@@ -14824,6 +14826,7 @@
       "community-edit",
       "conversion",
       "difficulty:medium",
+      "series",
       "size:large",
       "xen"
     ],
@@ -15957,6 +15960,7 @@
       "difficulty:medium",
       "randmap",
       "rubbish",
+      "series",
       "size:medium",
       "walkthrough"
     ],
@@ -17135,13 +17139,14 @@
     "title": "Crisis 1",
     "url": "https://scmapdb.wikidot.com/map:crisis-1",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:crisis-1/0-crisis10005.jpg/medium.jpg",
-    "rating": 4,
+    "rating": 3.5,
     "tags": [
       "2002",
       "black-mesa",
       "boms",
       "co-oprequired",
       "community-edit",
+      "difficulty:medium",
       "series",
       "size:medium",
       "walkthrough"
@@ -17195,13 +17200,14 @@
     "title": "Crisis 2",
     "url": "https://scmapdb.wikidot.com/map:crisis-2",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:crisis-2/0-crisis2-top.jpg/medium.jpg",
-    "rating": 3.9,
+    "rating": 3.8,
     "tags": [
       "2000",
       "black-mesa",
       "co-oprequired",
       "community-edit",
       "creepsworld-top50",
+      "difficulty:medium",
       "official",
       "official-screlease",
       "rcbot",
@@ -24201,7 +24207,7 @@
     "title": "Echoes",
     "url": "https://scmapdb.wikidot.com/map:half-life:echoes",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:half-life:echoes/0-echoes-poster.png/medium.jpg",
-    "rating": 4.4,
+    "rating": 4.3,
     "tags": [
       "2018",
       "2019",
@@ -24975,6 +24981,7 @@
       "boss",
       "community-edit",
       "secrets",
+      "series",
       "walkthrough"
     ],
     "scraped": true,
@@ -34389,6 +34396,7 @@
       "difficulty:medium",
       "featured",
       "music",
+      "series",
       "size:large",
       "spooky",
       "survival",
@@ -35138,9 +35146,10 @@
     "title": "Helms Deep",
     "url": "https://scmapdb.wikidot.com/map:helms-deep",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:helms-deep/0-nm_helmsdeep__12-04-09_00-54-52.jpg/medium.jpg",
-    "rating": 4,
+    "rating": 3.8,
     "tags": [
       "2004",
+      "boss",
       "defense",
       "difficulty:medium",
       "rcbot",
@@ -35437,6 +35446,7 @@
       "conversion",
       "escape",
       "secrets",
+      "series",
       "size:medium",
       "walkthrough",
       "xen"
@@ -41457,6 +41467,7 @@
       "losable",
       "maze",
       "music",
+      "series",
       "walkthrough",
       "xen"
     ],
@@ -42339,10 +42350,12 @@
     "title": "Last Stand",
     "url": "https://scmapdb.wikidot.com/map:last-stand",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:last-stand/laststand.jpg/medium.jpg",
-    "rating": 3,
+    "rating": 2,
     "tags": [
       "2004",
+      "difficulty:easy",
       "horde",
+      "no-end",
       "size:small",
       "zombies"
     ],
@@ -49870,6 +49883,7 @@
     "rating": 3,
     "tags": [
       "2003",
+      "boss",
       "difficulty:medium",
       "size:large",
       "walkthrough"
@@ -51475,7 +51489,7 @@
     "title": "Operation Retribution Remake",
     "url": "https://scmapdb.wikidot.com/map:operation-retribution-remake",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:operation-retribution-remake/20190224041031_1.jpg/medium.jpg",
-    "rating": 3.8,
+    "rating": 3.6,
     "tags": [
       "2004",
       "black-mesa",
@@ -57729,7 +57743,7 @@
     "title": "Quake for Sven Co-op",
     "url": "https://scmapdb.wikidot.com/map:quake-for-sven-co-op",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:quake-for-sven-co-op/0-0quakeposter.jpg/medium.jpg",
-    "rating": 4.4,
+    "rating": 4.5,
     "tags": [
       "2016",
       "community-edit",
@@ -58592,6 +58606,7 @@
       "music",
       "puzzle",
       "ragemap",
+      "series",
       "size:large",
       "walkthrough"
     ],
@@ -58667,6 +58682,7 @@
       "music",
       "puzzle",
       "ragemap",
+      "series",
       "size:large",
       "walkthrough"
     ],
@@ -59209,6 +59225,7 @@
       "conversion",
       "difficulty:medium",
       "scary",
+      "series",
       "size:large",
       "walkthrough"
     ],
@@ -60903,6 +60920,7 @@
       "boss",
       "conversion",
       "secrets",
+      "series",
       "walkthrough",
       "xen"
     ],
@@ -60944,7 +60962,7 @@
     "title": "Ressya no tabi - The Train Travel -",
     "url": "https://scmapdb.wikidot.com/map:ressya-no-tabi-the-train-travel",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:ressya-no-tabi-the-train-travel/0.jpg/medium.jpg",
-    "rating": 4.4,
+    "rating": 4.3,
     "tags": [
       "2018",
       "2019",
@@ -61685,6 +61703,7 @@
       "losable",
       "music",
       "secrets",
+      "series",
       "size:large",
       "space",
       "walkthrough"
@@ -71921,6 +71940,7 @@
       "jumping",
       "music",
       "puzzle",
+      "series",
       "size:medium",
       "walkthrough"
     ],
@@ -72700,6 +72720,7 @@
       "black-mesa",
       "conversion",
       "difficulty:medium",
+      "series",
       "size:large",
       "survival"
     ],
@@ -75053,14 +75074,16 @@
     "title": "Tetris",
     "url": "https://scmapdb.wikidot.com/map:tetris",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:tetris/0-sc_tetris60000.jpg/medium.jpg",
-    "rating": 4.1,
+    "rating": 4.2,
     "tags": [
       "2005",
       "2008",
       "boms",
       "boss",
       "co-oprequired",
+      "custom",
       "difficulty:hard",
+      "fun",
       "music",
       "official",
       "official-screlease",
@@ -75133,8 +75156,11 @@
     "tags": [
       "2018",
       "boss",
+      "custom",
       "difficulty:medium",
+      "fun",
       "music",
+      "puzzle",
       "size:medium",
       "walkthrough"
     ],
@@ -75614,6 +75640,7 @@
       "jumping",
       "music",
       "secrets",
+      "series",
       "size:large",
       "walkthrough",
       "water"
@@ -78496,6 +78523,7 @@
       "2026",
       "conversion",
       "escape",
+      "series",
       "space",
       "walkthrough",
       "xen"
@@ -82453,6 +82481,7 @@
       "difficulty:medium",
       "merged",
       "recreation",
+      "series",
       "size:medium",
       "walkthrough"
     ],
@@ -88406,8 +88435,13 @@
       "1999",
       "2016",
       "2026",
+      "boss",
       "conversion",
+      "difficulty:medium",
+      "non-linear",
       "secrets",
+      "series",
+      "size:large",
       "walkthrough"
     ],
     "scraped": true,
@@ -88450,7 +88484,7 @@
     "title": "Crime City 2",
     "url": "https://scmapdb.wikidot.com/map:crime-city-2",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:crime-city-2/00crime2front.png/medium.jpg",
-    "rating": 4.6,
+    "rating": 4.3,
     "tags": [
       "2026",
       "city",
@@ -88575,6 +88609,7 @@
       "conversion",
       "difficulty:hard",
       "secrets",
+      "series",
       "size:medium",
       "walkthrough",
       "xen"
@@ -88726,6 +88761,7 @@
       "maze",
       "music",
       "puzzle",
+      "series",
       "size:medium",
       "space",
       "walkthrough"
@@ -88828,6 +88864,7 @@
       "conversion",
       "difficulty:medium",
       "secrets",
+      "series",
       "size:medium",
       "walkthrough"
     ],
@@ -88932,6 +88969,7 @@
       "conversion",
       "escape",
       "secrets",
+      "series",
       "survival",
       "walkthrough"
     ],
@@ -88989,6 +89027,7 @@
       "escape",
       "music",
       "secrets",
+      "series",
       "walkthrough"
     ],
     "scraped": true,
@@ -89036,7 +89075,7 @@
     "title": "Operation Epstein Fury: Island Force",
     "url": "https://scmapdb.wikidot.com/map:operation-epstein-fury:island-force",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:operation-epstein-fury:island-force/000epstitle.jpg/medium.jpg",
-    "rating": 4.6,
+    "rating": 3.6,
     "tags": [
       "2026",
       "difficulty:hard",
@@ -89109,7 +89148,7 @@
     "title": "Death-Wish BONUS+",
     "url": "https://scmapdb.wikidot.com/map:death-wish-bonus",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:death-wish-bonus/0deathwishbonus.jpg/medium.jpg",
-    "rating": 3,
+    "rating": 2.7,
     "tags": [
       "2026",
       "boss",
@@ -89170,7 +89209,7 @@
     "id": "half-life:insecure",
     "title": "Half-Life: Insecure",
     "url": "https://scmapdb.wikidot.com/map:half-life:insecure",
-    "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:half-life:insecure/hl_insecure_picture_logo%20(2).png/medium.jpg",
+    "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:half-life:insecure/hl_insecure_picture_logo.jpg/medium.jpg",
     "rating": 5,
     "tags": [
       "2025",
@@ -89216,13 +89255,14 @@
     "title": "Timefall",
     "url": "https://scmapdb.wikidot.com/map:timefall",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:timefall/tf1.jpg/medium.jpg",
-    "rating": 0,
+    "rating": 2.3,
     "tags": [
       "2004",
       "2026",
       "conversion",
       "puzzle",
       "secrets",
+      "series",
       "walkthrough"
     ],
     "scraped": true,
@@ -89262,6 +89302,124 @@
       "http://scmapdb.wdfiles.com/local--files/map:timefall/tf8.jpg",
       "http://scmapdb.wdfiles.com/local--files/map:timefall/tf91.jpg",
       "http://scmapdb.wdfiles.com/local--files/map:timefall/tf92.jpg"
+    ],
+    "videos": [],
+    "votes": 0,
+    "difficulty": "unrated",
+    "size": "unrated",
+    "year": 2026
+  },
+  {
+    "id": "half-rats:redridge",
+    "title": "Half-Rats: Redridge",
+    "url": "https://scmapdb.wikidot.com/map:half-rats:redridge",
+    "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:half-rats:redridge/0_redridge_poster.jpg/medium.jpg",
+    "rating": 4,
+    "tags": [
+      "2024",
+      "2026",
+      "conversion",
+      "difficulty:hard",
+      "losable",
+      "music",
+      "scary",
+      "series",
+      "size:large",
+      "survival",
+      "walkthrough"
+    ],
+    "scraped": true,
+    "author": "Unknown",
+    "original_release_date": "",
+    "release_date": "",
+    "original_year": null,
+    "bsp_names": [
+      "hr_redridge1.bsp",
+      "hr_redridge2.bsp",
+      "hr_redridge3.bsp",
+      "hr_redridge4.bsp",
+      "hr_redridge5.bsp",
+      "hr_redridge5a.bsp",
+      "hr_redridge6.bsp",
+      "hr_redridge7.bsp",
+      "hr_redridge8.bsp",
+      "hr_redridge9.bsp",
+      "hr_redridge10.bsp",
+      "hr_redridge11.bsp"
+    ],
+    "description": "<p>August, 1999…You're a fresh college grad passing the time in your parents' rural retreat before the tourist season picks up and your first job as \"Junior Researcher\" at a nearby wildlife-themed resort begins. Located on the outskirts of the run down backwater town called Redridge, the crickets and your empty beer bottles are your only companions. It's getting late, and you decide to put on a pot of coffee and throw something in the microwave…just then, you hear a pounding at the door. Then…the windows…</p>\n<p>In this first canonical entry in the Half-Rats mod series, you step into the boots of Ronald (Ron) Henry Ellis, the great, great grandson of a rather notorious character. He's 24 Years old… an undergrad (with a focus on pre-veterinary medicine.) …once had a passion for the outdoors…<br>\ndown in the dumps… second-guessing his choices… underemployed… day-drinker… night drinker…</p>\n<p>He's about to use everything he's learned from video games, hunting with his dad and war movies to make it through his toughest trial yet!</p>\n<p>Will he survive the night? What's more… will he survive the truth and come out of it all unchanged?</p>",
+    "additional_info": "<ul>\n<li>Original series made by Half-Rats - <a href=\"https://www.moddb.com/company/heath-games\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.moddb.com/company/heath-games</a></li>\n</ul>",
+    "download_links": [
+      {
+        "name": "SCMapDB",
+        "url": "https://scmapdb.wdfiles.com/local--files/map%3Ahalf-rats%3Aredridge/redridge-952026.zip",
+        "type": "Original",
+        "description": "- v1.0"
+      }
+    ],
+    "download_notes": [],
+    "known_issues": "",
+    "screenshots": [
+      "http://scmapdb.wdfiles.com/local--files/map:half-rats:redridge/0_redridge_poster.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:half-rats:redridge/1_pic.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:half-rats:redridge/2_pic.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:half-rats:redridge/3_pic.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:half-rats:redridge/4_pic.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:half-rats:redridge/5_pic.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:half-rats:redridge/6_pic.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:half-rats:redridge/7_pic.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:half-rats:redridge/8_pic.jpg"
+    ],
+    "videos": [],
+    "votes": 0,
+    "difficulty": "hard",
+    "size": "large",
+    "year": 2026
+  },
+  {
+    "id": "prize",
+    "title": "Prize",
+    "url": "https://scmapdb.wikidot.com/map:prize",
+    "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:prize/pz1.jpg/medium.jpg",
+    "rating": 2,
+    "tags": [
+      "2004",
+      "2026",
+      "boss",
+      "conversion",
+      "music",
+      "puzzle",
+      "secrets",
+      "series",
+      "walkthrough"
+    ],
+    "scraped": true,
+    "author": "Reuniclus-579",
+    "original_release_date": "Jun 1 , 2004",
+    "release_date": "Sep 5, 2026",
+    "original_year": 2004,
+    "bsp_names": [
+      "prize1",
+      "prize2"
+    ],
+    "description": "<p>You are treasure hunter.<br>\nYour mission is looking for a king's Mask.</p>",
+    "additional_info": "<p>Original mod <a href=\"https://www.moddb.com/mods/prize\" target=\"_blank\" rel=\"noopener noreferrer\">ModDB</a></p>",
+    "download_links": [
+      {
+        "name": "SCMapDB",
+        "url": "https://scmapdb.wdfiles.com/local--files/map%3Aprize/prize.zip",
+        "type": "Mirror"
+      }
+    ],
+    "download_notes": [],
+    "known_issues": "",
+    "screenshots": [
+      "http://scmapdb.wdfiles.com/local--files/map:prize/pz1.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:prize/pz2.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:prize/pz3.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:prize/pz4.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:prize/pz5.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:prize/pz6.jpg"
     ],
     "videos": [],
     "votes": 0,
