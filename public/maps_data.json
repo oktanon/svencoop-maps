@@ -15256,7 +15256,7 @@
     "title": "Coldburn",
     "url": "https://scmapdb.wikidot.com/map:coldburn",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:coldburn/0coldburn.jpg/medium.jpg",
-    "rating": 2.6,
+    "rating": 2.8,
     "tags": [
       "2014",
       "community-edit",
@@ -30748,9 +30748,11 @@
     "title": "Ghoul's Forest",
     "url": "https://scmapdb.wikidot.com/map:ghoul-s-forest",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:ghoul-s-forest/20241024204457_1.jpg/medium.jpg",
-    "rating": 2.4,
+    "rating": 2.5,
     "tags": [
       "2024",
+      "boss",
+      "custom",
       "difficulty:easy",
       "horde",
       "scary",
@@ -89314,7 +89316,7 @@
     "title": "Half-Rats: Redridge",
     "url": "https://scmapdb.wikidot.com/map:half-rats:redridge",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:half-rats:redridge/0_redridge_poster.jpg/medium.jpg",
-    "rating": 4.5,
+    "rating": 4.7,
     "tags": [
       "2024",
       "2026",
