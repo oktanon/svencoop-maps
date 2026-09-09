@@ -13490,14 +13490,15 @@
     "title": "Cemetery",
     "url": "https://scmapdb.wikidot.com/map:cemetery",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:cemetery/the_cemetery1.jpg/medium.jpg",
-    "rating": 2.5,
+    "rating": 2.3,
     "tags": [
       "2010",
       "difficulty:medium",
       "horde",
+      "no-end",
       "rcbot",
       "scary",
-      "size:medium",
+      "size:small",
       "zombies"
     ],
     "scraped": true,
@@ -30798,6 +30799,8 @@
     "rating": 3,
     "tags": [
       "2025",
+      "boss",
+      "custom",
       "difficulty:easy",
       "horde",
       "scary",
@@ -78464,11 +78467,13 @@
     "title": "The Winery",
     "url": "https://scmapdb.wikidot.com/map:the-winery",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:the-winery/0-thewinery-top.jpg/medium.jpg",
-    "rating": 1.7,
+    "rating": 2,
     "tags": [
       "2003",
+      "boss",
       "co-oprequired",
       "community-edit",
+      "difficulty:medium",
       "size:medium",
       "walkthrough"
     ],
