@@ -33962,10 +33962,13 @@
     "title": "Hardcore Gaming",
     "url": "https://scmapdb.wikidot.com/map:hardcore-gaming",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:hardcore-gaming/hg1.jpg/medium.jpg",
-    "rating": 3,
+    "rating": 2,
     "tags": [
       "2025",
+      "boss",
       "difficulty:medium",
+      "horde",
+      "secrets",
       "size:large",
       "walkthrough"
     ],
@@ -67554,11 +67557,13 @@
     "title": "Skyscraper for Sven Co-op",
     "url": "https://scmapdb.wikidot.com/map:skyscraper-for-sven-co-op",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:skyscraper-for-sven-co-op/20220212162640_1.jpg/medium.jpg",
-    "rating": 4,
+    "rating": 3.5,
     "tags": [
       "2017",
+      "boss",
       "community-edit",
       "conversion",
+      "difficulty:medium",
       "horde",
       "series",
       "size:large",
@@ -89321,7 +89326,7 @@
     "title": "Half-Rats: Redridge",
     "url": "https://scmapdb.wikidot.com/map:half-rats:redridge",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:half-rats:redridge/0_redridge_poster.jpg/medium.jpg",
-    "rating": 4.7,
+    "rating": 4.3,
     "tags": [
       "2024",
       "2026",
