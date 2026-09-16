@@ -32458,7 +32458,9 @@
     "rating": 2,
     "tags": [
       "2017",
+      "difficulty:easy",
       "fun",
+      "no-end",
       "size:small",
       "skills"
     ],
@@ -35932,7 +35934,7 @@
     "title": "HL Comando",
     "url": "https://scmapdb.wikidot.com/map:hl-comando",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:hl-comando/000hlcomando.jpg/medium.jpg",
-    "rating": 3.6,
+    "rating": 3.4,
     "tags": [
       "2003",
       "black-mesa",
@@ -38764,10 +38766,12 @@
     "title": "Invisible Zombies",
     "url": "https://scmapdb.wikidot.com/map:invisible-zombies",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:invisible-zombies/0-invisiblezombies-top.jpg/medium.jpg",
-    "rating": 1,
+    "rating": 1.5,
     "tags": [
       "2002",
+      "difficulty:easy",
       "horde",
+      "no-end",
       "size:small",
       "zombies"
     ],
@@ -55939,10 +55943,11 @@
     "title": "Push The Button",
     "url": "https://scmapdb.wikidot.com/map:push-the-button",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:push-the-button/0-push_the_button-top.jpg/medium.jpg",
-    "rating": 2,
+    "rating": 2.5,
     "tags": [
       "2010",
       "co-oprequired",
+      "difficulty:easy",
       "fun",
       "music",
       "size:small"
@@ -55986,6 +55991,7 @@
     "tags": [
       "2011",
       "difficulty:hard",
+      "fun",
       "maze",
       "music",
       "puzzle",
