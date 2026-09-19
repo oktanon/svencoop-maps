@@ -1405,7 +1405,7 @@
     "title": "Abandoned",
     "url": "https://scmapdb.wikidot.com/map:abandoned",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:abandoned/0-abandoned0043.jpg/medium.jpg",
-    "rating": 3.9,
+    "rating": 3.7,
     "tags": [
       "2008",
       "black-mesa",
@@ -13490,14 +13490,15 @@
     "title": "Cemetery",
     "url": "https://scmapdb.wikidot.com/map:cemetery",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:cemetery/the_cemetery1.jpg/medium.jpg",
-    "rating": 2.5,
+    "rating": 2.3,
     "tags": [
       "2010",
       "difficulty:medium",
       "horde",
+      "no-end",
       "rcbot",
       "scary",
-      "size:medium",
+      "size:small",
       "zombies"
     ],
     "scraped": true,
@@ -13827,6 +13828,7 @@
       "conversion",
       "difficulty:medium",
       "music",
+      "secrets",
       "series",
       "size:large",
       "solo",
@@ -15256,7 +15258,7 @@
     "title": "Coldburn",
     "url": "https://scmapdb.wikidot.com/map:coldburn",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:coldburn/0coldburn.jpg/medium.jpg",
-    "rating": 2.6,
+    "rating": 2.8,
     "tags": [
       "2014",
       "community-edit",
@@ -16502,7 +16504,7 @@
     "title": "Cow Tycoon",
     "url": "https://scmapdb.wikidot.com/map:cow-tycoon",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:cow-tycoon/!0.jpg/medium.jpg",
-    "rating": 4.1,
+    "rating": 4.2,
     "tags": [
       "2023",
       "difficulty:hard",
@@ -30748,9 +30750,11 @@
     "title": "Ghoul's Forest",
     "url": "https://scmapdb.wikidot.com/map:ghoul-s-forest",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:ghoul-s-forest/20241024204457_1.jpg/medium.jpg",
-    "rating": 2.4,
+    "rating": 2.5,
     "tags": [
       "2024",
+      "boss",
+      "custom",
       "difficulty:easy",
       "horde",
       "scary",
@@ -30796,6 +30800,8 @@
     "rating": 3,
     "tags": [
       "2025",
+      "boss",
+      "custom",
       "difficulty:easy",
       "horde",
       "scary",
@@ -32453,7 +32459,9 @@
     "rating": 2,
     "tags": [
       "2017",
+      "difficulty:easy",
       "fun",
+      "no-end",
       "size:small",
       "skills"
     ],
@@ -33957,10 +33965,13 @@
     "title": "Hardcore Gaming",
     "url": "https://scmapdb.wikidot.com/map:hardcore-gaming",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:hardcore-gaming/hg1.jpg/medium.jpg",
-    "rating": 3,
+    "rating": 2,
     "tags": [
       "2025",
+      "boss",
       "difficulty:medium",
+      "horde",
+      "secrets",
       "size:large",
       "walkthrough"
     ],
@@ -35714,6 +35725,7 @@
       "2015",
       "2024",
       "conversion",
+      "series",
       "size:medium",
       "walkthrough"
     ],
@@ -35924,7 +35936,7 @@
     "title": "HL Comando",
     "url": "https://scmapdb.wikidot.com/map:hl-comando",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:hl-comando/000hlcomando.jpg/medium.jpg",
-    "rating": 3.6,
+    "rating": 3.4,
     "tags": [
       "2003",
       "black-mesa",
@@ -37410,6 +37422,7 @@
       "music",
       "scary",
       "secrets",
+      "series",
       "walkthrough",
       "zombies"
     ],
@@ -37847,6 +37860,7 @@
       "2024",
       "conversion",
       "music",
+      "series",
       "walkthrough"
     ],
     "scraped": true,
@@ -38756,10 +38770,12 @@
     "title": "Invisible Zombies",
     "url": "https://scmapdb.wikidot.com/map:invisible-zombies",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:invisible-zombies/0-invisiblezombies-top.jpg/medium.jpg",
-    "rating": 1,
+    "rating": 1.5,
     "tags": [
       "2002",
+      "difficulty:easy",
       "horde",
+      "no-end",
       "size:small",
       "zombies"
     ],
@@ -42847,7 +42863,7 @@
     "title": "Letongue Base",
     "url": "https://scmapdb.wikidot.com/map:letongue-base",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:letongue-base/000letonguebasev3.png/medium.jpg",
-    "rating": 1.3,
+    "rating": 1.5,
     "tags": [
       "2024",
       "boss",
@@ -48240,6 +48256,7 @@
       "difficulty:medium",
       "escape",
       "music",
+      "series",
       "size:large",
       "space",
       "walkthrough"
@@ -48640,11 +48657,13 @@
     "rating": 4.7,
     "tags": [
       "2026",
+      "entity-setup",
       "fun",
       "jmf",
       "music",
       "rmf",
       "size:small",
+      "triggers",
       "utility",
       "work-in-progress"
     ],
@@ -51369,6 +51388,7 @@
       "conversion",
       "music",
       "recreation",
+      "series",
       "space",
       "walkthrough"
     ],
@@ -55931,10 +55951,11 @@
     "title": "Push The Button",
     "url": "https://scmapdb.wikidot.com/map:push-the-button",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:push-the-button/0-push_the_button-top.jpg/medium.jpg",
-    "rating": 2,
+    "rating": 2.5,
     "tags": [
       "2010",
       "co-oprequired",
+      "difficulty:easy",
       "fun",
       "music",
       "size:small"
@@ -55978,6 +55999,7 @@
     "tags": [
       "2011",
       "difficulty:hard",
+      "fun",
       "maze",
       "music",
       "puzzle",
@@ -67549,11 +67571,13 @@
     "title": "Skyscraper for Sven Co-op",
     "url": "https://scmapdb.wikidot.com/map:skyscraper-for-sven-co-op",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:skyscraper-for-sven-co-op/20220212162640_1.jpg/medium.jpg",
-    "rating": 4,
+    "rating": 3.5,
     "tags": [
       "2017",
+      "boss",
       "community-edit",
       "conversion",
+      "difficulty:medium",
       "horde",
       "series",
       "size:large",
@@ -68660,6 +68684,7 @@
       "2002",
       "community-edit",
       "conversion",
+      "difficulty:easy",
       "size:medium",
       "walkthrough",
       "xen"
@@ -78462,11 +78487,13 @@
     "title": "The Winery",
     "url": "https://scmapdb.wikidot.com/map:the-winery",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:the-winery/0-thewinery-top.jpg/medium.jpg",
-    "rating": 1.7,
+    "rating": 2,
     "tags": [
       "2003",
+      "boss",
       "co-oprequired",
       "community-edit",
+      "difficulty:medium",
       "size:medium",
       "walkthrough"
     ],
@@ -81864,6 +81891,7 @@
       "2024",
       "conversion",
       "losable",
+      "series",
       "size:small",
       "survival",
       "xen"
@@ -86449,6 +86477,7 @@
     "rating": 1,
     "tags": [
       "1999",
+      "boss",
       "difficulty:medium",
       "size:medium",
       "walkthrough",
@@ -89075,7 +89104,7 @@
     "title": "Operation Epstein Fury: Island Force",
     "url": "https://scmapdb.wikidot.com/map:operation-epstein-fury:island-force",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:operation-epstein-fury:island-force/000epstitle.jpg/medium.jpg",
-    "rating": 3.6,
+    "rating": 3.7,
     "tags": [
       "2026",
       "difficulty:hard",
@@ -89148,13 +89177,14 @@
     "title": "Death-Wish BONUS+",
     "url": "https://scmapdb.wikidot.com/map:death-wish-bonus",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:death-wish-bonus/0deathwishbonus.jpg/medium.jpg",
-    "rating": 2.7,
+    "rating": 3,
     "tags": [
       "2026",
       "boss",
       "co-oprequired",
       "difficulty:hard",
       "horde",
+      "itemhunt",
       "music",
       "scary",
       "size:medium",
@@ -89210,7 +89240,7 @@
     "title": "Half-Life: Insecure",
     "url": "https://scmapdb.wikidot.com/map:half-life:insecure",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:half-life:insecure/hl_insecure_picture_logo.jpg/medium.jpg",
-    "rating": 5,
+    "rating": 4.8,
     "tags": [
       "2025",
       "2026",
@@ -89255,7 +89285,7 @@
     "title": "Timefall",
     "url": "https://scmapdb.wikidot.com/map:timefall",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:timefall/tf1.jpg/medium.jpg",
-    "rating": 2.3,
+    "rating": 2,
     "tags": [
       "2004",
       "2026",
@@ -89314,7 +89344,7 @@
     "title": "Half-Rats: Redridge",
     "url": "https://scmapdb.wikidot.com/map:half-rats:redridge",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:half-rats:redridge/0_redridge_poster.jpg/medium.jpg",
-    "rating": 4,
+    "rating": 4.3,
     "tags": [
       "2024",
       "2026",
@@ -89381,16 +89411,19 @@
     "title": "Prize",
     "url": "https://scmapdb.wikidot.com/map:prize",
     "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:prize/pz1.jpg/medium.jpg",
-    "rating": 2,
+    "rating": 2.8,
     "tags": [
       "2004",
       "2026",
       "boss",
       "conversion",
+      "custom",
+      "difficulty:medium",
       "music",
       "puzzle",
       "secrets",
       "series",
+      "size:medium",
       "walkthrough"
     ],
     "scraped": true,
@@ -89420,6 +89453,66 @@
       "http://scmapdb.wdfiles.com/local--files/map:prize/pz4.jpg",
       "http://scmapdb.wdfiles.com/local--files/map:prize/pz5.jpg",
       "http://scmapdb.wdfiles.com/local--files/map:prize/pz6.jpg"
+    ],
+    "videos": [],
+    "votes": 0,
+    "difficulty": "unrated",
+    "size": "unrated",
+    "year": 2026
+  },
+  {
+    "id": "castle-disposed",
+    "title": "Castle Disposed",
+    "url": "https://scmapdb.wikidot.com/map:castle-disposed",
+    "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:castle-disposed/cd0.jpg/medium.jpg",
+    "rating": 0,
+    "tags": [
+      "2010",
+      "2026",
+      "conversion",
+      "itemhunt",
+      "music",
+      "secrets",
+      "series",
+      "walkthrough",
+      "xen"
+    ],
+    "scraped": true,
+    "author": "Reuniclus-579",
+    "original_release_date": "Sep 21 , 2010",
+    "release_date": "Sep 18, 2026",
+    "original_year": 2010,
+    "bsp_names": [
+      "cd_hub",
+      "cd1",
+      "cd2",
+      "cd3",
+      "cd4",
+      "cd5",
+      "cd6"
+    ],
+    "description": "<p>Castle Disposed is a collection of abandoned maps from many TWHL members. Explore the castle to uncover maps that never before saw the light of day.</p>",
+    "additional_info": "<p>Original mod <a href=\"https://www.moddb.com/mods/castle-disposed\" target=\"_blank\" rel=\"noopener noreferrer\">ModDB</a></p>",
+    "download_links": [
+      {
+        "name": "SCMapDB",
+        "url": "https://scmapdb.wdfiles.com/local--files/map%3Acastle-disposed/CD-sven.zip",
+        "type": "Mirror"
+      }
+    ],
+    "download_notes": [],
+    "known_issues": "",
+    "screenshots": [
+      "http://scmapdb.wdfiles.com/local--files/map:castle-disposed/cd0.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:castle-disposed/cd1.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:castle-disposed/cd2.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:castle-disposed/cd3.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:castle-disposed/cd4.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:castle-disposed/cd5.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:castle-disposed/cd6.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:castle-disposed/cd7.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:castle-disposed/cd8.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:castle-disposed/cd9.jpg"
     ],
     "videos": [],
     "votes": 0,

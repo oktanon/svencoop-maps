@@ -13828,6 +13828,7 @@
       "conversion",
       "difficulty:medium",
       "music",
+      "secrets",
       "series",
       "size:large",
       "solo",
@@ -35724,6 +35725,7 @@
       "2015",
       "2024",
       "conversion",
+      "series",
       "size:medium",
       "walkthrough"
     ],
@@ -37420,6 +37422,7 @@
       "music",
       "scary",
       "secrets",
+      "series",
       "walkthrough",
       "zombies"
     ],
@@ -37857,6 +37860,7 @@
       "2024",
       "conversion",
       "music",
+      "series",
       "walkthrough"
     ],
     "scraped": true,
@@ -48252,6 +48256,7 @@
       "difficulty:medium",
       "escape",
       "music",
+      "series",
       "size:large",
       "space",
       "walkthrough"
@@ -51383,6 +51388,7 @@
       "conversion",
       "music",
       "recreation",
+      "series",
       "space",
       "walkthrough"
     ],
@@ -81885,6 +81891,7 @@
       "2024",
       "conversion",
       "losable",
+      "series",
       "size:small",
       "survival",
       "xen"
@@ -89446,6 +89453,66 @@
       "http://scmapdb.wdfiles.com/local--files/map:prize/pz4.jpg",
       "http://scmapdb.wdfiles.com/local--files/map:prize/pz5.jpg",
       "http://scmapdb.wdfiles.com/local--files/map:prize/pz6.jpg"
+    ],
+    "videos": [],
+    "votes": 0,
+    "difficulty": "unrated",
+    "size": "unrated",
+    "year": 2026
+  },
+  {
+    "id": "castle-disposed",
+    "title": "Castle Disposed",
+    "url": "https://scmapdb.wikidot.com/map:castle-disposed",
+    "thumbnail": "http://scmapdb.wdfiles.com/local--resized-images/map:castle-disposed/cd0.jpg/medium.jpg",
+    "rating": 0,
+    "tags": [
+      "2010",
+      "2026",
+      "conversion",
+      "itemhunt",
+      "music",
+      "secrets",
+      "series",
+      "walkthrough",
+      "xen"
+    ],
+    "scraped": true,
+    "author": "Reuniclus-579",
+    "original_release_date": "Sep 21 , 2010",
+    "release_date": "Sep 18, 2026",
+    "original_year": 2010,
+    "bsp_names": [
+      "cd_hub",
+      "cd1",
+      "cd2",
+      "cd3",
+      "cd4",
+      "cd5",
+      "cd6"
+    ],
+    "description": "<p>Castle Disposed is a collection of abandoned maps from many TWHL members. Explore the castle to uncover maps that never before saw the light of day.</p>",
+    "additional_info": "<p>Original mod <a href=\"https://www.moddb.com/mods/castle-disposed\" target=\"_blank\" rel=\"noopener noreferrer\">ModDB</a></p>",
+    "download_links": [
+      {
+        "name": "SCMapDB",
+        "url": "https://scmapdb.wdfiles.com/local--files/map%3Acastle-disposed/CD-sven.zip",
+        "type": "Mirror"
+      }
+    ],
+    "download_notes": [],
+    "known_issues": "",
+    "screenshots": [
+      "http://scmapdb.wdfiles.com/local--files/map:castle-disposed/cd0.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:castle-disposed/cd1.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:castle-disposed/cd2.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:castle-disposed/cd3.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:castle-disposed/cd4.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:castle-disposed/cd5.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:castle-disposed/cd6.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:castle-disposed/cd7.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:castle-disposed/cd8.jpg",
+      "http://scmapdb.wdfiles.com/local--files/map:castle-disposed/cd9.jpg"
     ],
     "videos": [],
     "votes": 0,
