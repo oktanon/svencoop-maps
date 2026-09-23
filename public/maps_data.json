@@ -37856,14 +37856,17 @@
     "id": "infiltracja",
     "title": "Infiltracja",
     "url": "https://scmapdb.wikidot.com/map:infiltracja",
-    "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:infiltracja/ija1.bmp/medium.jpg",
+    "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:infiltracja/ija1.jpg/medium.jpg",
     "rating": 1.5,
     "tags": [
       "2014",
       "2024",
+      "boss",
       "conversion",
+      "difficulty:medium",
       "music",
       "series",
+      "size:large",
       "walkthrough"
     ],
     "scraped": true,
@@ -80082,7 +80085,7 @@
     "id": "tower",
     "title": "Tower",
     "url": "https://scmapdb.wikidot.com/map:tower",
-    "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:tower/0-tower20000.jpg/medium.jpg",
+    "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:tower/000tower.jpg/medium.jpg",
     "rating": 4.1,
     "tags": [
       "2002",
@@ -89521,6 +89524,112 @@
     "votes": 0,
     "difficulty": "unrated",
     "size": "unrated",
+    "year": 2026
+  },
+  {
+    "id": "alien-gate",
+    "title": "Alien Gate",
+    "url": "https://scmapdb.wikidot.com/map:alien-gate",
+    "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:alien-gate/000ag.jpg/medium.jpg",
+    "rating": 0,
+    "tags": [
+      "2026",
+      "difficulty:medium",
+      "no-end",
+      "puzzle",
+      "size:large",
+      "walkthrough"
+    ],
+    "scraped": true,
+    "author": "MOL",
+    "original_release_date": "",
+    "release_date": "Final - Sep 14, 2026",
+    "original_year": null,
+    "bsp_names": [
+      "alien_gate"
+    ],
+    "description": "<p>You are on an island. Solve puzzles and survive. Good luck on this journey.</p>",
+    "additional_info": "<p><strong>Here you will see:</strong><br>\nrandom events<br>\nunique spawn system<br>\nthe weather is changing<br>\npuzzles<br>\ncustomize your game<br>\nplayable with survival mode<br>\ndynamic environment<br>\n___<br>\nHigh-quality map</p>",
+    "download_links": [
+      {
+        "name": "SCMapDB",
+        "url": "https://scmapdb.wdfiles.com/local--files/map%3Aalien-gate/alien_gate_11_28513b.zip",
+        "type": "Community Edit",
+        "description": "- repack v1"
+      },
+      {
+        "name": "GameBanana",
+        "url": "https://gamebanana.com/mods/715318",
+        "type": "Original"
+      }
+    ],
+    "download_notes": [],
+    "known_issues": "",
+    "screenshots": [
+      "https://scmapdb.wdfiles.com/local--files/map:alien-gate/000ag.jpg",
+      "https://scmapdb.wdfiles.com/local--files/map:alien-gate/ag1.jpg",
+      "https://scmapdb.wdfiles.com/local--files/map:alien-gate/ag2.jpg",
+      "https://scmapdb.wdfiles.com/local--files/map:alien-gate/ag3.jpg",
+      "https://scmapdb.wdfiles.com/local--files/map:alien-gate/ag4.jpg"
+    ],
+    "videos": [],
+    "votes": 0,
+    "difficulty": "medium",
+    "size": "large",
+    "year": 2026
+  },
+  {
+    "id": "underwater-adventure",
+    "title": "Underwater Adventure",
+    "url": "https://scmapdb.wikidot.com/map:underwater-adventure",
+    "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:underwater-adventure/000uwa.jpg/medium.jpg",
+    "rating": 0,
+    "tags": [
+      "2026",
+      "community-edit",
+      "difficulty:hard",
+      "no-end",
+      "size:large",
+      "walkthrough",
+      "water"
+    ],
+    "scraped": true,
+    "author": "MOL",
+    "original_release_date": "",
+    "release_date": "Final - Jan 8, 2026",
+    "original_year": null,
+    "bsp_names": [
+      "uwa"
+    ],
+    "description": "<p>This is an atmospheric underwater adventure. You can go make sushi or stay in a comfortable place.</p>",
+    "additional_info": "<p><strong>Here you will see:</strong></p>\n<p>Unique gameplay<br>\nBeautiful views<br>\nAtmospheric environment<br>\nDance place<br>\nFish TV<br>\nA secret<br>\nAnd an epic victory<br>\n___<br>\nHigh-quality map</p>",
+    "download_links": [
+      {
+        "name": "SCMapDB",
+        "url": "https://scmapdb.wdfiles.com/local--files/map%3Aunderwater-adventure/uwa_repack_v1.zip",
+        "type": "Community Edit",
+        "description": "- repack v1"
+      },
+      {
+        "name": "GameBanana",
+        "url": "https://gamebanana.com/mods/644918",
+        "type": "Original"
+      }
+    ],
+    "download_notes": [
+      "⚠️ Community edits are recommended due to bug fixes, but they may not play entirely the same as the original."
+    ],
+    "known_issues": "",
+    "screenshots": [
+      "https://scmapdb.wdfiles.com/local--files/map:underwater-adventure/000uwa.jpg",
+      "https://scmapdb.wdfiles.com/local--files/map:underwater-adventure/uwa1.jpg",
+      "https://scmapdb.wdfiles.com/local--files/map:underwater-adventure/uwa2.jpg",
+      "https://scmapdb.wdfiles.com/local--files/map:underwater-adventure/uwa3.jpg"
+    ],
+    "videos": [],
+    "votes": 0,
+    "difficulty": "hard",
+    "size": "large",
     "year": 2026
   }
 ]
