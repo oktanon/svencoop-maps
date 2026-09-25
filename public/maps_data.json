@@ -9163,6 +9163,7 @@
       "jumping",
       "music",
       "playable-solo",
+      "secrets",
       "series",
       "size:medium",
       "walkthrough"
@@ -32725,7 +32726,9 @@
     "tags": [
       "2007",
       "boss",
+      "custom",
       "difficulty:easy",
+      "fun",
       "horde",
       "size:small"
     ],
@@ -49510,6 +49513,9 @@
     "tags": [
       "2008",
       "community-edit",
+      "custom",
+      "difficulty:easy",
+      "fun",
       "size:medium",
       "walkthrough"
     ],
