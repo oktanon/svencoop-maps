@@ -6951,13 +6951,14 @@
   },
   {
     "id": "azure-sheep-merged",
-    "title": "Azure Sheep Merged",
+    "title": "Azure Sheep Merged (Outdated)",
     "url": "https://scmapdb.wikidot.com/map:azure-sheep-merged",
     "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:azure-sheep-merged/0-azure_sheep.png/medium.jpg",
     "rating": 3.4,
     "tags": [
       "2001",
       "2023",
+      "abandoned",
       "conversion",
       "difficulty:hard",
       "merged",
@@ -83466,9 +83467,12 @@
       "black-mesa",
       "community-edit",
       "conversion",
+      "difficulty:medium",
       "music",
+      "puzzle",
       "series",
       "size:large",
+      "survival",
       "walkthrough"
     ],
     "scraped": true,
@@ -89640,6 +89644,57 @@
       "https://scmapdb.wdfiles.com/local--files/map:underwater-adventure/uwa1.jpg",
       "https://scmapdb.wdfiles.com/local--files/map:underwater-adventure/uwa2.jpg",
       "https://scmapdb.wdfiles.com/local--files/map:underwater-adventure/uwa3.jpg"
+    ],
+    "videos": [],
+    "votes": 0,
+    "difficulty": "hard",
+    "size": "large",
+    "year": 2026
+  },
+  {
+    "id": "azure-sheep-modified-wip",
+    "title": "Azure Sheep Modified (WIP)",
+    "url": "https://scmapdb.wikidot.com/map:azure-sheep-modified-wip",
+    "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:azure-sheep-modified-wip/0-azure_sheep.png/medium.jpg",
+    "rating": 0,
+    "tags": [
+      "2001",
+      "2026",
+      "conversion",
+      "difficulty:hard",
+      "merged",
+      "music",
+      "series",
+      "size:large",
+      "survival",
+      "walkthrough"
+    ],
+    "scraped": true,
+    "author": "DAVLevels",
+    "original_release_date": "",
+    "release_date": "WIP - September 28, 2026",
+    "original_year": null,
+    "bsp_names": [
+      "azuresheep_c00a_mv2 ~ azuresheep_c11_mv2"
+    ],
+    "description": "<p>V2 of <a href=\"https://scmapdb.wikidot.com/map:azure-sheep-merged\" target=\"_blank\" rel=\"noopener noreferrer\">https://scmapdb.wikidot.com/map:azure-sheep-merged</a><br>\nMerged and heavily ripented version of <a href=\"http://scmapdb.wikidot.com/map:azure-sheep\" target=\"_blank\" rel=\"noopener noreferrer\">http://scmapdb.wikidot.com/map:azure-sheep</a></p>\n<p>You play one of the security guards that is on duty in one of the entrances of the Black Mesa facility. When the chaos starts you realize that Kate, your colleague, code name Azure Sheep, is in the complex and in big danger. You decide to rescue her!</p>",
+    "additional_info": "<p>1. Merged to 18 maps<br>\n2. Fixed a lot of bugs and add more enemies and challenge.</p>\n<p>(Kate Challenge : you have to move Kate to sector's ending if she appears in next sector, or you can't go to next sector)</p>\n<p>3. No force map restart in all series!</p>",
+    "download_links": [
+      {
+        "name": "SCMapdb",
+        "url": "https://scmapdb.wdfiles.com/local--files/map%3Aazure-sheep-modified-wip/azuresheep_modified_2026_09_29.zip",
+        "type": "Mirror"
+      },
+      {
+        "name": "DropBox",
+        "url": "https://www.dropbox.com/scl/fi/8whmvqp0397atr8ipxgno/azuresheep_modified_2026_09_29.zip?rlkey=gx0oh3kud65f7uvjkrswmhboy&st=ugitm41b&dl=0",
+        "type": "Mirror"
+      }
+    ],
+    "download_notes": [],
+    "known_issues": "",
+    "screenshots": [
+      "https://scmapdb.wdfiles.com/local--files/map:azure-sheep-modified-wip/0-azure_sheep.png"
     ],
     "videos": [],
     "votes": 0,

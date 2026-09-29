@@ -6951,13 +6951,14 @@
   },
   {
     "id": "azure-sheep-merged",
-    "title": "Azure Sheep Merged",
+    "title": "Azure Sheep Merged (Outdated)",
     "url": "https://scmapdb.wikidot.com/map:azure-sheep-merged",
     "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:azure-sheep-merged/0-azure_sheep.png/medium.jpg",
     "rating": 3.4,
     "tags": [
       "2001",
       "2023",
+      "abandoned",
       "conversion",
       "difficulty:hard",
       "merged",
@@ -9163,6 +9164,7 @@
       "jumping",
       "music",
       "playable-solo",
+      "secrets",
       "series",
       "size:medium",
       "walkthrough"
@@ -13393,7 +13395,7 @@
     "title": "Catalyst",
     "url": "https://scmapdb.wikidot.com/map:catalyst",
     "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:catalyst/0-sc_catalyst5.jpg/medium.jpg",
-    "rating": 2.5,
+    "rating": 2.7,
     "tags": [
       "2005",
       "difficulty:medium",
@@ -32725,7 +32727,9 @@
     "tags": [
       "2007",
       "boss",
+      "custom",
       "difficulty:easy",
+      "fun",
       "horde",
       "size:small"
     ],
@@ -37857,7 +37861,7 @@
     "title": "Infiltracja",
     "url": "https://scmapdb.wikidot.com/map:infiltracja",
     "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:infiltracja/ija1.jpg/medium.jpg",
-    "rating": 1.5,
+    "rating": 2,
     "tags": [
       "2014",
       "2024",
@@ -49506,10 +49510,13 @@
     "title": "Nintai Subway",
     "url": "https://scmapdb.wikidot.com/map:nintai-subway",
     "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:nintai-subway/nintai_subway_1.jpg/medium.jpg",
-    "rating": 3.9,
+    "rating": 3.8,
     "tags": [
       "2008",
       "community-edit",
+      "custom",
+      "difficulty:easy",
+      "fun",
       "size:medium",
       "walkthrough"
     ],
@@ -69991,11 +69998,14 @@
     "title": "Stacja",
     "url": "https://scmapdb.wikidot.com/map:stacja",
     "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:stacja/stja1.jpg/medium.jpg",
-    "rating": 1.7,
+    "rating": 2,
     "tags": [
       "2015",
       "2024",
+      "boss",
       "conversion",
+      "custom",
+      "difficulty:medium",
       "size:small",
       "space",
       "walkthrough"
@@ -82697,7 +82707,7 @@
     "title": "Umbrella",
     "url": "https://scmapdb.wikidot.com/map:umbrella",
     "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:umbrella/umb1.png/medium.jpg",
-    "rating": 4,
+    "rating": 3.8,
     "tags": [
       "2023",
       "co-oprequired",
@@ -83457,9 +83467,12 @@
       "black-mesa",
       "community-edit",
       "conversion",
+      "difficulty:medium",
       "music",
+      "puzzle",
       "series",
       "size:large",
+      "survival",
       "walkthrough"
     ],
     "scraped": true,
@@ -84113,11 +84126,15 @@
     "title": "Virtual",
     "url": "https://scmapdb.wikidot.com/map:virtual",
     "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:virtual/0-virtual_top.jpg/medium.jpg",
-    "rating": 3.8,
+    "rating": 3.7,
     "tags": [
       "2003",
+      "boss",
+      "difficulty:medium",
+      "horde",
       "music",
       "needs-fixing",
+      "secret",
       "size:medium",
       "walkthrough"
     ],
@@ -86480,7 +86497,7 @@
     "title": "Xenomorphic",
     "url": "https://scmapdb.wikidot.com/map:xenomorphic",
     "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:xenomorphic/0-xenomorphic-top.jpg/medium.jpg",
-    "rating": 1,
+    "rating": 1.5,
     "tags": [
       "1999",
       "boss",
@@ -89531,10 +89548,11 @@
     "title": "Alien Gate",
     "url": "https://scmapdb.wikidot.com/map:alien-gate",
     "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:alien-gate/000ag.jpg/medium.jpg",
-    "rating": 0,
+    "rating": 2,
     "tags": [
       "2026",
       "difficulty:medium",
+      "music",
       "no-end",
       "puzzle",
       "size:large",
@@ -89588,6 +89606,7 @@
       "2026",
       "community-edit",
       "difficulty:hard",
+      "music",
       "no-end",
       "size:large",
       "walkthrough",
@@ -89625,6 +89644,57 @@
       "https://scmapdb.wdfiles.com/local--files/map:underwater-adventure/uwa1.jpg",
       "https://scmapdb.wdfiles.com/local--files/map:underwater-adventure/uwa2.jpg",
       "https://scmapdb.wdfiles.com/local--files/map:underwater-adventure/uwa3.jpg"
+    ],
+    "videos": [],
+    "votes": 0,
+    "difficulty": "hard",
+    "size": "large",
+    "year": 2026
+  },
+  {
+    "id": "azure-sheep-modified-wip",
+    "title": "Azure Sheep Modified (WIP)",
+    "url": "https://scmapdb.wikidot.com/map:azure-sheep-modified-wip",
+    "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:azure-sheep-modified-wip/0-azure_sheep.png/medium.jpg",
+    "rating": 0,
+    "tags": [
+      "2001",
+      "2026",
+      "conversion",
+      "difficulty:hard",
+      "merged",
+      "music",
+      "series",
+      "size:large",
+      "survival",
+      "walkthrough"
+    ],
+    "scraped": true,
+    "author": "DAVLevels",
+    "original_release_date": "",
+    "release_date": "WIP - September 28, 2026",
+    "original_year": null,
+    "bsp_names": [
+      "azuresheep_c00a_mv2 ~ azuresheep_c11_mv2"
+    ],
+    "description": "<p>V2 of <a href=\"https://scmapdb.wikidot.com/map:azure-sheep-merged\" target=\"_blank\" rel=\"noopener noreferrer\">https://scmapdb.wikidot.com/map:azure-sheep-merged</a><br>\nMerged and heavily ripented version of <a href=\"http://scmapdb.wikidot.com/map:azure-sheep\" target=\"_blank\" rel=\"noopener noreferrer\">http://scmapdb.wikidot.com/map:azure-sheep</a></p>\n<p>You play one of the security guards that is on duty in one of the entrances of the Black Mesa facility. When the chaos starts you realize that Kate, your colleague, code name Azure Sheep, is in the complex and in big danger. You decide to rescue her!</p>",
+    "additional_info": "<p>1. Merged to 18 maps<br>\n2. Fixed a lot of bugs and add more enemies and challenge.</p>\n<p>(Kate Challenge : you have to move Kate to sector's ending if she appears in next sector, or you can't go to next sector)</p>\n<p>3. No force map restart in all series!</p>",
+    "download_links": [
+      {
+        "name": "SCMapdb",
+        "url": "https://scmapdb.wdfiles.com/local--files/map%3Aazure-sheep-modified-wip/azuresheep_modified_2026_09_29.zip",
+        "type": "Mirror"
+      },
+      {
+        "name": "DropBox",
+        "url": "https://www.dropbox.com/scl/fi/8whmvqp0397atr8ipxgno/azuresheep_modified_2026_09_29.zip?rlkey=gx0oh3kud65f7uvjkrswmhboy&st=ugitm41b&dl=0",
+        "type": "Mirror"
+      }
+    ],
+    "download_notes": [],
+    "known_issues": "",
+    "screenshots": [
+      "https://scmapdb.wdfiles.com/local--files/map:azure-sheep-modified-wip/0-azure_sheep.png"
     ],
     "videos": [],
     "votes": 0,
