@@ -35727,11 +35727,13 @@
     "title": "High Speed",
     "url": "https://scmapdb.wikidot.com/map:high-speed",
     "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:high-speed/high_speed_1.jpg/medium.jpg",
-    "rating": 2.3,
+    "rating": 2.6,
     "tags": [
       "2015",
       "2024",
+      "boss",
       "conversion",
+      "difficulty:medium",
       "series",
       "size:medium",
       "walkthrough"
