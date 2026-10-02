@@ -83604,10 +83604,13 @@
       "city",
       "community-edit",
       "conversion",
+      "custom",
+      "difficulty:medium",
       "featured",
       "half-life",
       "music",
       "series",
+      "size:large",
       "walkthrough"
     ],
     "scraped": true,
