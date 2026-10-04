@@ -51404,9 +51404,13 @@
       "2013",
       "2024",
       "conversion",
+      "custom",
+      "difficulty:hard",
+      "horde",
       "music",
       "recreation",
       "series",
+      "size:large",
       "space",
       "walkthrough"
     ],
@@ -80629,10 +80633,11 @@
     "title": "Toxic",
     "url": "https://scmapdb.wikidot.com/map:toxic",
     "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:toxic/0-toxic1.jpg/medium.jpg",
-    "rating": 3,
+    "rating": 2.8,
     "tags": [
       "2003",
       "community-edit",
+      "difficulty:medium",
       "rcbot",
       "size:large",
       "walkthrough"
