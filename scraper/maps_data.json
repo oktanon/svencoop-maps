@@ -6951,14 +6951,14 @@
   },
   {
     "id": "azure-sheep-merged",
-    "title": "Azure Sheep Merged (Outdated)",
+    "title": "Azure Sheep Merged",
     "url": "https://scmapdb.wikidot.com/map:azure-sheep-merged",
     "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:azure-sheep-merged/0-azure_sheep.png/medium.jpg",
     "rating": 3.4,
     "tags": [
       "2001",
       "2023",
-      "abandoned",
+      "2026",
       "conversion",
       "difficulty:hard",
       "merged",
@@ -35727,11 +35727,13 @@
     "title": "High Speed",
     "url": "https://scmapdb.wikidot.com/map:high-speed",
     "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:high-speed/high_speed_1.jpg/medium.jpg",
-    "rating": 2.3,
+    "rating": 2.6,
     "tags": [
       "2015",
       "2024",
+      "boss",
       "conversion",
+      "difficulty:medium",
       "series",
       "size:medium",
       "walkthrough"
@@ -39039,11 +39041,14 @@
     "title": "ISS 555 Cargo",
     "url": "https://scmapdb.wikidot.com/map:iss-555-cargo",
     "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:iss-555-cargo/i5c1.jpg/medium.jpg",
-    "rating": 2.7,
+    "rating": 2.8,
     "tags": [
       "2010",
       "2024",
       "conversion",
+      "custom",
+      "difficulty:medium",
+      "horde",
       "losable",
       "maze",
       "music",
@@ -49353,7 +49358,7 @@
     "title": "Night",
     "url": "https://scmapdb.wikidot.com/map:night",
     "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:night/0-sc_night-top.jpg/medium.jpg",
-    "rating": 2,
+    "rating": 2.5,
     "tags": [
       "2005",
       "community-fixed",
@@ -51394,15 +51399,21 @@
     "title": "Operation Mirra",
     "url": "https://scmapdb.wikidot.com/map:operation-mirra",
     "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:operation-mirra/om1.bmp/medium.jpg",
-    "rating": 3.7,
+    "rating": 3.9,
     "tags": [
       "2013",
       "2024",
+      "boss",
       "conversion",
+      "custom",
+      "difficulty:hard",
+      "horde",
       "music",
       "recreation",
       "series",
+      "size:large",
       "space",
+      "trap",
       "walkthrough"
     ],
     "scraped": true,
@@ -80624,10 +80635,11 @@
     "title": "Toxic",
     "url": "https://scmapdb.wikidot.com/map:toxic",
     "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:toxic/0-toxic1.jpg/medium.jpg",
-    "rating": 3,
+    "rating": 2.8,
     "tags": [
       "2003",
       "community-edit",
+      "difficulty:medium",
       "rcbot",
       "size:large",
       "walkthrough"
@@ -83599,10 +83611,13 @@
       "city",
       "community-edit",
       "conversion",
+      "custom",
+      "difficulty:medium",
       "featured",
       "half-life",
       "music",
       "series",
+      "size:large",
       "walkthrough"
     ],
     "scraped": true,
@@ -89700,6 +89715,106 @@
     "votes": 0,
     "difficulty": "hard",
     "size": "large",
+    "year": 2026
+  },
+  {
+    "id": "prototype-98",
+    "title": "Prototype 98",
+    "url": "https://scmapdb.wikidot.com/map:prototype-98",
+    "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:prototype-98/p981.jpg/medium.jpg",
+    "rating": 0,
+    "tags": [
+      "2012",
+      "2026",
+      "conversion",
+      "escape",
+      "music",
+      "puzzle",
+      "series",
+      "walkthrough"
+    ],
+    "scraped": true,
+    "author": "Reuniclus-579",
+    "original_release_date": "Dec 27 , 2012",
+    "release_date": "Oct 4, 2026",
+    "original_year": 2012,
+    "bsp_names": [
+      "p98_01",
+      "p98_02"
+    ],
+    "description": "<p>You wake up in a bedroom, after volunteering to become a test subject in some form of experiment related to The Black Mesa Research Facility.</p>\n<p>Follow the instructions and perform the tests with intelligence, creativity and diligence.</p>\n<p>You will be rewarded at the end.</p>",
+    "additional_info": "<p>Original mod <a href=\"https://www.runthinkshootlive.com/posts/prototype-98/\" target=\"_blank\" rel=\"noopener noreferrer\">RTSL</a></p>",
+    "download_links": [
+      {
+        "name": "SCMapDB",
+        "url": "https://scmapdb.wdfiles.com/local--files/map%3Aprototype-98/prototype98.zip",
+        "type": "Mirror"
+      }
+    ],
+    "download_notes": [],
+    "known_issues": "",
+    "screenshots": [
+      "https://scmapdb.wdfiles.com/local--files/map:prototype-98/p981.jpg",
+      "https://scmapdb.wdfiles.com/local--files/map:prototype-98/p982.jpg",
+      "https://scmapdb.wdfiles.com/local--files/map:prototype-98/p983.jpg",
+      "https://scmapdb.wdfiles.com/local--files/map:prototype-98/p984.jpg",
+      "https://scmapdb.wdfiles.com/local--files/map:prototype-98/p985.jpg",
+      "https://scmapdb.wdfiles.com/local--files/map:prototype-98/p986.jpg"
+    ],
+    "videos": [],
+    "votes": 0,
+    "difficulty": "unrated",
+    "size": "unrated",
+    "year": 2026
+  },
+  {
+    "id": "smart-decoy",
+    "title": "Smart Decoy",
+    "url": "https://scmapdb.wikidot.com/map:smart-decoy",
+    "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:smart-decoy/sd1.jpg/medium.jpg",
+    "rating": 0,
+    "tags": [
+      "2001",
+      "2026",
+      "conversion",
+      "series",
+      "walkthrough"
+    ],
+    "scraped": true,
+    "author": "Reuniclus-579",
+    "original_release_date": "Jan 7 , 2001",
+    "release_date": "Oct 4, 2026",
+    "original_year": 2001,
+    "bsp_names": [
+      "smart_decoy1",
+      "smart_decoy2",
+      "smart_decoy2a"
+    ],
+    "description": "<p>You are sent to an underwater base.</p>\n<p>Your objective is to reach and destroy the “machine”.</p>\n<p>Don't expect an easy time!</p>",
+    "additional_info": "<p>Original mod <a href=\"https://www.runthinkshootlive.com/posts/smart-decoy/\" target=\"_blank\" rel=\"noopener noreferrer\">RTSL</a></p>",
+    "download_links": [
+      {
+        "name": "SCMapDB",
+        "url": "https://scmapdb.wdfiles.com/local--files/map%3Asmart-decoy/smart-decoy.zip",
+        "type": "Mirror"
+      }
+    ],
+    "download_notes": [],
+    "known_issues": "",
+    "screenshots": [
+      "https://scmapdb.wdfiles.com/local--files/map:smart-decoy/sd1.jpg",
+      "https://scmapdb.wdfiles.com/local--files/map:smart-decoy/sd2.jpg",
+      "https://scmapdb.wdfiles.com/local--files/map:smart-decoy/sd3.jpg",
+      "https://scmapdb.wdfiles.com/local--files/map:smart-decoy/sd4.jpg",
+      "https://scmapdb.wdfiles.com/local--files/map:smart-decoy/sd5.jpg",
+      "https://scmapdb.wdfiles.com/local--files/map:smart-decoy/sd6.jpg",
+      "https://scmapdb.wdfiles.com/local--files/map:smart-decoy/sd7.jpg",
+      "https://scmapdb.wdfiles.com/local--files/map:smart-decoy/sd8.jpg"
+    ],
+    "videos": [],
+    "votes": 0,
+    "difficulty": "unrated",
+    "size": "unrated",
     "year": 2026
   }
 ]
