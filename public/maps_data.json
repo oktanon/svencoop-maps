@@ -12223,11 +12223,12 @@
     "title": "Bunker Escape",
     "url": "https://scmapdb.wikidot.com/map:bunker-escape",
     "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:bunker-escape/be1.bmp/medium.jpg",
-    "rating": 1,
+    "rating": 1.5,
     "tags": [
       "2007",
       "2024",
       "conversion",
+      "difficulty:medium",
       "escape",
       "music",
       "size:small",
@@ -66705,7 +66706,6 @@
       "conversion",
       "difficulty:easy",
       "escape",
-      "rubbish",
       "size:medium",
       "walkthrough"
     ],
