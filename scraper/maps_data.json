@@ -972,7 +972,7 @@
     "title": "7 Hours War Ep1",
     "url": "https://scmapdb.wikidot.com/map:7-hours-war",
     "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:7-hours-war/4009.jpg/medium.jpg",
-    "rating": 2.4,
+    "rating": 2.3,
     "tags": [
       "2025",
       "angelscript",
@@ -1097,7 +1097,7 @@
     "title": "7 Hours War Killing Combines",
     "url": "https://scmapdb.wikidot.com/map:7-hours-war-killing-combines",
     "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:7-hours-war-killing-combines/2000.jpg/medium.jpg",
-    "rating": 3,
+    "rating": 2.7,
     "tags": [
       "2025",
       "angelscript",
@@ -9857,7 +9857,7 @@
     "title": "Black Mesa Nightmare",
     "url": "https://scmapdb.wikidot.com/map:black-mesa-nightmare",
     "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:black-mesa-nightmare/0-bm_nightmare_d0003.jpg/medium.jpg",
-    "rating": 3.1,
+    "rating": 3.2,
     "tags": [
       "2006",
       "black-mesa",
@@ -12223,11 +12223,12 @@
     "title": "Bunker Escape",
     "url": "https://scmapdb.wikidot.com/map:bunker-escape",
     "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:bunker-escape/be1.bmp/medium.jpg",
-    "rating": 1,
+    "rating": 1.5,
     "tags": [
       "2007",
       "2024",
       "conversion",
+      "difficulty:medium",
       "escape",
       "music",
       "size:small",
@@ -18525,7 +18526,7 @@
     "title": "Danger of Collapse Part 1",
     "url": "https://scmapdb.wikidot.com/map:danger-of-collapse-part-1",
     "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:danger-of-collapse-part-1/0-sc_doc0006.jpg/medium.jpg",
-    "rating": 4,
+    "rating": 3.9,
     "tags": [
       "2007",
       "boms",
@@ -35097,7 +35098,7 @@
     "title": "Hellmouth",
     "url": "https://scmapdb.wikidot.com/map:hellmouth",
     "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:hellmouth/0-0hellmouthposter.jpg/medium.jpg",
-    "rating": 4,
+    "rating": 4.1,
     "tags": [
       "2005",
       "boms",
@@ -48112,7 +48113,7 @@
     "title": "Monsterbox",
     "url": "https://scmapdb.wikidot.com/map:monsterbox",
     "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:monsterbox/mbox-side.jpg/medium.jpg",
-    "rating": 1,
+    "rating": 1.5,
     "tags": [
       "2000",
       "creepsworld-top50",
@@ -49872,7 +49873,7 @@
     "title": "Nova Space Station",
     "url": "https://scmapdb.wikidot.com/map:nova-space-station",
     "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:nova-space-station/xaoc-1.jpg/medium.jpg",
-    "rating": 2,
+    "rating": 2.3,
     "tags": [
       "2012",
       "2024",
@@ -51345,8 +51346,8 @@
     "id": "operation-gargantua",
     "title": "Operation Gargantua",
     "url": "https://scmapdb.wikidot.com/map:operation-gargantua",
-    "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:operation-gargantua/og1a-2024-07-31-0002.bmp/medium.jpg",
-    "rating": 3,
+    "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:operation-gargantua/og1a-2024-07-31-0002.jpg/medium.jpg",
+    "rating": 3.3,
     "tags": [
       "2012",
       "2024",
@@ -55012,7 +55013,7 @@
     "title": "Prisonriot Erosion",
     "url": "https://scmapdb.wikidot.com/map:prisonriot-erosion",
     "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:prisonriot-erosion/0-theprisonvtbqbxjxqw.jpg/medium.jpg",
-    "rating": 1.5,
+    "rating": 1.7,
     "tags": [
       "2007",
       "co-oprequired",
@@ -66705,7 +66706,6 @@
       "conversion",
       "difficulty:easy",
       "escape",
-      "rubbish",
       "size:medium",
       "walkthrough"
     ],
@@ -77856,7 +77856,7 @@
     "title": "The Prison",
     "url": "https://scmapdb.wikidot.com/map:the-prison",
     "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:the-prison/0-theprisonyptdummlox.jpg/medium.jpg",
-    "rating": 3.3,
+    "rating": 3.2,
     "tags": [
       "2007",
       "difficulty:easy",
@@ -89722,7 +89722,7 @@
     "title": "Prototype 98",
     "url": "https://scmapdb.wikidot.com/map:prototype-98",
     "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:prototype-98/p981.jpg/medium.jpg",
-    "rating": 0,
+    "rating": 2.5,
     "tags": [
       "2012",
       "2026",
@@ -89772,7 +89772,7 @@
     "title": "Smart Decoy",
     "url": "https://scmapdb.wikidot.com/map:smart-decoy",
     "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:smart-decoy/sd1.jpg/medium.jpg",
-    "rating": 0,
+    "rating": 3,
     "tags": [
       "2001",
       "2026",
@@ -89816,5 +89816,46 @@
     "difficulty": "unrated",
     "size": "unrated",
     "year": 2026
+  },
+  {
+    "id": "route-canal",
+    "title": "Route Canal",
+    "url": "https://scmapdb.wikidot.com/map:route-canal",
+    "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:route-canal/000canals.jpg/medium.jpg",
+    "rating": 0,
+    "tags": [],
+    "scraped": true,
+    "author": "cengaver386",
+    "original_release_date": "",
+    "release_date": "Beta 1 - Oct 2, 2026",
+    "original_year": null,
+    "bsp_names": [
+      "d1_canal_01"
+    ],
+    "description": "<p>A port of the half life 2 famous chapter, only the first level is available for now</p>",
+    "additional_info": "<ul>\n<li>Many scripted sequences don't work as intended, or are not included, and dialogues</li>\n</ul>",
+    "download_links": [
+      {
+        "name": "SCMapDB",
+        "url": "https://scmapdb.wdfiles.com/local--files/map%3Aroute-canal/canals_repack_v1.zip",
+        "type": "Community Edit"
+      },
+      {
+        "name": "Gamebanana",
+        "url": "https://gamebanana.com/mods/723182",
+        "type": "Original"
+      }
+    ],
+    "download_notes": [],
+    "known_issues": "",
+    "screenshots": [
+      "https://scmapdb.wdfiles.com/local--files/map:route-canal/000canals.jpg",
+      "https://scmapdb.wdfiles.com/local--files/map:route-canal/canals1.jpg"
+    ],
+    "videos": [],
+    "votes": 0,
+    "difficulty": "unrated",
+    "size": "unrated",
+    "year": null
   }
 ]

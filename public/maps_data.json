@@ -972,7 +972,7 @@
     "title": "7 Hours War Ep1",
     "url": "https://scmapdb.wikidot.com/map:7-hours-war",
     "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:7-hours-war/4009.jpg/medium.jpg",
-    "rating": 2.4,
+    "rating": 2.3,
     "tags": [
       "2025",
       "angelscript",
@@ -1097,7 +1097,7 @@
     "title": "7 Hours War Killing Combines",
     "url": "https://scmapdb.wikidot.com/map:7-hours-war-killing-combines",
     "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:7-hours-war-killing-combines/2000.jpg/medium.jpg",
-    "rating": 3,
+    "rating": 2.7,
     "tags": [
       "2025",
       "angelscript",
@@ -48113,7 +48113,7 @@
     "title": "Monsterbox",
     "url": "https://scmapdb.wikidot.com/map:monsterbox",
     "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:monsterbox/mbox-side.jpg/medium.jpg",
-    "rating": 1,
+    "rating": 1.5,
     "tags": [
       "2000",
       "creepsworld-top50",
@@ -51346,8 +51346,8 @@
     "id": "operation-gargantua",
     "title": "Operation Gargantua",
     "url": "https://scmapdb.wikidot.com/map:operation-gargantua",
-    "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:operation-gargantua/og1a-2024-07-31-0002.bmp/medium.jpg",
-    "rating": 3,
+    "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:operation-gargantua/og1a-2024-07-31-0002.jpg/medium.jpg",
+    "rating": 3.3,
     "tags": [
       "2012",
       "2024",
@@ -89816,5 +89816,46 @@
     "difficulty": "unrated",
     "size": "unrated",
     "year": 2026
+  },
+  {
+    "id": "route-canal",
+    "title": "Route Canal",
+    "url": "https://scmapdb.wikidot.com/map:route-canal",
+    "thumbnail": "https://scmapdb.wdfiles.com/local--resized-images/map:route-canal/000canals.jpg/medium.jpg",
+    "rating": 0,
+    "tags": [],
+    "scraped": true,
+    "author": "cengaver386",
+    "original_release_date": "",
+    "release_date": "Beta 1 - Oct 2, 2026",
+    "original_year": null,
+    "bsp_names": [
+      "d1_canal_01"
+    ],
+    "description": "<p>A port of the half life 2 famous chapter, only the first level is available for now</p>",
+    "additional_info": "<ul>\n<li>Many scripted sequences don't work as intended, or are not included, and dialogues</li>\n</ul>",
+    "download_links": [
+      {
+        "name": "SCMapDB",
+        "url": "https://scmapdb.wdfiles.com/local--files/map%3Aroute-canal/canals_repack_v1.zip",
+        "type": "Community Edit"
+      },
+      {
+        "name": "Gamebanana",
+        "url": "https://gamebanana.com/mods/723182",
+        "type": "Original"
+      }
+    ],
+    "download_notes": [],
+    "known_issues": "",
+    "screenshots": [
+      "https://scmapdb.wdfiles.com/local--files/map:route-canal/000canals.jpg",
+      "https://scmapdb.wdfiles.com/local--files/map:route-canal/canals1.jpg"
+    ],
+    "videos": [],
+    "votes": 0,
+    "difficulty": "unrated",
+    "size": "unrated",
+    "year": null
   }
 ]
